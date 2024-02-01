@@ -1,2 +1,11 @@
 # Montreal_Real_Estate-soen341projectW2024
-Repository to work on the car rental project for SOEN 341
+
+## Description
+Repository to work in the car rental web project. Allows users to browse and reserve vehicules, to cancel reservations, to review them and much more. 
+
+## Team Members and Roles
+* J. David Ruiz
+   ROLE ?
+* put your names :) 
+
+## Project Approach and Technology
