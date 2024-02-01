@@ -6,6 +6,7 @@ Repository to work in the car rental web project. Allows users to browse and res
 ## Team Members and Roles
 * J. David Ruiz
    ROLE ?
+* Yan Pilon
 * put your names :) 
 
 ## Project Approach and Technology
