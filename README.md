@@ -10,6 +10,7 @@ Repository to work in the car rental web project. Allows users to browse and res
 * Alexandre Hachey
 * Mohammad Natsheh
 * David Jordan Mateus
+* Rishit Mittal
 
 ## Project Approach and Technology
 
