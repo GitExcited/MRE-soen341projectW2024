@@ -7,6 +7,6 @@ Repository to work in the car rental web project. Allows users to browse and res
 * J. David Ruiz
    ROLE ?
 * Yan Pilon
-* put your names :) 
+* Alexandre Hachey
 
 ## Project Approach and Technology
