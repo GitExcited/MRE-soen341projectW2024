@@ -1,4 +1,4 @@
-# Montreal_Real_Estate-soen341projectW2024
+# MRE-soen341projectW2024
 
 ## Description
 Repository to work in the car rental web project. Allows users to browse and reserve vehicules, to cancel reservations, to review them and much more. 
