@@ -8,5 +8,6 @@ Repository to work in the car rental web project. Allows users to browse and res
    ROLE ?
 * Yan Pilon
 * Alexandre Hachey
+* Mohammad Natsheh
 
 ## Project Approach and Technology
