@@ -4,6 +4,8 @@
 Repository to work in the car rental web project. Allows users to browse and reserve vehicules, to cancel reservations, to review them and much more. 
 
 ## Team Members and Roles
+
+Lab Review : 6:05pm-6:30pm
 * J. David Ruiz
    ROLE ?
 * Yan Pilon
