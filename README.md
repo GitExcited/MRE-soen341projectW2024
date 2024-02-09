@@ -4,6 +4,11 @@ Lab Review : 6:05pm-6:30pm
 ## Description
 Repository to work in the car rental web project. Allows users to browse and reserve vehicules, to cancel reservations, to review them and much more. 
 
+## Installation instructions and Usage Guidelines
+No installation yet. We are working on the project still. 
+Issues should be added using the new default template. 
+Every collaborator must have their own personal branch where they make modifications and answer to issues.
+
 ## Team Members and Roles
 
 ### Alexandre Hachey - Team lead / Full Stack
