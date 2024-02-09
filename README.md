@@ -61,16 +61,25 @@ project team.
  
  3.1 Backend Frameworks
  
- 3.1.1 Framework A
-- Description: Brief overview of Framework A.
+ 3.1.1 Express Js
+- Description: Express is a lightweight framework to build web applications. It helps to organize 
+HTTP requests to manage the backend.
 - Rationale:
-  - Justification for choosing Framework A.
-  - Consider factors such as community support,
-scalability, and ease of integration.
+  - We chose Express because it is a commonly used framework with lots of community support.
+  - Esy to integrate API requests and managing our SQL relational database.
+  - Scales well with large user bases
 - Qualitative Assessment:
-  - Strengths
+  - Strenghts:
+    - Simple, easy to use and learn.
+    - Organizing API is straightforward.
+    - Good Performance.
   - Weaknesses
+    - Limitations require additional libraries
+    - Requires lots of decisions regarding structure of database to be scalable
   - Use Cases
+   - Web development 
+   - Single page application
+   - Prototyping
  
  3.1.2 Framework B
 - Description: Brief overview of Framework B.
