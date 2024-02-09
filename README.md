@@ -40,9 +40,12 @@ Lab Review : 6:05pm-6:30pm
 Repository to work in the car rental web project. Allows users to browse and reserve vehicules, to cancel reservations, to review them and much more. 
 
 ## Installation instructions and Usage Guidelines
-No installation yet. We are working on the project still. 
-Issues should be added using the new default template. 
-Every collaborator must have their own personal branch where they make modifications and answer to issues.
+To get started working on this repository, you can run the following command in your terminal of choice
+
+```shell
+git clone https://github.com/GitExcited/MRE-soen341projectW2024/
+```
+There are no further installation instructions for the time being as the frontend and backend applications have not been initialized in the repository at the current time.
 
 ## Team Members and Roles
 
