@@ -1,18 +1,22 @@
 # MRE-soen341projectW2024
+Lab Review : 6:05pm-6:30pm
 
 ## Description
 Repository to work in the car rental web project. Allows users to browse and reserve vehicules, to cancel reservations, to review them and much more. 
 
 ## Team Members and Roles
 
-Lab Review : 6:05pm-6:30pm
-* J. David Ruiz
-   ROLE ?
-* Yan Pilon
-* Alexandre Hachey
-* Mohammad Natsheh
-* David Jordan Mateus
-* Rishit Mittal
+### Alexandre Hachey - Team lead / Full Stack
+I am a software engineering student with several years of part-time and full-time work experience in the tech industry. I have worked in an Agile team
+and am confident in leading my team to follow this methodology. I have worked as a Full-Stack developer touching a variety of technologies, implementing
+projects using languages and frameworks such as C# .NET, Pyhton, Typescript/Javascript, Angular, React, Golang, Zig, HTMX, and several more. My role in
+this project will be to manage the task delegation and project deadlines within the team while working on features and coordinating the team.
+
+### J. David Ruiz
+### Yan Pilon
+### Mohammad Natsheh
+### David Jordan Mateus
+### Rishit Mittal
 
 ## Project Approach and Technology
 
