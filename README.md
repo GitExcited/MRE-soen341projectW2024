@@ -46,16 +46,22 @@ functionalities.
  2. Project Approach
  
  2.1 Development Methodology
-- Choose a development methodology (e.g., Agile, Waterfall) and
-justify the selection based on project requirements.
+- We choose Scrum methodology with an Agile mindset. This allows to adapt quickly to changing requirements, to involve the costumer in every new version and to work in 4 sprints. We prioritize collaboration between team members and meet daily.
  
  2.2 Project Timeline
-- Create a high-level timeline outlining major milestones and
-deadlines.
+- Sprint 1 - February 12
+  - Decide framework
+  - Populate Team Members and Roles readme
+  - Populate Approach and Technology readme
+  - Create 6 user stories
+  - Work on team log and wiki
+  - Plan Sprint 2
+- Sprint 2 - March 11
+- Sprint 3 - March 25
+- Sprint 4 - April 10
  
  2.3 Collaboration and Communication
-- Define communication channels and collaboration tools for the
-project team.
+- The team will meet regularly in person for short amount of time (15 min). We will also meet on Fridays for longer periods (1-2 hours) to work together. Lastly, all the communication will be done through a discord server.
  
  3. Technology Stack
  
