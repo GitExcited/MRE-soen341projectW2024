@@ -1,6 +1,41 @@
 # MRE-soen341projectW2024
 Lab Review : 6:05pm-6:30pm
 
+## Table of Contents
+1. [Description](#description)
+2. [Installation Instructions and Usage Guidelines](#installation-instructions-and-usage-guidelines)
+3. [Team Members and Roles](#team-members-and-roles)
+   - [Alexandre Hachey - Team lead / Full Stack](#alexandre-hachey---team-lead--full-stack)
+   - [J. David Ruiz / Full Stack](#j-david-ruiz--full-stack)
+   - [Yan Pilon - Developer / Full Stack](#yan-pilon---developer--full-stack)
+   - [Mohammad Natsheh](#mohammad-natsheh)
+   - [David Jordan Mateus](#david-jordan-mateus)
+   - [Rishit Mittal](#rishit-mittal)
+4. [Project Approach and Technology](#project-approach-and-technology)
+   - [Project Overview](#project-overview)
+     - [Project Objectives](#project-objectives)
+     - [Scope](#scope)
+     - [Target Audience](#target-audience)
+   - [Project Approach](#project-approach)
+     - [Development Methodology](#development-methodology)
+     - [Project Timeline](#project-timeline)
+     - [Collaboration and Communication](#collaboration-and-communication)
+   - [Technology Stack](#technology-stack)
+     - [Backend Frameworks](#backend-frameworks)
+       - [Express Js](#express-js)
+       - [PostgreSQL](#postgresql)
+     - [Frontend Frameworks](#frontend-frameworks)
+       - [Vue.js](#vuejs)
+       - [Bootstrap](#bootstrap)
+       - [ESLint](#eslint)
+       - [Prettier](#prettier)
+   - [Integration and Interoperability](#integration-and-interoperability)
+     - [Backend-Frontend Integration](#backend-frontend-integration)
+     - [Third-Party Services](#third-party-services)
+   - [Security Considerations](#security-considerations)
+   - [Conclusion](#conclusion)
+
+
 ## Description
 Repository to work in the car rental web project. Allows users to browse and reserve vehicules, to cancel reservations, to review them and much more. 
 
@@ -159,7 +194,6 @@ integrated into the project.
  
 ###	Security Considerations
 - We will be storing all our user data on our own database, and we will hash and salt our user information to ensure any data leaks are not compromising.
-
 
 ### Conclusion
  
