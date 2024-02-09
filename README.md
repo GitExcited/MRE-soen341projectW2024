@@ -111,54 +111,41 @@ curve, and extensibility.
  
  3.2 Frontend Frameworks
  
- 3.2.1 Framework X
-- Description: Brief overview of Framework X.
-- Rationale:
-  - Justification for choosing Framework X.
-  - Consider factors such as user interface
-capabilities, responsiveness, and cross-browser compatibility.
-- Qualitative Assessment:
-  - Strengths
-  - Weaknesses
-  - Use Cases
+ 3.2.1 Vue.js 
+•	Description: Vue.js is a JavaScript front-end framework used for creating user-interface with a component-based and declarative programming model. 
+•	Rationale:
+o	Since we don’t have a lot of time to develop the website, and this is a small project we wanted a lightweight front-end framework with a small learning curve.
+o	We want to be able to have reusable components and the capability for single-page application and those are features vue.js was designed to provide.
+•	Qualitative Assessment:
+o	Strengths: Small learning-curve, Code reusability, Versatility, Typescript support
+o	Weaknesses: Less community support than competing front-end frameworks.
+o	Use Cases: Building User-Interfaces
+
  
- 3.2.2 Framework Y
-- Description: Brief overview of Framework Y.
-- Rationale:
-  - Justification for choosing Framework Y.
-  - Consider factors such as modularity, performance,
-and community support.
-- Qualitative Assessment:
-  - Strengths
-  - Weaknesses
-  - Use Cases
- 
- 3.2.3 Framework Z
-- Description: Brief overview of Framework Z.
-- Rationale:
-  - Justification for choosing Framework Z.
-  - Consider factors such as ease of integration,
-component libraries, and developer experience.
-- Qualitative Assessment:
-  - Strengths
-  - Weaknesses
-  - Use Cases
+3.2.2 Bootstrap 
+•	Description: Bootstrap is CSS framework with pre-built CSS classes and animations.
+•	Rationale:
+o	Helps us speed up the development time and have a consistent UI style.
+•	Qualitative Assessment:
+o	Strengths: Reusability.
+o	Weaknesses: Less fine grain control.
+o	Use Cases: Adding style to a website.
+
  
  4. Integration and Interoperability
  
- 4.1 Backend-Frontend Integration
-- Outline the strategy for integrating the chosen backend and
-frontend technologies.
+4.1 Backend-Frontend Integration
+•	The front-end and back-end will be communicating through a restful API with various endpoints using Json formatting for the request bodies. The server and databases will both be hosted on the same machine and the server will access the database through the node.js runtime on the local host.
+
  
  4.2 Third-Party Services
 - Identify any third-party services or APIs that will be
 integrated into the project.
  
- 5. Security Considerations
- 
-- Provide an overview of security measures and considerations for
-both the backend and frontend.
- 
+5.	Security Considerations
+•	We will be storing all our user data on our own database, and we will hash and salt our user information to ensure any data leaks are not compromising.
+
+
  6. Conclusion
  
 - Summarize the chosen project approach and technology stack,
