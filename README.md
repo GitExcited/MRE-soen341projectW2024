@@ -9,7 +9,7 @@ Repository to work in the car rental web project. Allows users to browse and res
 ### Alexandre Hachey - Team lead / Full Stack
 I am a software engineering student with several years of part-time and full-time work experience in the tech industry. I have worked in an Agile team
 and am confident in leading my team to follow this methodology. I have worked as a Full-Stack developer touching a variety of technologies, implementing
-projects using languages and frameworks such as C# .NET, Pyhton, Typescript/Javascript, Angular, React, Golang, Zig, HTMX, and several more. My role in
+projects using languages and frameworks such as C# .NET, Python, Typescript/Javascript, Angular, React, Golang, Zig, HTMX, and several more. My role in
 this project will be to manage the task delegation and project deadlines within the team while working on features and coordinating the team.
 
 ### J. David Ruiz
@@ -18,6 +18,8 @@ I am a software engineering student at Concordia who specializes in Full-Stack d
 
 ### Mohammad Natsheh
 ### David Jordan Mateus
+I am a software engineering student at Concordia university who over my summer intership specialized in AI, specifically in neural network creation. I have most my experience creating neural networks in python. I am also confortable using Java, JavaScript, C#, CSS and more. Due to having taking web design in the past I will also be confortable creating the website. I will be working more so on front end and design of the website.
+
 ### Rishit Mittal
 
 ## Project Approach and Technology
