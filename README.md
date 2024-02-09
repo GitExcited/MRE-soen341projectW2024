@@ -151,6 +151,15 @@ maintenance.
   - Weaknesses
   - Use Cases
 
+##### Jest
+- Description: Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript/Typescript codebase. It allows for easy setup and execution of tests, and is designed to be used with React, Angular, and Vue.js.
+- Rationale:
+  - Jest is designed to be used with Vue.js, which is our chosen front-end framework. It has a large community of users, which means that it is well-documented and has a lot of support available.
+- Qualitative Assessment:
+  - Strengths: Easy to set up and use, large community of users, well-documented, designed to be used with Vue.js.
+  - Weaknesses: Requires setup, and writing tests can become very verbose.
+  - Use Cases: Testing Code to ensure functionality. 
+
 #### Frontend Frameworks
  
 ##### Vue.js 
