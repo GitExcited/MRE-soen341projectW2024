@@ -17,6 +17,8 @@ this project will be to manage the task delegation and project deadlines within 
 I am a software engineering student at Concordia who specializes in Full-Stack development using Vue.js, Express.js, Node.js and MongoDB as a main stack but who also has experience with various other languages and frameworks such as: Java, Python, C#, Angular.js and others. I will be mainly working on feature implementation but I will also be helping coordinating members who have less experience with web technologies/development.
 
 ### Mohammad Natsheh
+I am a computer engineer at Concordia with experience programming in lower level languages such as x86 and arm assembly as well as java and C++. I have previously worked using the agile methodology with a previous project involving the development of an Android application. I have worked with databases including Firebase and some SQL experience. 
+
 ### David Jordan Mateus
 I am a software engineering student at Concordia university who over my summer intership specialized in AI, specifically in neural network creation. I have most my experience creating neural networks in python. I am also confortable using Java, JavaScript, C#, CSS and more. Due to having taking web design in the past I will also be confortable creating the website. I will be working more so on front end and design of the website.
 
