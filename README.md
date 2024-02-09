@@ -62,8 +62,14 @@ functionalities.
   - Work on team log and wiki
   - Plan Sprint 2
 - Sprint 2 - March 11
+  - Implement UI on frontend app
+  - Introduce API routes in backend
+  - Introduce Database controls in backend
+  - Plan Sprint 3
 - Sprint 3 - March 25
+  - Will be updated during Sprint 2's future sprint planning session
 - Sprint 4 - April 10
+  - Will be updated during Sprint 3's future sprint planning session
  
  2.3 Collaboration and Communication
 - The team will meet regularly in person for short amount of time (15 min). We will also meet on Fridays for longer periods (1-2 hours) to work together. Lastly, all the communication will be done through a discord server.
