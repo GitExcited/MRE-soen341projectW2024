@@ -12,7 +12,7 @@ and am confident in leading my team to follow this methodology. I have worked as
 projects using languages and frameworks such as C# .NET, Python, Typescript/Javascript, Angular, React, Golang, Zig, HTMX, and several more. My role in
 this project will be to manage the task delegation and project deadlines within the team while working on features and coordinating the team.
 
-### J. David Ruiz
+### J. David Ruiz / Full Stack
 I am a software engineering student at Concordia. I have experience in building large scale website applications using React.
 I also love programming in Python and Java. I have worked at Bombardier and Intact as software developper. In this project I will be
 working in the front and backend. 
