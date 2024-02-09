@@ -35,25 +35,24 @@ I am a software engineering student at Concordia university who over my summer i
 
 ## Project Approach and Technology
 
-
-1. Project Overview
+### Project Overview
  
- 1.1 Project Objectives
+#### Project Objectives
 - Clearly define the goals and objectives of the project.
  
- 1.2 Scope
+#### Scope
 - Outline the scope of the project, including key features and
 functionalities.
  
- 1.3 Target Audience
+#### Target Audience
 - Identify the intended users and their needs.
  
- 2. Project Approach
+### Project Approach
  
- 2.1 Development Methodology
+#### Development Methodology
 - We choose Scrum methodology with an Agile mindset. This allows to adapt quickly to changing requirements, to involve the costumer in every new version and to work in 4 sprints. We prioritize collaboration between team members and meet daily.
  
- 2.2 Project Timeline
+#### Project Timeline
 - Sprint 1 - February 12
   - Decide framework
   - Populate Team Members and Roles readme
@@ -71,14 +70,14 @@ functionalities.
 - Sprint 4 - April 10
   - Will be updated during Sprint 3's future sprint planning session
  
- 2.3 Collaboration and Communication
+#### Collaboration and Communication
 - The team will meet regularly in person for short amount of time (15 min). We will also meet on Fridays for longer periods (1-2 hours) to work together. Lastly, all the communication will be done through a discord server.
  
- 3. Technology Stack
+### Technology Stack
  
- 3.1 Backend Frameworks
+#### Backend Frameworks
  
- 3.1.1 Express Js
+##### Express Js
 - Description: Express is a lightweight framework to build web applications. It helps to organize 
 HTTP requests to manage the backend.
 - Rationale:
@@ -98,7 +97,7 @@ HTTP requests to manage the backend.
    - Single page application
    - Prototyping
  
- 3.1.2 Framework B
+##### PostgreSQL
 - Description: Brief overview of Framework B.
 - Rationale:
   - Justification for choosing Framework B.
@@ -108,56 +107,61 @@ maintenance.
   - Strengths
   - Weaknesses
   - Use Cases
+
+#### Frontend Frameworks
  
- 3.1.3 Framework C
-- Description: Brief overview of Framework C.
+##### Vue.js 
+- Description: Vue.js is a JavaScript front-end framework used for creating user interfaces with a component-based and declarative programming model.
 - Rationale:
-  - Justification for choosing Framework C.
-  - Consider factors such as community support, learning
-curve, and extensibility.
+  - Since we don’t have a lot of time to develop the website, and this is a small project, we wanted a lightweight front-end framework with a small learning curve.
+  - We want to be able to have reusable components and the capability for single-page applications, and those are features Vue.js was designed to provide.
 - Qualitative Assessment:
-  - Strengths
-  - Weaknesses
-  - Use Cases
+  - Strengths: Small learning curve, Code reusability, Versatility, TypeScript support.
+  - Weaknesses: Less community support than competing front-end frameworks.
+  - Use Cases: Building User Interfaces.
  
- 3.2 Frontend Frameworks
+##### Bootstrap 
+- Description: Bootstrap is a CSS framework with pre-built CSS classes and animations.
+- Rationale:
+  - Helps us speed up the development time and have a consistent UI style.
+- Qualitative Assessment:
+  - Strengths: Reusability.
+  - Weaknesses: Less fine-grain control.
+  - Use Cases: Adding style to a website.
+
+##### ESLint
+- Description: ESLint is a code analysis tool to find errors in our typescript code and enforce rules on code quality
+- Rationale:
+  - Having consistent rules for coding style and not allowing code to break these rules will save time for developers that must re-read their code or read other developers code.
+- Qualitative Assessment:
+  - Strengths: Makes reading written code easier, enforces a consistent style
+  - Weaknesses: Can slow down development time initially and requires configuration
+  - Use Cases: Enforcing consistency in code quality and fixing errors
+
+##### Prettier
+- Description: Prettier is a code formatter that enforces a consistent style by parsing code and re-printing it with its own rules.
+- Rationale:
+  - It ensures that all outputted code conforms to a consistent style. This means less time is spent discussing code style in code review, allowing developers to focus on the content and logic of the code rather than the format.
+- Qualitative Assessment:
+  - Strengths: Ensures consistency across the codebase, supports many languages and frameworks, integrates with the development environment, reduces time spent on formatting during code reviews.
+  - Weaknesses: Requires initial setup and configuration, may not conform with all developers wishes for the coding style.
+  - Use Cases: Automated code formatting in projects to maintain code quality and readability, reducing manual efforts in maintaining code style guidelines.
+
+### Integration and Interoperability
  
- 3.2.1 Vue.js 
-•	Description: Vue.js is a JavaScript front-end framework used for creating user-interface with a component-based and declarative programming model. 
-•	Rationale:
-o	Since we don’t have a lot of time to develop the website, and this is a small project we wanted a lightweight front-end framework with a small learning curve.
-o	We want to be able to have reusable components and the capability for single-page application and those are features vue.js was designed to provide.
-•	Qualitative Assessment:
-o	Strengths: Small learning-curve, Code reusability, Versatility, Typescript support
-o	Weaknesses: Less community support than competing front-end frameworks.
-o	Use Cases: Building User-Interfaces
+#### Backend-Frontend Integration
+- The front-end and back-end will be communicating through a restful API with various endpoints using Json formatting for the request bodies. The server and databases will both be hosted on the same machine and the server will access the database through the node.js runtime on the local host.
 
  
-3.2.2 Bootstrap 
-•	Description: Bootstrap is CSS framework with pre-built CSS classes and animations.
-•	Rationale:
-o	Helps us speed up the development time and have a consistent UI style.
-•	Qualitative Assessment:
-o	Strengths: Reusability.
-o	Weaknesses: Less fine grain control.
-o	Use Cases: Adding style to a website.
-
- 
- 4. Integration and Interoperability
- 
-4.1 Backend-Frontend Integration
-•	The front-end and back-end will be communicating through a restful API with various endpoints using Json formatting for the request bodies. The server and databases will both be hosted on the same machine and the server will access the database through the node.js runtime on the local host.
-
- 
- 4.2 Third-Party Services
+#### Third-Party Services
 - Identify any third-party services or APIs that will be
 integrated into the project.
  
-5.	Security Considerations
-•	We will be storing all our user data on our own database, and we will hash and salt our user information to ensure any data leaks are not compromising.
+###	Security Considerations
+- We will be storing all our user data on our own database, and we will hash and salt our user information to ensure any data leaks are not compromising.
 
 
- 6. Conclusion
+### Conclusion
  
 - Summarize the chosen project approach and technology stack,
 highlighting key reasons for the selections.
