@@ -13,6 +13,10 @@ projects using languages and frameworks such as C# .NET, Python, Typescript/Java
 this project will be to manage the task delegation and project deadlines within the team while working on features and coordinating the team.
 
 ### J. David Ruiz
+I am a software engineering student at Concordia. I have experience in building large scale website applications using React.
+I also love programming in Python and Java. I have worked at Bombardier and Intact as software developper. In this project I will be
+working in the front and backend. 
+
 ### Yan Pilon - Developer / Full Stack
 I am a software engineering student at Concordia who specializes in Full-Stack development using Vue.js, Express.js, Node.js and MongoDB as a main stack but who also has experience with various other languages and frameworks such as: Java, Python, C#, Angular.js and others. I will be mainly working on feature implementation but I will also be helping coordinating members who have less experience with web technologies/development.
 
