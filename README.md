@@ -77,7 +77,7 @@ I am a computer engineering student at Concordia university who specialized in M
 ### Project Overview
  
 #### Project Objectives
-The overall goal of this project is to create a website designed to serve as a car rental platform. This platform will strive to be as user friendly as possible with a very intuitive design / interface. This website will be designed using an agile work methodology. This will allow our members to develop new project management skills during the short timeframe that this website is expected to be built in.
+The overall goal of this project is to create a website designed to serve as a car rental platform. This platform will strive to be as user-friendly as possible with a very intuitive design/interface. Furthermore, this website will be designed using an agile work methodology. This will allow our members to develop new project management skills during the short timeframe that this website is expected to be built. Team communication will prove to be very important as we strive to work towards separate goals without inadvertently working on similar parts or breaking others' codes. 
  
 #### Scope
 Functionalities that will be included in our website include a browsing page for users to be able to select a car to rent during a specified time period. To manage customers, users will also be able to create profiles and store personal information such as location and credit information. Furthermore, the users will be able to place reservations on vehicles and place reviews on vehicles that have already been used.
@@ -88,7 +88,7 @@ Finally, the basic operations of CRUD will be implemented on the website so that
 
  
 #### Target Audience
-The target audience of the website is anyone over 25 years of age with a valid driver's license and insurance letting them legally rent the car. More specifically, our target audience is travelers as this is the main demographic of car renters. As such, the website is aimed to be simple and provide ease of use for foreign visitors.
+The target audience of the website is anyone over 25 years of age with a valid driver's license and insurance letting them legally rent a car. More specifically, our target audience is travelers as this is the main demographic of car renters. As such, the website is aimed to be simple and provide ease of use for foreign visitors. To accomplish this, easy-to-understand navigation on the site as well as currency conversion will be implemented.
 
  
 ### Project Approach
