@@ -37,7 +37,7 @@ Lab Review : 6:05pm-6:30pm
 
 
 ## Description
-Repository to work in the car rental web project. Allows users to browse and reserve vehicules, to cancel reservations, to review them and much more. 
+Repository to work in the car rental web project. Allows users to browse and reserve vehicles, to cancel reservations, to review them and much more. 
 
 ## Installation instructions and Usage Guidelines
 To get started working on this repository, you can run the following command in your terminal of choice
@@ -70,6 +70,7 @@ I am a computer engineer at Concordia with experience programming in lower level
 I am a software engineering student at Concordia university who over my summer intership specialized in AI, specifically in neural network creation. I have most my experience creating neural networks in python. I am also confortable using Java, JavaScript, C#, CSS and more. Due to having taking web design in the past I will also be confortable creating the website. I will be working more so on front end and design of the website.
 
 ### Rishit Mittal
+I am a computer engineering student at Concordia university who specialized in Machine Learning, Deep Learning, AI specifically in neural network such as CNN over my 8 month internship. I have experience using SDK with C/C++, Java, Python and lower level language such as x86 assembly. I have some experience in creating a webpage using HTML, CSS and I would be working on the front end using vue.js and would be helping out in the backend too.
 
 ## Project Approach and Technology
 
