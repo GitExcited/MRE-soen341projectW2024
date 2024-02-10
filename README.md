@@ -80,11 +80,11 @@ I am a computer engineering student at Concordia university who specialized in M
 The overall goal of this project is to create a website designed to serve as a car rental platform. This platform will strive to be as user friendly as possible with a very intuitive design / interface. This website will be designed using an agile work methodology. This will allow our members to develop new project management skills during the short timeframe that this website is expected to be built in.
  
 #### Scope
-Functionalities that will be included in our website include a browsing page for users to be able to select a car to rent during a specified time period. In order to manage customers, users will also be able to create profiles and store personal information such as location and credit information. Furthermore, the users will be able to place reservations on vehicles and place reviews on vehicles that have already used.
+Functionalities that will be included in our website include a browsing page for users to be able to select a car to rent during a specified time period. To manage customers, users will also be able to create profiles and store personal information such as location and credit information. Furthermore, the users will be able to place reservations on vehicles and place reviews on vehicles that have already been used.
 
-Customers when renting a vehicle will also have a check out process that will allow both the company and user to confirm information on their rental such as location, time period and price. Furthermore, customers will also have access to a customer service page where they can ask questions and find our company's phone number.
+Customers when renting a vehicle will also have a checkout process that will allow both the company and user to confirm information on their rental such as location, time period, and price. Furthermore, customers will also have access to a customer service page where they can ask questions and find our company's phone number.
 
-Finally, the basic operations of CRUD will be implemented on the website so that information of users, reservations and the cars can be modified at will.
+Finally, the basic operations of CRUD will be implemented on the website so that information on users, reservations, and cars can be modified at will.
 
  
 #### Target Audience
