@@ -142,15 +142,14 @@ HTTP requests to manage the backend.
    - Prototyping
  
 ##### PostgreSQL
-- Description: Brief overview of Framework B.
+- Description: PostGreSQL is a relational database management system.
 - Rationale:
-  - Justification for choosing Framework B.
-  - Consider factors such as performance, security, and
-maintenance.
+  - PostGreSQL is easy to integrate with express.js because of available node modules made to interface with PostGreSQL databases.
+  - PostGreSQL provides security features such as role-based access control, SSL encryption and more.
 - Qualitative Assessment:
-  - Strengths
-  - Weaknesses
-  - Use Cases
+  - Strengths: PostGreSQL is known to be reliable and extensible
+  - Weaknesses: PostGreSQL can require a lot of ressources it is scaled up.
+  - Use Case: Storing user information for websites
 
 ##### Jest
 - Description: Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript/Typescript codebase. It allows for easy setup and execution of tests, and is designed to be used with React, Angular, and Vue.js.
