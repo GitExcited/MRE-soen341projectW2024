@@ -37,7 +37,7 @@ Lab Review : 6:05pm-6:30pm
 
 
 ## Description
-Repository to work in the car rental web project. Allows users to browse and reserve vehicles, to cancel reservations, to review them and much more. 
+Repository to work on the car rental web project. Allows users to browse and reserve vehicles, to cancel reservations, to review them and much more. 
 
 ## Installation instructions and Usage Guidelines
 To get started working on this repository, you can run the following command in your terminal of choice
@@ -57,17 +57,17 @@ this project will be to manage the task delegation and project deadlines within 
 
 ### J. David Ruiz / Full Stack
 I am a software engineering student at Concordia. I have experience in building large scale website applications using React.
-I also love programming in Python and Java. I have worked at Bombardier and Intact as software developper. In this project I will be
+I also love programming in Python and Java. I have worked at Bombardier and Intact as a software developper. In this project I will be
 working in the front and backend. 
 
 ### Yan Pilon - Developer / Full Stack
 I am a software engineering student at Concordia who specializes in Full-Stack development using Vue.js, Express.js, Node.js and MongoDB as a main stack but who also has experience with various other languages and frameworks such as: Java, Python, C#, Angular.js and others. I will be mainly working on feature implementation but I will also be helping coordinating members who have less experience with web technologies/development.
 
 ### Mohammad Natsheh
-I am a computer engineer at Concordia with experience programming in lower level languages such as x86 and arm assembly as well as java and C++. I have previously worked using the agile methodology with a previous project involving the development of an Android application. I have worked with databases including Firebase and some SQL experience. I will be working on the front end for this project using typescript.
+I am a computer engineer student at Concordia with experience programming in lower level languages such as x86 and arm assembly as well as java and C++. I have previously worked using the agile methodology with a previous project involving the development of an Android application. I have worked with databases including Firebase and some SQL experience. I will be working on the front end for this project using typescript.
 
 ### David Jordan Mateus
-I am a software engineering student at Concordia university who over my summer intership specialized in AI, specifically in neural network creation. I have most my experience creating neural networks in python. I am also confortable using Java, JavaScript, C#, CSS and more. Due to having taking web design in the past I will also be confortable creating the website. I will be working more so on front end and design of the website.
+I am a software engineering student at Concordia university who over my summer internship specialized in AI, specifically in neural network creation. Most of my experience is creating neural networks in python. I am also confortable using Java, JavaScript, C#, CSS and more. Due to having taken web design in the past I will also be confortable creating the website. I will be working more so on front end and design of the website.
 
 ### Rishit Mittal
 I am a computer engineering student at Concordia university who specialized in Machine Learning, Deep Learning, AI specifically in neural network such as CNN over my 8 month internship. I have experience using SDK with C/C++, Java, Python and lower level language such as x86 assembly. I have some experience in creating a webpage using HTML, CSS and I would be working on the front end using vue.js and would be helping out in the backend too.
@@ -88,13 +88,13 @@ Finally, the basic operations of CRUD will be implemented on the website so that
 
  
 #### Target Audience
-The target audience of the website is anyone over 25 with a valid driver's license and insurance letting them legally rent the car. More specifically, our target audience is travelers as this is the main demographic of car renters. As such, the website is aimed to be simple and provide ease of use for foreign visitors.
+The target audience of the website is anyone over 25 years of age with a valid driver's license and insurance letting them legally rent the car. More specifically, our target audience is travelers as this is the main demographic of car renters. As such, the website is aimed to be simple and provide ease of use for foreign visitors.
 
  
 ### Project Approach
  
 #### Development Methodology
-- We choose Scrum methodology with an Agile mindset. This allows to adapt quickly to changing requirements, to involve the costumer in every new version and to work in 4 sprints. We prioritize collaboration between team members and meet daily.
+- We chose Scrum methodology with an Agile mindset. This allows to adapt quickly to changing requirements, to involve the costumer in every new version and to work in 4 sprints. We prioritize collaboration between team members and meet daily.
  
 #### Project Timeline
 - Sprint 1 - February 12
@@ -115,7 +115,7 @@ The target audience of the website is anyone over 25 with a valid driver's licen
   - Will be updated during Sprint 3's future sprint planning session
  
 #### Collaboration and Communication
-- The team will meet regularly in person for short amount of time (15 min). We will also meet on Fridays for longer periods (1-2 hours) to work together. Lastly, all the communication will be done through a discord server.
+- The team will meet regularly in person for shorts amount of time (15 min). We will also meet on Fridays for longer periods (1-2 hours) to work together. Lastly, all the communication will be done through a discord server.
  
 ### Technology Stack
  
@@ -126,7 +126,7 @@ The target audience of the website is anyone over 25 with a valid driver's licen
 HTTP requests to manage the backend.
 - Rationale:
   - We chose Express because it is a commonly used framework with lots of community support.
-  - Esy to integrate API requests and managing our SQL relational database.
+  - Easy to integrate API requests and managing our SQL relational database.
   - Scales well with large user bases
 - Qualitative Assessment:
   - Strenghts:
@@ -147,9 +147,9 @@ HTTP requests to manage the backend.
   - PostGreSQL is easy to integrate with express.js because of available node modules made to interface with PostGreSQL databases.
   - PostGreSQL provides security features such as role-based access control, SSL encryption and more.
 - Qualitative Assessment:
-  - Strengths: PostGreSQL is known to be reliable and extensible
-  - Weaknesses: PostGreSQL can require a lot of ressources it is scaled up.
-  - Use Case: Storing user information for websites
+  - Strengths: PostGreSQL is known to be reliable and extensible.
+  - Weaknesses: PostGreSQL can require a lot of ressources if it is scaled up.
+  - Use Case: Storing user information for websites.
 
 ##### Jest
 - Description: Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript/Typescript codebase. It allows for easy setup and execution of tests, and is designed to be used with React, Angular, and Vue.js.
@@ -166,7 +166,7 @@ HTTP requests to manage the backend.
 - Description: Vue.js is a JavaScript front-end framework used for creating user interfaces with a component-based and declarative programming model.
 - Rationale:
   - Since we don’t have a lot of time to develop the website, and this is a small project, we wanted a lightweight front-end framework with a small learning curve.
-  - We want to be able to have reusable components and the capability for single-page applications, and those are features Vue.js was designed to provide.
+  - We want to be able to have reusable components and the capability for single-page applications which are features Vue.js was designed to provide.
 - Qualitative Assessment:
   - Strengths: Small learning curve, Code reusability, Versatility, TypeScript support.
   - Weaknesses: Less community support than competing front-end frameworks.
