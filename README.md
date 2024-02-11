@@ -63,7 +63,7 @@ working in the front and backend.
 ### Yan Pilon - Developer / Full Stack
 I am a software engineering student at Concordia who specializes in Full-Stack development using Vue.js, Express.js, Node.js and MongoDB as a main stack but who also has experience with various other languages and frameworks such as: Java, Python, C#, Angular.js and others. I will be mainly working on feature implementation but I will also be helping coordinating members who have less experience with web technologies/development.
 
-### Mohammad Natsheh
+### Mohammad Natsheh /Front-End
 I am a computer engineer student at Concordia with experience programming in lower level languages such as x86 and arm assembly as well as java and C++. I have previously worked using the agile methodology with a previous project involving the development of an Android application. I have worked with databases including Firebase and some SQL experience. I will be working on the front end for this project using typescript.
 
 ### David Jordan Mateus
