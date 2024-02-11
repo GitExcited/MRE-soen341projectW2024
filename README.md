@@ -9,7 +9,7 @@ Lab Review : 6:05pm-6:30pm
    - [J. David Ruiz / Full Stack](#j-david-ruiz--full-stack)
    - [Yan Pilon - Developer / Full Stack](#yan-pilon---developer--full-stack)
    - [Mohammad Natsheh](#mohammad-natsheh)
-   - [David Jordan Mateus](#david-jordan-mateus)
+   - [David Jordan Mateus - Full Stack](#david-jordan-mateus)
    - [Rishit Mittal](#rishit-mittal)
 4. [Project Approach and Technology](#project-approach-and-technology)
    - [Project Overview](#project-overview)
