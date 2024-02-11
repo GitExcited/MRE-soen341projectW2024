@@ -16,10 +16,10 @@ Sprint 1
 
 
 ### Mohammad Natsheh /Front-End
-# Worked on Readme role and and description
-# Initialize sprint 1 folder
-# Created User story for navigation bar feature
-# Organize the Meeting Minutes file under sprint 1
+##### Worked on Readme role and and description
+##### Initialize sprint 1 folder
+##### Created User story for navigation bar feature
+##### Organize the Meeting Minutes file under sprint 1
 
 
 ### David Jordan Mateus / Full Stack
