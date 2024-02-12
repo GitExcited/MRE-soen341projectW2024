@@ -12,6 +12,10 @@ Sprint 1
 
 
 ### Yan Pilon - Developer / Full Stack
+- Contributed to the Project Approach and Technology Stack Selection file by adding descriptions for Vue.js, Bootstrap and PostGreSQL. I also wrote the integration and interoperability section with Alex.
+- Created a user story for available vehicule browsing page
+- Read over the read me and Project Approach files and corrected typos and other errors.
+- Added my role and description in the readme
 
 
 
