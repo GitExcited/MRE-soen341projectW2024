@@ -1,0 +1,33 @@
+# Node.js dependencies
+node_modules/
+
+# Express.js generated files
+dist/
+build/
+
+# Vue.js generated files
+/dist/
+/node_modules/
+
+# Compiled JavaScript files
+*.js
+*.map
+
+# Logs
+*.log
+
+# SQL databases
+*.sqlite
+*.db
+*.sql
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
