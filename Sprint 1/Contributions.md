@@ -19,11 +19,10 @@ Sprint 1
 
 
 
-### Mohammad Natsheh /Front-End
-#### Febraury 2nd at 5pm : Worked on Readme role after 15 minute team meeting where decision was made. Readme description was completed after 30 minutes with editing and consultation with team.
-#### Initialize sprint 1 folder
-#### Created User story for navigation bar feature
-#### Organize the Meeting Minutes file under sprint 1
+### Mohammad Natsheh / Front-End
+- Febraury 2nd at 5pm : Worked on Readme role after 15 minute team meeting where decision was made. Readme description was completed after editing and consultating with team.
+- February 9th at 10pm : Initialize sprint 1 folder and created user story for navigation bar feature as well as splitting up user story into tasks.
+- February 12th at 3pm : Organize the Meeting Minutes file under sprint 1.
 
 
 ### David Jordan Mateus / Full Stack
