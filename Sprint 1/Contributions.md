@@ -28,7 +28,7 @@ Sprint 1
 
 ### David Jordan Mateus / Full Stack
 - Contributed to the page Project_Approach-and Technology-Stack_Selection by writting the Project Objectives, Scope and Target Audience. 
-- Added additions to Project Approach.
+- Added to Project Approach and personal information.
 - Created 5 issues detailing what website users may want in the website. Mainly, focused on facilitating processes of finding and reviewing vehicles
 - For each of these issues I added task that would need to be accomplished in order to have these functionalities on the website.
 
