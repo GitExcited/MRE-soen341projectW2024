@@ -46,7 +46,7 @@ I am a computer engineer student at Concordia with experience programming in low
 ### David Jordan Mateus / Full Stack
 I am a software engineering student at Concordia University who over my summer internship specialized in AI, specifically in neural network creation. Most of my experience is in creating neural networks in Python. I am also comfortable using Java, JavaScript, C#, CSS, and more. Due to having taken web design in the past, I will also be comfortable creating the website. I will be working more so on the front end and design of the website. My goal is to make this project a learning experience and something to be proud of.
 
-### Rishit Mittal
+### Rishit Mittal / Full Stack
 I am a computer engineering student at Concordia university who specialized in Machine Learning, Deep Learning, AI specifically in neural network such as CNN over my 8 month internship. I have experience using SDK with C/C++, Java, Python and lower level language such as x86 assembly. I have some experience in creating a webpage using HTML, CSS and I would be working on the front end using vue.js and would be helping out in the backend too.
 
 
