@@ -20,7 +20,7 @@ Sprint 1
 
 
 ### Mohammad Natsheh /Front-End
-#### Worked on Readme role and and description
+#### Febraury 2nd at 5pm : Worked on Readme role after 15 minute team meeting where decision was made. Readme description was completed after 30 minutes with editing and consultation with team.
 #### Initialize sprint 1 folder
 #### Created User story for navigation bar feature
 #### Organize the Meeting Minutes file under sprint 1
