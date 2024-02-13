@@ -4,7 +4,13 @@ Sprint 1
 ## Team Members and Contributions
 
 ### Alexandre Hachey - Team lead / Full Stack
+- February 2 (2 hours): Spent time making sure everyone was added to the project repo, deciding technology stack with the team, adding project approach template to our README, talking with our TA
 
+- February 8 (4 hours): Wrote a template for user stories, wrote 6 user stories, wrote PR template, Moved content to correct locations, Wrote meeting minutes (+ template to use in future meetings), split the work for all teammates, wrote my developer description in README.md
+
+- February 9 (3 hours): Met with the team, coordinated work in person with them helping out with descriptions on technology stack and project approach, Met with TA to discuss deliverables and project structure, Wrote several sections in the technology stack section including Jest, ESLint, Prettier, Wrote the project timeline and installation instructions, inserted table of contents.
+
+- February 12 (2 hours): Moved project approach and tech stack information to its own file, verified all team members submitted their work before the deadline, wrote this contribution log, finalized submission and submitted.
 
 
 ### J. David Ruiz / Full Stack
