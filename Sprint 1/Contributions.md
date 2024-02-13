@@ -30,8 +30,8 @@ Sprint 1
 - For each of these issues I added task that would need to be accomplished in order to have these functionalities on the website.
 
 ### Rishit Mittal
-- February 2nd: Spent 15 minutes after the team meeting and worked on the Readme.md file by adding name description and role.
-- February 9th: Spent 1:30 hour to update the Conclusion in the page Project_Approach-and Technology-Stack_Selection and created a user story for verifcation of users.
-- February 12th: Spent 1 hour to create 3 sub-issues for the tasks mentioned in the user story with the description that will help in implementing it in the website.   
+- February 2nd (15 mins): Worked on the Readme.md file after the team meeting by adding name description and role.
+- February 9th (1:30 hours): Updated the Conclusion in the page Project_Approach-and Technology-Stack_Selection and created a user story for verifcation of users.
+- February 12th (1 hour): Created 3 sub-issues for the tasks mentioned in the user story with the description that will help in implementing it in the website.   
 
 
