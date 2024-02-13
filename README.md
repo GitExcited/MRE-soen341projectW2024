@@ -17,12 +17,21 @@ Lab Review : 6:05pm-6:30pm
 Repository to work on the car rental web project. Allows users to browse and reserve vehicles, to cancel reservations, to review them and much more. 
 
 ## Installation instructions and Usage Guidelines
+
+### Installation
 To get started working on this repository, you can run the following command in your terminal of choice
 
 ```shell
 git clone https://github.com/GitExcited/MRE-soen341projectW2024/
 ```
 There are no further installation instructions for the time being as the frontend and backend applications have not been initialized in the repository at the current time.
+
+### Usage guidelines
+Branch Protection: To contribute to the repository, developers need to make a branch, commit to the branch, and merge to the main branch through a pull request when ready.
+
+Pull Request Approvals: Every pull request attempting to merge to the main branch must be reviewed by atleast 2 other contributors before being merged.
+
+CI Pipeline: Over the course of sprint 2, the Jest testing framework will be used to enforce tests on the code to verify integrity of our logic and syntax. There will also be lint checks from ESLint rules and Prettier to enforce consistend code style.
 
 ## Team Members and Roles
 
