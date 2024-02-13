@@ -30,10 +30,10 @@ Sprint 1
 
 
 ### David Jordan Mateus / Full Stack
-- Contributed to the page Project_Approach-and Technology-Stack_Selection by writting the Project Objectives, Scope and Target Audience. 
-- Added to Project Approach and personal information.
-- Created 5 issues detailing what website users may want in the website. Mainly, focused on facilitating processes of finding and reviewing vehicles
-- For each of these issues I added task that would need to be accomplished in order to have these functionalities on the website.
+- February 9th: Contributed to the page Project_Approach-and Technology-Stack_Selection by writting the Project Objectives, Scope and Target Audience. 
+- February 9th: Added to Project Approach and personal information.
+- February 10-11th: Created 5 issues detailing what website users may want in the website. Mainly, focused on facilitating processes of finding and reviewing vehicles
+- February 10-11th: For each of these issues I added task that would need to be accomplished in order to have these functionalities on the website.
 
 ### Rishit Mittal
 - February 2nd (15 mins): Worked on the Readme.md file after the team meeting by adding name description and role.
