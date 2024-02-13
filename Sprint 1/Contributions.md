@@ -14,7 +14,10 @@ Sprint 1
 
 
 ### J. David Ruiz / Full Stack
-
+- Jan 31 ( 1hr ) Created repo, added members, worked on permissions and scafolded the repo
+- February 2 (2hrs) Worked on the project repo, decided tech stack, talked to TA and worked on issues template.
+- February 9 (2hrs) Worked on my description, Express Js backend framework description, Project description in readme. Also Worked on Project approach section of the wiki. Also added installation instructions to the project
+-February 10 ( 15 min) Worked on gitignore, more repo scaffolding and wiki restructuring.
 
 
 ### Yan Pilon - Developer / Full Stack
