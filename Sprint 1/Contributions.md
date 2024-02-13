@@ -12,15 +12,12 @@ Sprint 1
 
 
 ### Yan Pilon - Developer / Full Stack
-- Contributed to the Project Approach and Technology Stack Selection file by adding descriptions for Vue.js, Bootstrap and PostGreSQL. I also wrote the integration and interoperability section with Alex.
-- Created a user story for available vehicule browsing page
-- Read over the read me and Project Approach files and corrected typos and other errors.
-- Added my role and description in the readme
-
-
+- February 9th :Contributed to the Project Approach and Technology Stack Selection file by adding descriptions for Vue.js, Bootstrap and PostGreSQL. I also wrote     the integration and interoperability section with Alex. Added my role and description in the readme. Contributed to the Project Approach and Technology Stack       Selection file by adding descriptions for Vue.js, Bootstrap and PostGreSQL. I also wrote the integration and interoperability section with Alex.
+- February 10th: Read over the read me and Project Approach files and corrected typos and other errors. Created a user story for available vehicule browsing page
+- February 11th: Migrated the project and approach section of the readme to its own file in the sprint 1 folder.
 
 ### Mohammad Natsheh / Front-End
-- Febraury 2nd at 5pm : Worked on Readme role after 15 minute team meeting where decision was made. Readme description was completed after editing and consultating with team.
+- February 2nd at 5pm : Worked on Readme role after 15 minute team meeting where decision was made. Readme description was completed after editing and consultating with team.
 - February 9th at 10pm : Initialize sprint 1 folder and created user story for navigation bar feature as well as splitting up user story into tasks.
 - February 12th at 3pm : Organize the Meeting Minutes file under sprint 1.
 
