@@ -29,6 +29,8 @@ Sprint 1
 - For each of these issues I added task that would need to be accomplished in order to have these functionalities on the website.
 
 ### Rishit Mittal
-In this sprint, I contributed to the Readme role and description. I also created a user story for verifcation of users and wrote in the page Project_Approach-and Technology-Stack_Selection by writting the conclusion.  
+- February 2nd: Worked on the Readme.md file by adding name description and role.
+- February 9th: I updated the Conclusion in the page Project_Approach-and Technology-Stack_Selection and created a user story for verifcation of users.
+- February 12th: I created 3 sub-issues for the tasks mentioned in the user story with the description that will help in implementing it in the website.  
 
 
