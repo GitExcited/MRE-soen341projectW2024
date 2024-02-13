@@ -30,9 +30,12 @@ Sprint 1
 
 
 ### David Jordan Mateus / Full Stack
-- February 9th (2 hours): Contributed to the page Project_Approach-and Technology-Stack_Selection by writting the Project Objectives, Scope and Target Audience. 
-- February 9th (30 minutes): Added to Project Approach and personal information.
+- February 9th (2 hours): Contributed to the page Project_Approach-and Technology-Stack_Selection by writting the Project Objectives, Scope and Target Audience.
+  
+- February 9th (2 hours 30 minutes): Added to Project Approach and personal information. Furthermore, coordinated with team task and completed certain task together
+
 - February 10-11th (2 hours): Created 5 issues detailing what website users may want in the website. Mainly, focused on facilitating processes of finding and reviewing vehicles
+  
 - February 10-11th (1 hours: For each of these issues I added task that would need to be accomplished in order to have these functionalities on the website.
 
 ### Rishit Mittal
