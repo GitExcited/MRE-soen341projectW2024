@@ -8,9 +8,9 @@ Lab Review : 6:05pm-6:30pm
    - [Alexandre Hachey - Team lead / Full Stack](#alexandre-hachey---team-lead--full-stack)
    - [J. David Ruiz / Full Stack](#j-david-ruiz--full-stack)
    - [Yan Pilon - Developer / Full Stack](#yan-pilon---developer--full-stack)
-   - [Mohammad Natsheh](#mohammad-natsheh)
-   - [David Jordan Mateus - Full Stack](#david-jordan-mateus)
-   - [Rishit Mittal](#rishit-mittal)
+   - [Mohammad Natsheh](#mohammad-natsheh-front-end)
+   - [David Jordan Mateus - Full Stack](#david-jordan-mateus--full-stack)
+   - [Rishit Mittal](#rishit-mittal--full-stack)
 
 
 ## Description
@@ -37,7 +37,8 @@ Additional Rules:
 - User stories must follow the template found [here](https://github.com/GitExcited/MRE-soen341projectW2024/blob/main/.github/ISSUE_TEMPLATE/user-story.md)
 - Pull requests must follow the template found [here](https://github.com/GitExcited/MRE-soen341projectW2024/blob/main/.github/pull_request_template.md)
 - User stories must be broken down into their tasks in their own issues.
-- For any additional information about the technology and project approach. consult the [Project Approach and Technology Stack](https://github.com/GitExcited/MRE-soen341projectW2024/wiki/Sprint-Planning) section of our [wiki](https://github.com/GitExcited/MRE-soen341projectW2024/wiki)
+- For any additional information about feature implementation statuses, consult our [Sprint Planning](https://github.com/GitExcited/MRE-soen341projectW2024/wiki/Sprint-Planning) section of our [wiki](https://github.com/GitExcited/MRE-soen341projectW2024/wiki)
+- For any additional information about the technology and project approach, consult the [Project Approach and Technology Stack](https://github.com/GitExcited/MRE-soen341projectW2024/blob/main/Sprint%201/Project-Approach-and-Technology-Stack-Selection.md) 
 
 ## Team Members and Roles
 
