@@ -24,9 +24,9 @@ Sprint 1
 - February 12th (15 mins): Created a user story and sub tasks related to that stories.
 
 ### Mohammad Natsheh / Front-End
-- February 2nd at 5pm : Worked on Readme role after 15 minute team meeting where decision was made. Readme description was completed after editing and consultating with team.
-- February 9th at 10pm : Initialize sprint 1 folder and created user story for navigation bar feature as well as splitting up user story into tasks.
-- February 12th at 3pm : Organize the Meeting Minutes file under sprint 1.
+- February 2nd at 5pm (1 hour): Worked on Readme role and Readme description.
+- February 9th at 10pm (1 hour): Initialize sprint 1 folder and created user story for navigation bar feature as well as splitting up user story into tasks.
+- February 12th at 3pm (15 mins): Organize the Meeting Minutes file under sprint 1.
 
 
 ### David Jordan Mateus / Full Stack
