@@ -17,11 +17,11 @@ Sprint 1
 - Jan 31 ( 1hr ) Created repo, added members, worked on permissions and scafolded the repo
 - February 2 (2hrs) Worked on the project repo, decided tech stack, talked to TA and worked on issues template.
 - February 9 (2hrs) Worked on my description, Express Js backend framework description, Project description in readme. Also Worked on Project approach section of the wiki. Also added installation instructions to the project
--February 10 ( 15 min) Worked on gitignore, more repo scaffolding and wiki restructuring.
+- February 10 ( 15 min) Worked on gitignore, more repo scaffolding and wiki restructuring.
 
 
 ### Yan Pilon - Developer / Full Stack
-- February 9th (2 hours):Contributed to the Project Approach and Technology Stack Selection file by adding descriptions for Vue.js, Bootstrap and PostGreSQL. I also wrote     the integration and interoperability section with Alex. Added my role and description in the readme. Contributed to the Project Approach and Technology Stack       Selection file by adding descriptions for Vue.js, Bootstrap and PostGreSQL. I also wrote the integration and interoperability section with Alex.
+- February 9th (2 hours):Contributed to the Project Approach and Technology Stack Selection file by adding descriptions for Vue.js, Bootstrap and PostGreSQL. I also wrote     the integration and interoperability section with Alex. Added my role and description in the readme. Contributed to the Project Approach and Technology Stack Selection file by adding descriptions for Vue.js, Bootstrap and PostGreSQL. I also wrote the integration and interoperability section with Alex.
 - February 10th (45 mins): Read over the read me and Project Approach files and corrected typos and other errors. Created a user story for available vehicule browsing page
 - February 11th (10 mins): Migrated the project and approach section of the readme to its own file in the sprint 1 folder.
 - February 12th (15 mins): Created a user story and sub tasks related to that stories.
@@ -39,7 +39,7 @@ Sprint 1
 
 - February 10-11th (2 hours): Created 5 issues detailing what website users may want in the website. Mainly, focused on facilitating processes of finding and reviewing vehicles
   
-- February 10-11th (1 hours: For each of these issues I added task that would need to be accomplished in order to have these functionalities on the website.
+- February 10-11th (1 hours): For each of these issues I added task that would need to be accomplished in order to have these functionalities on the website.
 
 ### Rishit Mittal
 - February 2nd (15 mins): Worked on the Readme.md file after the team meeting by adding name description and role.
