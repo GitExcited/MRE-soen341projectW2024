@@ -33,6 +33,12 @@ Pull Request Approvals: Every pull request attempting to merge to the main branc
 
 CI Pipeline: Over the course of sprint 2, the Jest testing framework will be used to enforce tests on the code to verify integrity of our logic and syntax. There will also be lint checks from ESLint rules and Prettier to enforce consistend code style.
 
+Additional Rules: 
+- User stories must follow the template found [here](https://github.com/GitExcited/MRE-soen341projectW2024/blob/main/.github/ISSUE_TEMPLATE/user-story.md)
+- Pull requests must follow the template found [here](https://github.com/GitExcited/MRE-soen341projectW2024/blob/main/.github/pull_request_template.md)
+- User stories must be broken down into their tasks in their own issues.
+- For any additional information about the technology and project approach. consult the [Project Approach and Technology Stack](https://github.com/GitExcited/MRE-soen341projectW2024/wiki/Sprint-Planning) section of our [wiki](https://github.com/GitExcited/MRE-soen341projectW2024/wiki)
+
 ## Team Members and Roles
 
 ### Alexandre Hachey - Team lead / Full Stack
