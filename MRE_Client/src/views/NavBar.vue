@@ -8,16 +8,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <router-link class="nav-link" to="/home">Home</router-link>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <router-link class="nav-link" to="/services">Services</router-link>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <router-link class="nav-link" to="/signup">Sign Up</router-link>
                 </li>
             </ul>
         </div>
