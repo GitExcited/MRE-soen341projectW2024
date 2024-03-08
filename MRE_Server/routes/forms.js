@@ -1,26 +1,32 @@
 import express from "express";
 import bodyParser from "body-parser";
 import {verifyToken} from "./auth.js"
-import * as dboperations from "../database/operations.js";
+import dboperations from "../database/operations.js";
 const formRouter = express.Router();
 
 
 
 formRouter.post('/reservation',async (req,res)=>{
     
-    const {vehicle_id, user_id, rental_start_date, rental_end_date, total_cost, status} = req.query;
+    const {vehicle_id, user_id, rental_start_date, rental_end_date, total_cost} = req.query;
     //check if vehicle is already reserved or not 
+    //console.log(req.query)
+    //console.log(vehicle_id,user_id, rental_start_date, rental_end_date, total_cost); 
 
     try{
-    const result = await getVehiclesByFieldValue("vehicle_id", vehicle_id)
-    const vehiclestatus = result[0].status;
+        const result = await dboperations.getVehiclesByFieldValue("vehicle_id", vehicle_id)
 
-    if(vehiclestatus === "available"){
-        await createRental(vehicle_id, user_id, rental_start_date, rental_end_date, total_cost, status)
-        return res.status(201).json({message: "Reservation successfully created."});
-    }else{
-        return res.status(400).json({message: "Error: vehicle already reserved."})
-    }
+        if (result.length > 0){
+            const vehiclestatus = result[0].status;
+            if(vehiclestatus === "available"){
+                await createRental(vehicle_id, user_id, rental_start_date, rental_end_date, total_cost, status="reserved")
+                return res.status(201).json({message: "Reservation successfully created."});
+            }else{
+                return res.status(400).json({message: "Error: vehicle already reserved."})
+            }
+        }else{
+            return res.status(400).json({message: "Error: vehicle does not exist."});
+        }
     }catch (err) {
         console.error('Error executing query', err);
         res.status(500).json({ message: 'Internal server error' });
