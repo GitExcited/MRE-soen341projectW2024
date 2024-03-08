@@ -1,5 +1,5 @@
 <template>
-    <div class="container mt-5" style="margin-top:100px;">
+    <div class="container mt-5" style="margin-top:200px;">
       <div class="row">
         <div class="col text-center">
           <h1>Our Services</h1>
@@ -9,10 +9,20 @@
       <div class="row mt-4">
         <div class="col-md-4">
           <div class="card">
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Service Image">
+            <img src="../../public/img/delorean_car_dummy.jpg" class="card-img-top"style="height:300px" alt="Service Image">
             <div class="card-body">
-              <h5 class="card-title">Service 1</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">Rent Car</h5>
+              <p class="card-text">Look for a car that matches your needs</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../../public/img/rent_your_car.jpg" class="card-img-top" style="height:300px"alt="Service Image">
+            <div class="card-body">
+              <h5 class="card-title">Put a car for Rent</h5>
+              <p class="card-text">Put your card to rent and start earning that $$$ NOW! </p>
               <a href="#" class="btn btn-primary">Learn More</a>
             </div>
           </div>

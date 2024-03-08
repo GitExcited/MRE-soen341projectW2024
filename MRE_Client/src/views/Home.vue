@@ -7,16 +7,43 @@
         </div>
       </div>
       <div class="row mt-4">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="/img/delorean_car_dummy.jpg" class="card-img-top" alt="Car Image">            <div class="card-body">
-              <h5 class="card-title">Car Model 1</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Rent Now</a>
-            </div>
-          </div>
-        </div>
+
+        <!-- ? If you want to create car cards, use this :   -->
+        <CarCard
+        v-for="car in cars"
+        :key="car.model"
+        :image="car.image"
+        :title="car.model"
+        :description="`Make: ${car.make}, Color: ${car.color}`"
+        />
+
         <!-- Repeat the above div for more car models -->
       </div>
     </div>
   </template>
+
+<script>
+import CarCard from '../components/CarCard.vue';
+import axios from 'axios';
+
+export default {
+  components: {
+    CarCard,
+  },
+  data() {
+    return {
+      cars: [],
+    };
+  },
+  mounted() {
+    axios.get('http://localhost:3000/cars') //-! DUMMY SERVER
+      .then(response => {
+        this.cars = response.data;
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
+  // Other options...
+};
+</script>

@@ -13,8 +13,11 @@
                 <li class="nav-item">
                     <router-link class="nav-link" to="/services">Services</router-link>
                 </li>
-                <li class="nav-item">
-                    <router-link class="nav-link" to="/signup">Sign Up</router-link>
+                <li class="nav-item" v-if="!loggedIn">
+                    <router-link class="nav-link" to="/signup">Sign up</router-link>
+                </li>
+                <li class="nav-item" v-if="loggedIn">
+                    <router-link class="nav-link" to="/logout">Log Out</router-link>
                 </li>
             </ul>
         </div>
@@ -22,11 +25,6 @@
 </nav>
 </template>
 
-<script>
-export default {
-    name: 'Navbar'
-}
-</script>
 
 <style scoped>
 .navbar {
