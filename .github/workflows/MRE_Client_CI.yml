@@ -18,15 +18,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20.x'
-        cache: 'npm'
-
-    - name: Cache MRE_Client dependencies
-      uses: actions/cache@v2
-      with:
-        path: MRE_Client/node_modules
-        key: MRE_Client-${{ runner.os }}-node-20-${{ hashFiles('MRE_Client/package-lock.json') }}
-        restore-keys: |
-          MRE_Client-${{ runner.os }}-node-20-
 
     - name: Install MRE_Client dependencies
       run: npm ci
