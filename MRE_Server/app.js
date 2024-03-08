@@ -28,12 +28,19 @@ const client = new Client({
 })
 await client.connect()
 
-//Mount middleware
-app.use(bodyParser.urlencoded({ extended: true }));
+//middleware
+const bpURLencoded = bodyParser.urlencoded({ extended: true });
+const bpJSON = bodyParser.json();
+const authRouter = require('./routes/auth');
+
+app.use('/', authRouter);
 
 app.get('/',(req,res)=>{
 
 })
+
+
+
 
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}`);
