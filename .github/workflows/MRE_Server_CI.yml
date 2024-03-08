@@ -17,15 +17,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20.x'
-        cache: 'npm'
-
-    - name: Cache MRE_Server dependencies
-      uses: actions/cache@v2
-      with:
-        path: MRE_Server/node_modules
-        key: MRE_Server-${{ runner.os }}-node-20-${{ hashFiles('MRE_Server/package-lock.json') }}
-        restore-keys: |
-          MRE_Server-${{ runner.os }}-node-20-
 
     - name: Install MRE_Server dependencies
       run: npm ci
