@@ -1,13 +1,16 @@
 import express from "express";
 import bodyParser from "body-parser";
 import bcrypt from "bcrypt";
-import {jsonwebtoken as jwt} from "jsonwebtoken";
+import jwt from "jsonwebtoken";
+const jsonwebtoken = jwt;
+// import {jsonwebtoken as jwt} from "jsonwebtoken";
+import db from "../database/db.js";
 
 const bpURLencoded = bodyParser.urlencoded({ extended: true });
 const bpJSON = bodyParser.json();
 const router = express.Router();
 
-const saltRounds = 10;
+const saltRounds = 2;
 
 // user: {
 //     id: int,
@@ -38,27 +41,33 @@ function verifyToken(req, res, next) {
 }
 
 router.post('/login',bpURLencoded, async (req,res)=>{
-    const username = req.body.username;
-    const password = req.body.password;
+    const username = req.query.username;
+    const password = req.query.password;
+
+    console.log(username, password);
 
     //check user exists
     try {
         // Query the database to find the user with the provided username and password
-        //const result = await pool.query('SELECT * FROM users WHERE username = $1 AND password = $2', [username, password]);
-
+        const result = await db`SELECT password FROM users WHERE username = ${username}`;
+        const pass = result[0].password;
+        
         //if user exist then compare for password
-        if (result.rows.length > 0) {
-            bcrypt.compare(password, hashpass, function(err, result) {
+        if (result.length > 0) {
+            bcrypt.compare(password, pass, function(err, result) {
                 if (result == true){
                 // Create and sign JWT token
-                const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '1h' });
+                const token = jwt.sign({ userId: username }, "so private wow", { expiresIn: '1h' });
 
                 // Return the token to the client
-                res.json({ token });
+                res.status(200).json({ message: 'Login successful', token: token});
                 }
-
-                //res.status(200).json({ message: 'Login successful' });
+                else {
+                    res.status(401).json({ message: 'Invalid username or password' });
+                }
+                
             });
+
         } else {
             //redirect to login
             res.status(401).json({ message: 'Invalid username or password' });
@@ -72,29 +81,26 @@ router.post('/login',bpURLencoded, async (req,res)=>{
     //if match send back token to user and update token in DB
   })
   
-router.post('/logout',bpURLencoded,(req,res)=>{
-    //check user exists
-    //compare token
-    //if match wipe token from DB and client
-  })
+
   
-router.post('/signup',bpURLencoded,(req,res)=>{
+router.post('/signup',bpURLencoded, async (req,res)=>{
     //check user exists (username and email)
     // if doesnt exist create user in DB
 
-    const username = req.body.username;
-    const password = req.body.password;
+    const username = req.query.username;
+    const email = req.query.email;
+    const password = req.query.password;
     //check user exists
     try {
         // Query the database to find the user with the provided username and password
-        //const result = await pool.query('SELECT * FROM users WHERE username = $1 AND password = $2', [username, password]);
-
-        if (result.rows.length > 0) {
+        const result = await db`SELECT * FROM users WHERE username = ${username}`;
+        if (result.length > 0) {
             //user already exists return error
             res.status(401).json({ message: 'User already exists' });
         } else {
-            bcrypt.hash(password, saltRounds, function(err, hash) {
+            bcrypt.hash(password, saltRounds, async function(err, hash) {
                 //create user in db
+                await db`INSERT INTO users (username, email, password) VALUES (${username}, ${email}, ${hash})`;
             });
             res.status(200).json({ message: 'Signup successful' });
         }
@@ -105,4 +111,4 @@ router.post('/signup',bpURLencoded,(req,res)=>{
 
   })
   
-  export {router};
+  export default router;
