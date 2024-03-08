@@ -21,45 +21,46 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    
+        # Note: No need to specify cache-dependency-path here because we handle caching manually below.
+
     # MRE_Client steps
-    - name: Cache MRE_Client node modules
-      uses: actions/cache@v3
+    - name: Cache MRE_Client dependencies
+      uses: actions/cache@v2
       with:
         path: MRE_Client/node_modules
-        key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('MRE_Client/package-lock.json') }}
+        key: MRE_Client-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('MRE_Client/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-node-${{ matrix.node-version }}-
+          MRE_Client-${{ runner.os }}-node-${{ matrix.node-version }}-
 
     - name: Install MRE_Client dependencies
       run: npm ci
-      working-directory: ./MRE_Client
-      
+      working-directory: MRE_Client
+
     - name: Build MRE_Client
       run: npm run build --if-present
-      working-directory: ./MRE_Client
-      
+      working-directory: MRE_Client
+
     - name: Test MRE_Client
       run: npm test
-      working-directory: ./MRE_Client
+      working-directory: MRE_Client
 
     # MRE_Server steps
-    - name: Cache MRE_Server node modules
-      uses: actions/cache@v3
+    - name: Cache MRE_Server dependencies
+      uses: actions/cache@v2
       with:
         path: MRE_Server/node_modules
-        key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('MRE_Server/package-lock.json') }}
+        key: MRE_Server-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('MRE_Server/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-node-${{ matrix.node-version }}-
+          MRE_Server-${{ runner.os }}-node-${{ matrix.node-version }}-
 
     - name: Install MRE_Server dependencies
       run: npm ci
-      working-directory: ./MRE_Server
-      
+      working-directory: MRE_Server
+
     - name: Build MRE_Server
       run: npm run build --if-present
-      working-directory: ./MRE_Server
-      
+      working-directory: MRE_Server
+
     - name: Test MRE_Server
       run: npm test
-      working-directory: ./MRE_Server
+      working-directory: MRE_Server
