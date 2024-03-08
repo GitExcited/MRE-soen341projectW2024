@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Node.js CI
 
 on:
@@ -21,16 +18,35 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    
+    - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd MRE_Client
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
-    - run: cd ../MRE_Server
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+        
+    # MRE_Client steps
+    - name: Install MRE_Client dependencies
+      run: npm ci
+      working-directory: ./MRE_Client
+      
+    - name: Build MRE_Client
+      run: npm run build --if-present
+      working-directory: ./MRE_Client
+      
+    - name: Test MRE_Client
+      run: npm test
+      working-directory: ./MRE_Client
+
+    # MRE_Server steps
+    - name: Install MRE_Server dependencies
+      run: npm ci
+      working-directory: ./MRE_Server
+      
+    - name: Build MRE_Server
+      run: npm run build --if-present
+      working-directory: ./MRE_Server
+      
+    - name: Test MRE_Server
+      run: npm test
+      working-directory: ./MRE_Server
