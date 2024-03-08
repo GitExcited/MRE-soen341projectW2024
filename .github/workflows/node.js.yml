@@ -8,24 +8,29 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        node-version: [14.x, 16.x, 18.x]
 
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
+    
     # MRE_Client steps
+    - name: Cache MRE_Client node modules
+      uses: actions/cache@v3
+      with:
+        path: MRE_Client/node_modules
+        key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('MRE_Client/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-${{ matrix.node-version }}-
+
     - name: Install MRE_Client dependencies
       run: npm ci
       working-directory: ./MRE_Client
@@ -39,6 +44,14 @@ jobs:
       working-directory: ./MRE_Client
 
     # MRE_Server steps
+    - name: Cache MRE_Server node modules
+      uses: actions/cache@v3
+      with:
+        path: MRE_Server/node_modules
+        key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('MRE_Server/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-${{ matrix.node-version }}-
+
     - name: Install MRE_Server dependencies
       run: npm ci
       working-directory: ./MRE_Server
