@@ -18,6 +18,25 @@ const saltRounds = 10;
 
 //modify to use with our db
 
+function verifyToken(req, res, next) {
+    const token = req.headers.authorization?.split(' ')[1]; // Extract token from Authorization header
+
+    if (!token) {
+        return res.status(401).json({ message: 'No token provided' });
+    }
+
+    // Verify JWT token
+    jwt.verify(token, secretKey, (err, decoded) => {
+        if (err) {
+            return res.status(403).json({ message: 'Failed to authenticate token' });
+        }
+
+        // Store decoded token payload in request object for further use
+        req.userId = decoded.userId;
+        next();
+    });
+}
+
 router.post('/login',bpURLencoded, async (req,res)=>{
     const username = req.body.username;
     const password = req.body.password;
@@ -37,7 +56,7 @@ router.post('/login',bpURLencoded, async (req,res)=>{
                 // Return the token to the client
                 res.json({ token });
                 }
-                
+
                 //res.status(200).json({ message: 'Login successful' });
             });
         } else {
