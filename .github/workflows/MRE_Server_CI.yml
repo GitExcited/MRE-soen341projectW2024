@@ -3,12 +3,8 @@ name: MRE_Server CI
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - 'MRE_Server/**'
   pull_request:
     branches: [ "main" ]
-    paths:
-      - 'MRE_Server/**'
 
 jobs:
   build:

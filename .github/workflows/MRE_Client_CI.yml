@@ -3,12 +3,9 @@ name: MRE_Client CI
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - 'MRE_Client/**'
   pull_request:
     branches: [ "main" ]
-    paths:
-      - 'MRE_Client/**'
+
 
 jobs:
   build:
