@@ -3,7 +3,6 @@ import bodyParser from "body-parser";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 const jsonwebtoken = jwt;
-// import {jsonwebtoken as jwt} from "jsonwebtoken";
 import db from "../database/db.js";
 
 const bpURLencoded = bodyParser.urlencoded({ extended: true });
@@ -21,7 +20,7 @@ const saltRounds = 2;
 
 //modify to use with our db
 
-function verifyToken(req, res, next) {
+export function verifyToken(req, res, next) {
     const token = req.headers.authorization?.split(' ')[1]; // Extract token from Authorization header
 
     if (!token) {
@@ -110,5 +109,6 @@ router.post('/signup',bpURLencoded, async (req,res)=>{
     }
 
   })
+  
   
   export default router;
