@@ -52,7 +52,7 @@ export default {
   methods: {
     submitForm() {
       console.log('Form submitted with data:', this.car);
-      this.$router.push({ name: 'Confirmation' });
+      this.$router.push({path: '/confirmation'});
     }
   }
 };
