@@ -12,7 +12,7 @@
         <CarCard
         v-for="car in cars"
         :key="car.model"
-        :image="car.image"
+        :image="car.image_link"
         :title="car.model"
         :description="`Make: ${car.make}, Color: ${car.color}`"
         />
@@ -36,7 +36,7 @@ export default {
     };
   },
   mounted() {
-    axios.get('http://localhost:3000/cars') //-! DUMMY SERVER
+    axios.post('http://localhost:3000/form/vehicles?user_id=103210')
       .then(response => {
         this.cars = response.data;
       })
@@ -44,6 +44,5 @@ export default {
         console.error(error);
       });
   },
-  // Other options...
 };
 </script>
