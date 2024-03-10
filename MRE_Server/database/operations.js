@@ -84,6 +84,17 @@ async function getVehiclesByFieldValue(field, value) {
     }
 }
 
+async function getAllVehicles(user_id) {
+    try {
+        // get all vehicles that are not owned by the user
+        const vehicles = await db`SELECT * FROM vehicles WHERE vehicle_id NOT IN (SELECT vehicle_id FROM rentals WHERE user_id = ${user_id})`;
+        return vehicles;
+    } catch (err) {
+        console.log(err);
+        return false;
+    }
+}
+
 async function updateVehicle(vehicle_id, make,model,year,license_plate,vehicle_type,color,mileage,status,rental_rate,branch_id,transmission_type) {
     try {
         await db`UPDATE vehicles SET make = ${make}, model = ${model}, year = ${year}, license_plate = ${license_plate}, vehicle_type = ${vehicle_type}, color = ${color}, mileage = ${mileage}, status = ${status}, rental_rate = ${rental_rate}, branch_id = ${branch_id}, transmission_type = ${transmission_type} WHERE vehicle_id = ${vehicle_id}`;
@@ -154,4 +165,4 @@ async function deleteRental(rental_id) {
     return true;
 }
 
-export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByFieldValue, updateVehicle, deleteVehicle, createRental, getRentalsByFieldValue, updateRental, deleteRental};
+export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByFieldValue, updateVehicle, deleteVehicle, createRental, getRentalsByFieldValue, updateRental, deleteRental, getAllVehicles};
