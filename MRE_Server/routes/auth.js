@@ -49,17 +49,20 @@ router.post('/login',bpURLencoded, async (req,res)=>{
     try {
         // Query the database to find the user with the provided username and password
         const result = await db`SELECT password FROM users WHERE username = ${username}`;
-        const pass = result[0].password;
         
         //if user exist then compare for password
         if (result.length > 0) {
+            const pass = result[0].password;
             bcrypt.compare(password, pass, function(err, result) {
                 if (result == true){
                 // Create and sign JWT token
                 const token = jwt.sign({ userId: username }, "so private wow", { expiresIn: '1h' });
 
+                res.cookie("authTokenMRE",token, {
+                    httpOnly: true
+                });
                 // Return the token to the client
-                res.status(200).json({ message: 'Login successful', token: token});
+                res.status(200).json({ message: 'Login successful'});
                 }
                 else {
                     res.status(401).json({ message: 'Invalid username or password' });
