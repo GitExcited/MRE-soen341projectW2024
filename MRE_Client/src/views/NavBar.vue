@@ -16,6 +16,9 @@
                 <li class="nav-item">
                     <router-link class="nav-link" to="/signup">Sign up</router-link>
                 </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/rentalform">Rental Form</router-link>
+                </li>
             </ul>
         </div>
     </div>
