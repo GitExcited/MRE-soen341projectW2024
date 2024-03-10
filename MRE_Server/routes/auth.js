@@ -10,6 +10,7 @@ const bpJSON = bodyParser.json();
 const router = express.Router();
 
 const saltRounds = 2;
+const secretKey = "ballsandnuts"
 
 // user: {
 //     id: int,
@@ -21,29 +22,28 @@ const saltRounds = 2;
 //modify to use with our db
 
 export function verifyToken(req, res, next) {
-    const token = req.headers.authorization?.split(' ')[1]; // Extract token from Authorization header
+    const token = req.cookies.authTokenMRE; // Extract token from cookies
 
     if (!token) {
         return res.status(401).json({ message: 'No token provided' });
     }
-
     // Verify JWT token
-    jwt.verify(token, secretKey, (err, decoded) => {
-        if (err) {
-            return res.status(403).json({ message: 'Failed to authenticate token' });
-        }
-
-        // Store decoded token payload in request object for further use
+    try{
+        let decoded = jwt.verify(token, secretKey);
+        console.log(decoded)
         req.userId = decoded.userId;
         next();
-    });
+    }catch(err){
+        console.log(err)
+        res.status(500).json({ message: 'Internal server error' });
+    }
 }
 
 router.post('/login',bpURLencoded, async (req,res)=>{
     const username = req.query.username;
     const password = req.query.password;
 
-    console.log(username, password);
+    //console.log(username, password);
 
     //check user exists
     try {
@@ -56,7 +56,7 @@ router.post('/login',bpURLencoded, async (req,res)=>{
             bcrypt.compare(password, pass, function(err, result) {
                 if (result == true){
                 // Create and sign JWT token
-                const token = jwt.sign({ userId: username }, "so private wow", { expiresIn: '1h' });
+                const token = jwt.sign({ userId: username }, secretKey, { expiresIn: '1h' });
 
                 res.cookie("authTokenMRE",token, {
                     httpOnly: true
@@ -111,6 +111,10 @@ router.post('/signup',bpURLencoded, async (req,res)=>{
         res.status(500).json({ message: 'Internal server error' });
     }
 
+  })
+
+  router.post('/testing',verifyToken,(req,res)=>{
+    res.status(200).json({message: "Testing complete"})
   })
   
   
