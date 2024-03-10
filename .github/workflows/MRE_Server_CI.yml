@@ -31,8 +31,8 @@ jobs:
       run: npm test
       working-directory: MRE_Server
       env: 
-        PGHOST {{secrets.PGHOST}}
-        PGUSER {{secrets.PGUSER}}
-        PGPASSWORD {{secrets.PGPASSWORD}}
-        PGDATABASE {{secrets.PGDATABASE}}
-        ENDPOINT_ID {{secrets.ENDPOINT_ID}}
+        PGHOST: ${{ secrets.PGHOST }}
+        PGUSER: ${{ secrets.PGUSER }}
+        PGPASSWORD: ${{ secrets.PGPASSWORD }}
+        PGDATABASE: ${{ secrets.PGDATABASE }}
+        ENDPOINT_ID: ${{ secrets.ENDPOINT_ID }}
