@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: mre_secrets
 
     steps:
     - uses: actions/checkout@v3
@@ -29,3 +30,9 @@ jobs:
     - name: Test MRE_Server
       run: npm test
       working-directory: MRE_Server
+      env: 
+        PGHOST {{secrets.PGHOST}}
+        PGUSER {{secrets.PGUSER}}
+        PGPASSWORD {{secrets.PGPASSWORD}}
+        PGDATABASE {{secrets.PGDATABASE}}
+        ENDPOINT_ID {{secrets.ENDPOINT_ID}}
