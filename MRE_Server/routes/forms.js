@@ -49,6 +49,7 @@ formRouter.post('/cancelreservation', async (req,res)=>{
 });
 
 formRouter.post('/registervehicle',async (req,res)=>{
+    
     //Literally just create db entry
     const {make,model,year,license_plate,vehicle_type,color,mileage,status,rental_rate,branch_id,transmission_type} = req.query;
 
@@ -63,7 +64,7 @@ formRouter.post('/registervehicle',async (req,res)=>{
 
 formRouter.post('/vehicles',async (req,res)=>{
     //get all vehicles
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    
     try{
         const vehicles = await dboperations.getAllVehicles(req.query.user_id);
         return res.status(200).json(vehicles);
