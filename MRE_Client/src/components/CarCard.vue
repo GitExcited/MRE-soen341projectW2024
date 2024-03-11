@@ -5,7 +5,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ title }}</h5>
           <p class="card-text">{{ description }}</p>
-          <a href="torent" class="btn btn-primary">Rent Now</a>
+          <a @click="rentNow" class="btn btn-primary">Rent Now</a>
         </div>
       </div>
     </div>
@@ -26,7 +26,24 @@
         type: String,
         required: true,
       },
+      color: {
+      type: String,
+      required: true,
     },
+    },
+    methods: {
+    rentNow() {
+      console.log('Rent Now clicked');
+      this.$emit('rent-now', {
+        image: this.image,
+        title: this.title,
+        description: this.description,
+        color: this.color,
+    });
+  },
+},
+
+
   };
   //Making the image width smaller
   </script>

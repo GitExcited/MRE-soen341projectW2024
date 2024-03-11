@@ -5,21 +5,21 @@
     </div>
     <div class="center-container">
       <form @submit.prevent="submitForm" class="form-container">
-        <div class="input-group">
-          <label class="label" for="startDate">Start Date:</label>
-          <input type="text" id="startDate" v-model="cars.startDate" required>
-        </div>
-        <div class="input-group">
-          <label class="label" for="endDate">End Date:</label>
-          <input type="text" id="endDate" v-model="cars.endDate" required>
-        </div>
-        <div class="output-group">
-          <label class="label" for="color">Color: </label>
-          <output name="result" for="color">{{ cars.color }}</output>
-        </div>
-        <div class="output-group">
-          <label class="label" for="price">Price:</label>
-          <input type="number" id="price" v-model="cars.price" required>
+        <div class="col-md-4">
+          <div class="card-body">
+            <div class="input-group">
+              <label class="label" for="startDate">Start Date:</label>
+              <input type="text" id="startDate" v-model="startDate" required>
+            </div>
+            <div class="input-group">
+              <label class="label" for="endDate">End Date:</label>
+              <input type="text" id="endDate" v-model="endDate" required>
+            </div>
+            <div class="output-group">
+              <label class="label" for="color">Color: </label>
+              <output name="result" for="color">{{ selectedCar.color }}</output>
+            </div>
+          </div>
         </div>
         <button type="submit" class="submit-button">Submit</button>
       </form>
@@ -29,36 +29,46 @@
 
 <script>
 import axios from 'axios';
+import CarCard from '../components/CarCard.vue';
 
 export default {
   data() {
     return {
-      cars: {
-        startDate: '',
-        endDate: '',
-        make: '',
-        model: '',
+      selectedCar: {
+        image: '',
+        title: '',
+        description: '',
         color: '',
-        year: null,
-        mileage: null,
       },
+      startDate: '',
+      endDate: '',
     };
   },
 
+  components: {
+    CarCard,
+  },
+
   mounted() {
-    axios.post('http://localhost:3000/form/vehicles?user_id=103210')
-      .then(response => {
-        console.log('API Response:', response.data);
-        this.cars = response.data; // Assuming response.data is an array of car details
-      })
-      .catch(error => {
-        console.error('Error fetching car details:', error);
-      });
+    // Set default values if needed
+    // this.startDate = '2024-03-01';
+    // this.endDate = '2024-03-10';
   },
 
   methods: {
+
+    // Handler for the event emitted by CarCard
+    handleRentNow(carInfo) {
+      this.selectedCar = { ...carInfo };
+    },
+
     submitForm() {
-      console.log('Form submitted with data:', this.cars[0]);
+      console.log('Form submitted with data:', {
+        selectedCar: this.selectedCar,
+        startDate: this.startDate,
+        endDate: this.endDate,
+      });
+      
       this.$router.push({ path: '/confirmation' });
     },
   },
