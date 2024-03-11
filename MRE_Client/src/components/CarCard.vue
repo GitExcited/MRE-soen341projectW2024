@@ -5,7 +5,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ title }}</h5>
           <p class="card-text">{{ description }}</p>
-          <a href="#" class="btn btn-primary">Rent Now</a>
+          <a href="torent" class="btn btn-primary">Rent Now</a>
         </div>
       </div>
     </div>

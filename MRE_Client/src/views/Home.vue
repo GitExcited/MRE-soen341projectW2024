@@ -14,7 +14,8 @@
         :key="car.model"
         :image="car.image_link"
         :title="car.model"
-        :description="`Make: ${car.make}, Color: ${car.color}`"
+        :id="car.vehicle_id"
+        :description="`Make: ${car.make}, Color: ${car.color}, ID: ${car.vehicle_id}`"
         />
 
         <!-- Repeat the above div for more car models -->
