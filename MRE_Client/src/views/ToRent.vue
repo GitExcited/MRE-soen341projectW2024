@@ -30,11 +30,14 @@
       </form>
     </div>
   </div>
+  <div v-if="this.error" class="alert alert-danger fixed-bottom" role="alert">
+    {{ error }}
+  </div>
 </template>
 
 <script>
 import CarCard from '../components/CarCard.vue';
-
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -69,14 +72,23 @@ export default {
       this.selectedCar = { ...carInfo };
     },
 
-    submitForm() {
-      console.log('Form submitted with data:', {
-        selectedCar: this.selectedCar,
-        startDate: this.startDate,
-        endDate: this.endDate,
+    async submitForm() {
+
+      // Send the selected car and dates to the server
+      await axios.post('http://localhost:3000/form/rent', {
+        vehicle_id: this.selectedCar.vehicle_id,
+        start_date: this.startDate,
+        end_date: this.endDate,
+      }).then(
+        (response) => {
+          console.log(response);
+          this.$router.push({ path: '/confirmrent' });
+      }).catch(
+        (error) => {
+          console.error(error);
+          this.error = error;
       });
-      
-      this.$router.push({ path: '/confirmrent' });
+
     },
   },
 };
