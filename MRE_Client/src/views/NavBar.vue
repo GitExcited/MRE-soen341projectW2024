@@ -14,7 +14,10 @@
                     <router-link class="nav-link" to="/services">Services</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" to="/signup">Sign up</router-link>
+                    <router-link class="nav-link" to="/login">Login</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/rentalform">Rental Form</router-link>
                 </li>
             </ul>
         </div>

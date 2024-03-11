@@ -2,11 +2,9 @@ import express from "express";
 import bodyParser from "body-parser";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-const jsonwebtoken = jwt;
 import db from "../database/db.js";
 
 const bpURLencoded = bodyParser.urlencoded({ extended: true });
-const bpJSON = bodyParser.json();
 const router = express.Router();
 
 const saltRounds = 2;
@@ -40,8 +38,8 @@ export function verifyToken(req, res, next) {
 }
 
 router.post('/login',bpURLencoded, async (req,res)=>{
-    const username = req.query.username;
-    const password = req.query.password;
+    const username = req.query.username || req.body.username;
+    const password = req.query.password || req.body.password;
 
     //console.log(username, password);
 
@@ -81,14 +79,14 @@ router.post('/login',bpURLencoded, async (req,res)=>{
 
     //compare password
     //if match send back token to user and update token in DB
-  })
-  
-
+})
   
 router.post('/signup',bpURLencoded, async (req,res)=>{
+    
+
     //check user exists (username and email)
     // if doesnt exist create user in DB
-
+    
     const username = req.query.username;
     const email = req.query.email;
     const password = req.query.password;
@@ -98,14 +96,24 @@ router.post('/signup',bpURLencoded, async (req,res)=>{
         const result = await db`SELECT * FROM users WHERE username = ${username}`;
         if (result.length > 0) {
             //user already exists return error
-            res.status(401).json({ message: 'User already exists' });
-        } else {
-            bcrypt.hash(password, saltRounds, async function(err, hash) {
-                //create user in db
-                await db`INSERT INTO users (username, email, password) VALUES (${username}, ${email}, ${hash})`;
-            });
-            res.status(200).json({ message: 'Signup successful' });
+            res.status(401).json({ message: 'Username already exists' });
+            return;
         }
+        
+        //check email
+        const result2 = await db`SELECT * FROM users WHERE email = ${email}`;
+        if (result2.length > 0) {
+            //user already exists return error
+            res.status(401).json({ message: 'Email already exists' });
+            return;
+        }
+
+        bcrypt.hash(password, saltRounds, async function(err, hash) {
+            //create user in db
+            await db`INSERT INTO users (username, email, password) VALUES (${username}, ${email}, ${hash})`;
+        });
+        res.status(200).json({ message: 'Signup successful' });
+        
     } catch (err) {
         console.error('Error executing query', err);
         res.status(500).json({ message: 'Internal server error' });
