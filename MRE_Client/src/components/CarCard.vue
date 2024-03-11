@@ -33,5 +33,7 @@
   <style scoped>
   .car-image {
     height: 300px;
+    width: 100%;
+    object-fit: cover;
   }
   </style>
