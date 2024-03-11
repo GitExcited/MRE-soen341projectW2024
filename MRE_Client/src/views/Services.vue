@@ -23,7 +23,7 @@
             <div class="card-body">
               <h5 class="card-title">Put a car for Rent</h5>
               <p class="card-text">Put your card to rent and start earning that $$$ NOW! </p>
-              <a href="#" class="btn btn-primary">Learn More</a>
+              <a href="/rentalform" class="btn btn-primary">Learn More</a>
             </div>
           </div>
         </div>
