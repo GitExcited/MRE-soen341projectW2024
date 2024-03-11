@@ -10,3 +10,7 @@
 - March 8 : 2 hrs working on frontend. Created rental page.
 - March 9:  3 hrs working on front end. Created a confirmation page for renters.
 
+## Rishit Mittal
+- March 8 : 1 hour working on front end. Made a plan on how to make renting page.
+- March 10 : 2 hours working on front end. Created a static page for rental page.
+- March 11 : 5:30 hours working on front end. Finsihed up the renting page which dynamically shows the details of the car at which rent now button was pressed. Made confirmation page that displays a message when pressed submit.
