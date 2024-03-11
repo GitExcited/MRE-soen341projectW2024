@@ -5,6 +5,8 @@ import Services from '../views/Services.vue';
 import RentalForm from '@/views/RentalForm.vue';
 import Confirmation from '@/views/Confirmation.vue';
 import Login from '@/views/Login.vue';
+import ToRent from '@/views/ToRent.vue';
+import ConfirmRent from '@/views/ConfirmRent.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,7 +17,9 @@ const router = createRouter({
     { path: '/home', component: Home },
     { path: '/services', component: Services },
     { path: '/rentalform', component: RentalForm },
-    { path: '/confirmation', component: Confirmation } // Add the Confirmation route
+    { path: '/confirmation', component: Confirmation },
+    { path: '/confirmrent', component: ConfirmRent },
+    { path:'/torent', name: 'torent', component: ToRent},
   ]
 });
 
