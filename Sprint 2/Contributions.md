@@ -4,4 +4,9 @@
 
 ## Yan Pilon
 - March 8 : 6 hours working on backend development. Created server http routes for login and sign up, also created routes for creating and canceling reservations and registering vehicles.
-- March 10: 1h30 Created various stories, issues and acceptance tests.
+- March 10: 3h30 Created various stories, issues and acceptance tests. Finished the authentication system.
+
+## Mohammad Natsheh
+- March 8 : 2 hrs working on frontend. Created rental page.
+- March 9:  3 hrs working on front end. Created a confirmation page for renters.
+
