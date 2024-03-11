@@ -76,7 +76,7 @@ export default {
         endDate: this.endDate,
       });
       
-      this.$router.push({ path: '/confirmation' });
+      this.$router.push({ path: '/confirmrent' });
     },
   },
 };
