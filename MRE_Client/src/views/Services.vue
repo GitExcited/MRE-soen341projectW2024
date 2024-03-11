@@ -13,7 +13,7 @@
             <div class="card-body">
               <h5 class="card-title">Rent Car</h5>
               <p class="card-text">Look for a car that matches your needs</p>
-              <a href="#" class="btn btn-primary">Learn More</a>
+              <a href="/torent" class="btn btn-primary">Learn More</a>
             </div>
           </div>
         </div>
