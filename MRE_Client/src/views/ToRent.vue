@@ -1,124 +1,91 @@
 <template>
-    <div>
-      <div class="banner">
-        <h1 class="banner-text">List Your Vehicle for Rent</h1>
+    <div class="container mt-5" style="margin-top:200px;">
+      <div class="row">
+        <div class="col text-center">
+          <h1>Rent a Vehicle</h1>
+          <!-- <p class="lead">We offer a variety of services to cater to your car rental needs.</p>  --> 
+        </div>
       </div>
-      <div class="center-container">
-        <form @submit.prevent="submitForm" class="form-container">
-          <div class="input-group">
-            <label class="label" for="make">Make:</label>
-            <input type="text" id="make" v-model="car.make" required>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../../public/img/delorean_car_dummy.jpg" class="card-img-top"style="height:300px" alt="Service Image">
+            <div class="card-body">
+              <h5 class="card-title">Old GT</h5>
+              <h6 class="card-make">Year: 1990</h6>
+              <h6 class="card-model">Model: HS32454</h6>
+              <h6 class="card-color">Color: Tinted Blue</h6>
+              <h6 class="card-mileage">Mileage (Km): 650</h6>
+              <a href="/confirmrent" class="btn btn-primary">Rent Now</a>
+            </div>
           </div>
-          <div class="input-group">
-            <label class="label" for="model">Model:</label>
-            <input type="text" id="model" v-model="car.model" required>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../../public/img/rent_your_car.jpg" class="card-img-top" style="height:300px"alt="Service Image">
+            <div class="card-body">
+              <h5 class="card-title">Wolkswagen S2</h5>
+              <h6 class="card-make">Year: 2020</h6>
+              <h6 class="card-model">Model: SD43654</h6>
+              <h6 class="card-color">Color: Light Grey</h6>
+              <h6 class="card-mileage">Mileage (Km): 800</h6>
+              <a href="/confirmrent" class="btn btn-primary">Rent Now</a>
+            </div>
           </div>
-          <div class="input-group">
-            <label class="label" for="color">Color:</label>
-            <input type="text" id="color" v-model="car.color" required>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../../public/img/2022_Ferrari_296_(cropped).jpg" class="card-img-top" style="height:300px"alt="Service Image">
+            <div class="card-body">
+              <h5 class="card-title">Ferrari 296</h5>
+              <h6 class="card-make">Year: 2015</h6>
+              <h6 class="card-model">Model: GR4365</h6>
+              <h6 class="card-color">Color: Spicy Red</h6>
+              <h6 class="card-mileage">Mileage (Km): 1000</h6>
+              <a href="/confirmrent" class="btn btn-primary">Rent Now</a>
+            </div>
           </div>
-          <div class="input-group">
-            <label class="label" for="year">Year:</label>
-            <input type="number" id="year" v-model="car.year" required>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../../public/img/McLaren_720S.jpg" class="card-img-top" style="height:300px"alt="Service Image">
+            <div class="card-body">
+              <h5 class="card-title">McLaren 720S</h5>
+              <h6 class="card-make">Year: 2023</h6>
+              <h6 class="card-model">Model: HFV8</h6>
+              <h6 class="card-color">Color: Crispy Orange</h6>
+              <h6 class="card-mileage">Mileage (Km): 1000</h6>
+              <a href="/confirmrent" class="btn btn-primary">Rent Now</a>
+            </div>
           </div>
-          <div class="input-group">
-            <label class="label" for="mileage">Mileage (km):</label>
-            <input type="number" id="mileage" v-model="car.mileage" required>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../../public/img/Lamborghini_Aventador.jpg" class="card-img-top" style="height:300px"alt="Service Image">
+            <div class="card-body">
+              <h5 class="card-title">Lamborghini Aventador</h5>
+              <h6 class="card-make">Year: 2024</h6>
+              <h6 class="card-model">Model: JHV56456</h6>
+              <h6 class="card-color">Color: Light Green</h6>
+              <h6 class="card-mileage">Mileage (Km): 1500</h6>
+              <a href="/confirmrent" class="btn btn-primary">Rent Now</a>
+            </div>
           </div>
-          <div class="input-group">
-            <label class="label" for="imageURL">Image URL:</label>
-            <input type="url" id="imageURL" v-model="car.imageURL" required>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../../public/img/BMW_X4.png" class="card-img-top" style="height:300px"alt="Service Image">
+            <div class="card-body">
+              <h5 class="card-title">BMW X4</h5>
+              <h6 class="card-make">Year: 2024</h6>
+              <h6 class="card-model">Model: RGE4565</h6>
+              <h6 class="card-color">Color: White</h6>
+              <h6 class="card-mileage">Mileage (Km): 2000</h6>
+              <a href="/confirmrent" class="btn btn-primary">Rent Now</a>
+            </div>
           </div>
-          <button type="submit" class="submit-button">Submit</button>
-        </form>
+        </div>
+        <!-- Repeat the above div for more services -->
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        car: {
-          make: '',
-          model: '',
-          color: '',
-          year: null,
-          mileage: null,
-          imageURL: ''
-        }
-      };
-    },
-    methods: {
-      submitForm() {
-        console.log('Form submitted with data:', this.car);
-        this.$router.push({path: '/confirmation'});
-      }
-    }
-  };
-  </script>
-  
-  <style scoped>
-  .banner {
-    background-color: #1e4168; /* Dark blue background */
-    color: white;
-    padding: 7%;
-    text-align: center;
-  }
-  
-  .banner-text {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 80px); /* Adjusted to account for banner height */
-  }
-  
-  .form-container {
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f0f5f9; /* Light blue background */
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  .label {
-    color: #1e4168; /* Dark blue for labels */
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="number"],
-  input[type="url"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .submit-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #1e4168; /* Dark blue button */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  }
-  
-  .submit-button:hover {
-    background-color: #003366; /* Darker blue on hover */
-  }
-  </style>
-  
+</template>
