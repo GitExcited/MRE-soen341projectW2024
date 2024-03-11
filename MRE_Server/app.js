@@ -13,7 +13,8 @@ const port = 3000;
 const bpURLencoded = bodyParser.urlencoded({ extended: true });
 const bpJSON = bodyParser.json();
 
-app.use(cookieParser());
+
+app.use(cookieParser())
 app.use(cors({
     origin: 'http://localhost:5173',
     credentials: true,
