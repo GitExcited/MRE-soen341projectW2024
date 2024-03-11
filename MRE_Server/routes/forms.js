@@ -61,6 +61,18 @@ formRouter.post('/registervehicle',async (req,res)=>{
     }
 });
 
+formRouter.post('/vehicles',async (req,res)=>{
+    //get all vehicles
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    try{
+        const vehicles = await dboperations.getAllVehicles(req.query.user_id);
+        return res.status(200).json(vehicles);
+    }catch (err) {
+        console.error('Error executing query', err);
+        res.status(500).json({ message: 'Internal server error'});
+    }
+});
+
 formRouter.post('/',(req,res)=>{
     
 });

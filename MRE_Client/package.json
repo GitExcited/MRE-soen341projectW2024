@@ -13,12 +13,13 @@
     "format": "prettier --write src/",
     "serve": "vue-cli-service serve",
     "json-server": "json-server --watch db_test.json",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
+    "jest": "^29.7.0",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
     "vuex": "^4.0.2"
