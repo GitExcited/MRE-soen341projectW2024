@@ -1,9 +1,18 @@
 <template>
   <div>
-    <div class="banner">
+    <div class="banner pb-4">
       <h1 class="banner-text">Renting Details</h1>
     </div>
-    <div class="center-container">
+    <div class="d-flex justify-content-center">
+      <div class="card mb-3">
+        <img :src="selectedCar.image" class="card-img-top car-image" alt="Car Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ selectedCar.title }}</h5>
+          <p class="card-text">{{ selectedCar.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
       <form @submit.prevent="submitForm" class="form-container">
         <div class="col-md-4">
           <div class="card-body">
@@ -15,10 +24,6 @@
               <label class="label" for="endDate">End Date:</label>
               <input type="text" id="endDate" v-model="endDate" required>
             </div>
-            <div class="output-group">
-              <label class="label" for="color">Color: </label>
-              <output name="result" for="color">{{ selectedCar.color }}</output>
-            </div>
           </div>
         </div>
         <button type="submit" class="submit-button">Submit</button>
@@ -28,7 +33,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import CarCard from '../components/CarCard.vue';
 
 export default {
@@ -50,9 +54,12 @@ export default {
   },
 
   mounted() {
-    // Set default values if needed
-    // this.startDate = '2024-03-01';
-    // this.endDate = '2024-03-10';
+    let carDetails;
+    if (window.history.state && window.history.state.carDetails) {
+    carDetails = window.history.state.carDetails;
+    }
+    this.selectedCar = { ...carDetails };
+
   },
 
   methods: {
@@ -76,15 +83,13 @@ export default {
 </script>
 
 <style scoped>
-  /* Your styling goes here */
-</style>
-
-  
-  <style scoped>
-  /* Your styling goes here */
+  .car-image {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
   </style>
-  
-  
+ 
   <style scoped>
   .banner {
     background-color: #1e4168; /* Dark blue background */

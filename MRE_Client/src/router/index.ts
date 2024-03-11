@@ -16,8 +16,8 @@ const router = createRouter({
     { path: '/home', component: Home },
     { path: '/services', component: Services },
     { path: '/rentalform', component: RentalForm },
-    { path: '/confirmation', component: Confirmation }, // Add the Confirmation route
-    {path:'/torent', name: 'torent', component:ToRent},
+    { path: '/confirmation', component: Confirmation },
+    { path:'/torent', name: 'torent', component: ToRent},
   ]
 });
 

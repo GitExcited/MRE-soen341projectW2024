@@ -42,9 +42,9 @@ export default {
   handleRentNow(carDetails) {
     console.log('Rent Now handled:', carDetails);
     // Navigate to the 'ToRent' page with car details
-    this.$router.push({ name: 'torent', params: { 
-      carId: carDetails.vehicle_id, 
-      carColor: carDetails.color } });
+    this.$router.push({ name: 'torent', state: {
+      carDetails
+    }});
   },
 },
 
