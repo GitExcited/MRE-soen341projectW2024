@@ -51,7 +51,7 @@ export default {
 
 
   mounted() {
-    axios.post('http://localhost:3000/form/vehicles?user_id=103210')
+    axios.post('http://localhost:3000/forms/vehicles?user_id=103210')
       .then(response => {
         this.cars = response.data;
       })

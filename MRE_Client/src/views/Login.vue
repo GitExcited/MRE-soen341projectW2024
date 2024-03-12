@@ -65,6 +65,7 @@
           this.message = 'Account creation successful!';
   
           // Save the token
+          console.log(response.data);
           sessionStorage.setItem("token", response.data.token);
   
         })

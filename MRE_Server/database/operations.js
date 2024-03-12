@@ -74,9 +74,9 @@ async function createVehicle(make,model,year,license_plate,vehicle_type,color,mi
     }
 }
 
-async function getVehiclesByFieldValue(field, value) {
+async function getVehiclesByVehicleId(value) {
     try {
-        const vehicles = await db`SELECT * FROM vehicles WHERE ${field} = ${value}`;
+        const vehicles = await db`SELECT * FROM vehicles WHERE vehicle_id = ${value}`;
         return vehicles;
     } catch (err) {
         console.log(err);
@@ -165,4 +165,15 @@ async function deleteRental(rental_id) {
     return true;
 }
 
-export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByFieldValue, updateVehicle, deleteVehicle, createRental, getRentalsByFieldValue, updateRental, deleteRental, getAllVehicles};
+async function getAllReservations(user_id) {
+    try {
+        const user_id_int = await db`SELECT user_id FROM users WHERE username = ${user_id}`;
+        const reservations = await db`SELECT * FROM rentals WHERE user_id = ${user_id_int[0].user_id}`;
+        return reservations;
+    } catch (err) {
+        console.log(err);
+        return false;
+    }
+}
+
+export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByVehicleId, updateVehicle, deleteVehicle, createRental, getRentalsByFieldValue, updateRental, deleteRental, getAllVehicles, getAllReservations};

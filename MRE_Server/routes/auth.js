@@ -56,14 +56,15 @@ router.post('/login',bpURLencoded, async (req,res)=>{
                 // Create and sign JWT token
                 const token = jwt.sign({ userId: username }, secretKey, { expiresIn: '1h' });
 
-                res.cookie("authTokenMRE",token, {
-                    httpOnly: true
-                });
+                // res.cookie("authTokenMRE", token, {
+                //     httpOnly: true,
+                //     expires: new Date(Date.now() + 3600000)
+                // });
                 // Return the token to the client
-                res.status(200).json({ message: 'Login successful'});
+                res.status(200).json({ message: 'Login successful',  token: token});
                 }
                 else {
-                    res.status(401).json({ message: 'Invalid username or password' });
+                    res.status(401).json({ message: 'Invalid username or password'});
                 }
                 
             });
