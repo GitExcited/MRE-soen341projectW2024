@@ -29,7 +29,11 @@
       color: {
       type: String,
       required: true,
-    },
+      },
+      vehicle_id: {
+        type: String,
+        required: true,
+      },
     },
     methods: {
     rentNow() {
@@ -39,6 +43,7 @@
         title: this.title,
         description: this.description,
         color: this.color,
+        vehicle_id: this.vehicle_id,
     });
   },
 },

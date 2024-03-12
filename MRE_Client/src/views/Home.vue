@@ -16,6 +16,7 @@
         :title="car.model"
         :color="car.color"
         :description="`Make: ${car.make}, Color: ${car.color}, ID: ${car.vehicle_id}`"
+        :vehicle_id="car.vehicle_id"
         @rent-now="handleRentNow"
         />
 
@@ -50,7 +51,7 @@ export default {
 
 
   mounted() {
-    axios.post('http://localhost:3000/form/vehicles?user_id=103210')
+    axios.post('http://localhost:3000/forms/vehicles?user_id=103210')
       .then(response => {
         this.cars = response.data;
       })

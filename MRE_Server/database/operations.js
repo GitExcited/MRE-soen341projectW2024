@@ -74,9 +74,9 @@ async function createVehicle(make,model,year,license_plate,vehicle_type,color,mi
     }
 }
 
-async function getVehiclesByFieldValue(field, value) {
+async function getVehiclesByVehicleId(value) {
     try {
-        const vehicles = await db`SELECT * FROM vehicles WHERE ${field} = ${value}`;
+        const vehicles = await db`SELECT * FROM vehicles WHERE vehicle_id = ${value}`;
         return vehicles;
     } catch (err) {
         console.log(err);
@@ -135,9 +135,10 @@ async function createRental(vehicle_id, user_id, rental_start_date, rental_end_d
     }
 }
 
-async function getRentalsByFieldValue(field, value) {
+async function getRentalsById(value) {
     try {
-        const rentals = await db`SELECT * FROM rentals WHERE ${field} = ${value}`;
+        const rentals = await db`SELECT * FROM rentals WHERE rental_id = ${value}`;
+        console.log(rentals);
         return rentals;
     } catch (err) {
         console.log(err);
@@ -145,9 +146,9 @@ async function getRentalsByFieldValue(field, value) {
     }
 }
 
-async function updateRental(rental_id, vehicle_id, user_id, rental_start_date, rental_end_date, total_cost, status) {
+async function updateRental(rental_id, rental_start_date, rental_end_date) {
     try {
-        await db`UPDATE rentals SET vehicle_id = ${vehicle_id}, user_id = ${user_id}, rental_start_date = ${rental_start_date}, rental_end_date = ${rental_end_date}, total_cost = ${total_cost}, status = ${status} WHERE rental_id = ${rental_id}`;
+        await db`UPDATE rentals SET rental_start_date = ${rental_start_date}, rental_end_date = ${rental_end_date} WHERE rental_id = ${rental_id}`;
     } catch (err) {
         console.log(err);
         return false;
@@ -165,4 +166,15 @@ async function deleteRental(rental_id) {
     return true;
 }
 
-export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByFieldValue, updateVehicle, deleteVehicle, createRental, getRentalsByFieldValue, updateRental, deleteRental, getAllVehicles};
+async function getAllReservations(user_id) {
+    try {
+        const user_id_int = await db`SELECT user_id FROM users WHERE username = ${user_id}`;
+        const reservations = await db`SELECT * FROM rentals WHERE user_id = ${user_id_int[0].user_id}`;
+        return reservations;
+    } catch (err) {
+        console.log(err);
+        return false;
+    }
+}
+
+export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByVehicleId, updateVehicle, deleteVehicle, createRental, getRentalsById, updateRental, deleteRental, getAllVehicles, getAllReservations};

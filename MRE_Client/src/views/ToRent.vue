@@ -14,15 +14,15 @@
     </div>
     <div class="d-flex justify-content-center">
       <form @submit.prevent="submitForm" class="form-container">
-        <div class="col-md-4">
+        <div class="col-md-4 w-100">
           <div class="card-body">
             <div class="input-group">
-              <label class="label" for="startDate">Start Date:</label>
-              <input type="text" id="startDate" v-model="startDate" required>
+              <label class="label" for="startDate">Start Date:&nbsp;&nbsp;</label>
+              <input type="date" id="startDate" v-model="startDate" required>
             </div>
             <div class="input-group">
-              <label class="label" for="endDate">End Date:</label>
-              <input type="text" id="endDate" v-model="endDate" required>
+              <label class="label" for="endDate">End Date:&nbsp;&nbsp;</label>
+              <input type="date" id="endDate" v-model="endDate" required>
             </div>
           </div>
         </div>
@@ -30,11 +30,14 @@
       </form>
     </div>
   </div>
+  <div v-if="this.error" class="alert alert-danger fixed-bottom" role="alert">
+    {{ error }}
+  </div>
 </template>
 
 <script>
 import CarCard from '../components/CarCard.vue';
-
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -69,14 +72,28 @@ export default {
       this.selectedCar = { ...carInfo };
     },
 
-    submitForm() {
-      console.log('Form submitted with data:', {
-        selectedCar: this.selectedCar,
-        startDate: this.startDate,
-        endDate: this.endDate,
+    async submitForm() {
+      const auth = 'authTokenMRE=' + sessionStorage.getItem('token') + '; path=/; max-age=3600';
+      document.cookie = auth;
+      // Send the selected car and dates to the server
+      await axios.post('http://localhost:3000/forms/reservation', 
+      {
+        vehicle_id: this.selectedCar.vehicle_id,
+        start_date: this.startDate,
+        end_date: this.endDate,
+      },
+      {
+        withCredentials: true,
+      }).then(
+        (response) => {
+          console.log(response);
+          this.$router.push({ path: '/confirmrent' });
+      }).catch(
+        (error) => {
+          console.error(error);
+          this.error = error;
       });
-      
-      this.$router.push({ path: '/confirmrent' });
+
     },
   },
 };

@@ -7,6 +7,8 @@ import Confirmation from '@/views/Confirmation.vue';
 import Login from '@/views/Login.vue';
 import ToRent from '@/views/ToRent.vue';
 import ConfirmRent from '@/views/ConfirmRent.vue';
+import Reservations from '@/views/Reservations.vue';
+import ModifyReservation from '@/views/ModifyReservation.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +22,8 @@ const router = createRouter({
     { path: '/confirmation', component: Confirmation },
     { path: '/confirmrent', component: ConfirmRent },
     { path:'/torent', name: 'torent', component: ToRent},
+    { path: '/reservations', component: Reservations},
+    { path: '/reservations/:id', component: ModifyReservation, props: true}
   ]
 });
 
