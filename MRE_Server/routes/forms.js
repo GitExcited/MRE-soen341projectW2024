@@ -22,9 +22,9 @@ formRouter.get('/getreservation', async (req,res)=>{
     //get reservation by id
     const rental_id = req.query.rental_id;
     try{
-        const reservation = await dboperations.getRentalsByFieldValue("rental_id", rental_id);
+        const reservation = await dboperations.getRentalsById(rental_id);
         if(reservation)
-            return res.status(200).json(reservation);
+            return res.status(200).json(reservation[0]);
         else
             return res.status(500).json({ message: 'Internal server error' });
     }catch (err) {
@@ -36,9 +36,10 @@ formRouter.get('/getreservation', async (req,res)=>{
 formRouter.post('/updatereservation', async (req,res)=>{
     //update reservation by id
     const rental_id = req.query.rental_id;
-    const {vehicle_id, user_id, rental_start_date, rental_end_date, total_cost, status} = req.query;
+    const rental_start_date = req.query.rental_start_date;
+    const rental_end_date = req.query.rental_end_date;
     try{
-        await dboperations.updateRental(rental_id, vehicle_id, user_id, rental_start_date, rental_end_date, total_cost, status);
+        await dboperations.updateRental(rental_id, rental_start_date, rental_end_date);
         return res.status(200).json({message: "Reservation updated successfully."});
     }catch (err) {
         console.error('Error executing query', err);

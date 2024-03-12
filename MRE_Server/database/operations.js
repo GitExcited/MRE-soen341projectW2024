@@ -135,9 +135,10 @@ async function createRental(vehicle_id, user_id, rental_start_date, rental_end_d
     }
 }
 
-async function getRentalsByFieldValue(field, value) {
+async function getRentalsById(value) {
     try {
-        const rentals = await db`SELECT * FROM rentals WHERE ${field} = ${value}`;
+        const rentals = await db`SELECT * FROM rentals WHERE rental_id = ${value}`;
+        console.log(rentals);
         return rentals;
     } catch (err) {
         console.log(err);
@@ -145,9 +146,9 @@ async function getRentalsByFieldValue(field, value) {
     }
 }
 
-async function updateRental(rental_id, vehicle_id, user_id, rental_start_date, rental_end_date, total_cost, status) {
+async function updateRental(rental_id, rental_start_date, rental_end_date) {
     try {
-        await db`UPDATE rentals SET vehicle_id = ${vehicle_id}, user_id = ${user_id}, rental_start_date = ${rental_start_date}, rental_end_date = ${rental_end_date}, total_cost = ${total_cost}, status = ${status} WHERE rental_id = ${rental_id}`;
+        await db`UPDATE rentals SET rental_start_date = ${rental_start_date}, rental_end_date = ${rental_end_date} WHERE rental_id = ${rental_id}`;
     } catch (err) {
         console.log(err);
         return false;
@@ -176,4 +177,4 @@ async function getAllReservations(user_id) {
     }
 }
 
-export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByVehicleId, updateVehicle, deleteVehicle, createRental, getRentalsByFieldValue, updateRental, deleteRental, getAllVehicles, getAllReservations};
+export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByVehicleId, updateVehicle, deleteVehicle, createRental, getRentalsById, updateRental, deleteRental, getAllVehicles, getAllReservations};
