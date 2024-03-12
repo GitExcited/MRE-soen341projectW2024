@@ -18,3 +18,8 @@
 ## Alexandre Hachey
 - March 8: Over 6 hours spent working on core features implementing the backend, working on auth logic with Yan, creating database, online connection and wrapper for working with it in our backend.
 - March 11: Over 6 hours working on finalizing all the work for the sprint, work on core features for reservations, helped rishit with issues, filmed video.
+
+## David Mateus
+- March 8 : 2h30 hour working various bureaucracy requirements such as acceptance test and meetin gminutes
+- March 10 : 2h30 hours working adding on various front end and back end task.
+
