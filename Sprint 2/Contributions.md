@@ -15,6 +15,6 @@
 - March 10 : 2 hours working on front end. Created a static page for rental page.
 - March 11 : 5:30 hours working on front end. Finsihed up the renting page which dynamically shows the details of the car at which rent now button was pressed. Made confirmation page that displays a message when pressed submit.
 
-- ## David Mateus
+## David Mateus
 - March 8 : 2h30 hour working various bureaucracy requirements such as acceptance test and meetin gminutes
 - March 10 : 2h30 hours working adding on various front end and back end task.
