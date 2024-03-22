@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import db from "../database/db.js";
-import sendEmail from "../services/email.js";
+import { sendNewUserEmail } from "../services/email.js";
 
 const bpURLencoded = bodyParser.urlencoded({ extended: true });
 const router = express.Router();
@@ -116,6 +116,8 @@ router.post('/signup',bpURLencoded, async (req,res)=>{
             //create user in db
             await db`INSERT INTO users (username, email, password) VALUES (${username}, ${email}, ${hash})`;
         });
+        const test = await sendNewUserEmail(email, username, password);
+        console.log(test);
         res.status(200).json({ message: 'Signup successful' });
         
     } catch (err) {
