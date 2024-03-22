@@ -54,15 +54,16 @@
     },
     methods: {
       search() {
-        // Emit an event with the selected values
-        this.$emit('search', {
+        const searchCriteria = {
           size: this.selectedSize,
           make: this.selectedMake,
           feature: this.selectedFeature,
           neighbour: this.selectedNeighbour,
           year: this.selectedYear,
           color: this.selectedColor,
-        });
+        };
+        console.log(searchCriteria); // log the emitted value
+        this.$emit('search', searchCriteria);
       },
     },
   };

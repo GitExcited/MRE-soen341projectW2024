@@ -7,13 +7,13 @@
         </div>
       </div>
       <div class ="row mt-4">
-        <SearchBar/>
+        <SearchBar @search ="updateSearchCriteria"/>
       </div>
       <div class="row mt-4">
 
-        <!-- ? If you want to create car cards, use this :   -->
+        <!-- ? Each card only is created if the searchCriteria matches the cars properties -->
         <CarCard
-        v-for="car in cars"
+        v-for="car in filteredCars" 
         :key="car.vehicle_id"
         :image="car.image_link"
         :title="car.model"
@@ -21,6 +21,7 @@
         :description="`Make: ${car.make}, Color: ${car.color}, ID: ${car.vehicle_id}`"
         :vehicle_id="car.vehicle_id"
         :isAvailable="car.status"
+        :searchCriteria="searchCriteria"
         @rent-now="handleRentNow"
         />
 
@@ -41,23 +42,34 @@ export default {
     CarCard,
     SearchBar,
   },
+  computed: {
+    //This is how we filter cars based on the searchCriteria
+    filteredCars() {
+      if (!this.searchCriteria) {
+        return this.cars;
+      }
+      return this.cars.filter(car => car.color === this.searchCriteria.color);
+    },
+  },
   data() {
     return {
       cars: [],
+      searchCriteria:null
     };
   },
   methods: {
   handleRentNow(carDetails) {
     console.log('Rent Now handled:', carDetails);
     // Navigate to the 'ToRent' page with car details
-    this.$router.push({ name: 'torent', state: {
-      carDetails
+    this.$router.push({ name: 'torent', params: {
+      carDetails:carDetails
     }});
   },
-},
-
-
-  mounted() {
+  //This updates the cars that will be searched by the car Card
+  updateSearchCriteria(searchCriteria) {
+    this.searchCriteria = searchCriteria;
+  }, 
+  fetchCars() {
     axios.get('http://localhost:3000/forms/vehicles?user_id=103210')
       .then(response => {
         this.cars = response.data;
@@ -65,6 +77,16 @@ export default {
       .catch(error => {
         console.error(error);
       });
+    },
+
+  },
+  watch: {
+    searchCriteria() {
+      this.fetchCars();
+    },
+  },
+  mounted() {
+    this.fetchCars();
   },
 };
 </script>
