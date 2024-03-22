@@ -16,7 +16,11 @@
           <label for="cvv">CVV:</label>
           <input type="number" id="cvv" v-model="cvv" required maxlength="3" @input="limitCVV">
         </div>
-        <button type="submit" class="submit-button">Submit</button>
+
+        <router-link :to="{path: '/checkoutconfirmation'}">
+          <button type="submit" class="submit-button">Submit</button>
+        </router-link>
+        
       </form>
     </div>
   </template>
