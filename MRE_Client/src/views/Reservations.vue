@@ -25,7 +25,8 @@
             <td>
               <!-- View/Modify Button -->
               <button class="action-button" @click="viewModifyReservation(reservation.rental_id)">View/Modify</button>
-              <router-link :to="{ name: 'Checkout', params: { rental_id: reservation.rental_id } }" class="action-button">Proceed to Checkout</router-link>
+              <router-link v-if="isReservationDate(reservation)" :to="{ name: 'Checkin', params: { rental_id: reservation.rental_id } }" class="action-button">Checkin</router-link>
+              <router-link v-else-if="isAfterReservationDate(reservation)" :to="{ name: 'Checkout', params: { rental_id: reservation.rental_id } }" class="action-button">Checkout</router-link>
             </td>
           </tr>
         </tbody>
@@ -47,6 +48,19 @@
       };
     },
     methods: {
+      isReservationDate(reservation) {
+    const currentDate = new Date().toLocaleDateString();
+    const reservationDate = new Date(reservation.rental_start_date).toLocaleDateString() ;
+        console.log("Today date is"+ currentDate);
+        console.log("Reservation date is"+ reservationDate);
+    return currentDate === reservationDate;
+  },
+  isAfterReservationDate(reservation) {
+    const currentDate = new Date().toLocaleDateString();
+    const reservationDate =  new Date(reservation.rental_start_date).toLocaleDateString();
+
+    return (currentDate > reservationDate && reservation.status === 'checked in');
+  },
       async fetchReservations() {
         try {
             const auth = 'authTokenMRE=' + sessionStorage.getItem('token') + '; path=/; max-age=3600';
