@@ -1,6 +1,7 @@
 <template>
     <div class="checkout-form">
       <div class="banner">
+        <h2 class="banner-text">Rental ID: {{ rental_id }}</h2>
         <h2 class="banner-text">Enter Your Card Details</h2>
       </div>
       <form @submit.prevent="handleSubmit">
@@ -29,16 +30,26 @@
         expiryDate: '',
         cvv: '',
         name: 'Checkout',
-        props: ['rental_id'],
+        props: {
+            rental_id: {
+            type: Number,
+            required: true
+            }
+        },
       };
     },
+    mounted() {
+    console.log(this.$route.params);
+  },
+
     methods: {
       handleSubmit() {
         // Here you can implement logic for submitting card details
         console.log('Card details submitted:', {
           cardNumber: this.cardNumber,
           expiryDate: this.expiryDate,
-          cvv: this.cvv
+          cvv: this.cvv,
+          rental_id: this.rental_id,
         });
       },
 
