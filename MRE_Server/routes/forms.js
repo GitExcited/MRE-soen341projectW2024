@@ -3,7 +3,7 @@ import {verifyToken} from "./auth.js"
 import dboperations from "../database/operations.js";
 const formRouter = express.Router();
 
-formRouter.post('/getreservations', verifyToken, async (req,res)=>{
+formRouter.get('/getallreservations', verifyToken, async (req,res)=>{
     //get all reservations
     try{
         const user_id = req.userId;

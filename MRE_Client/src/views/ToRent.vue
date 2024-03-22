@@ -52,13 +52,13 @@
       </form>
     </div>
   </div>
-  <div v-if="this.error" class="alert alert-danger fixed-bottom" role="alert">
+  <div v-if="this.error" class="alert alert-danger mt-3" role="alert">
     {{ error }}
   </div>
 </template>
 
 <script>
-import CarCard from '../components/CarCard.vue'
+import CarCard from '@/components/CarCard.vue'
 import axios from 'axios'
 export default {
   data() {
@@ -75,7 +75,8 @@ export default {
       endDate: '',
       creditCardNumber: '',
       cvv: '',
-      expirationDate: ''
+      expirationDate: '',
+      error: null
     }
   },
 

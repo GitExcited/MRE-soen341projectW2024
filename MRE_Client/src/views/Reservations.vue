@@ -51,7 +51,7 @@
         try {
             const auth = 'authTokenMRE=' + sessionStorage.getItem('token') + '; path=/; max-age=3600';
             document.cookie = auth;
-            const response = await axios.post('http://localhost:3000/forms/getreservations', {}, {
+            const response = await axios.get('http://localhost:3000/forms/getallreservations', {}, {
                 withCredentials: true
             });
             
