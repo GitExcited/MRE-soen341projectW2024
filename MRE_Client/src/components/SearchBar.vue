@@ -1,23 +1,18 @@
 <template>
     <div class="d-flex">
-      <select v-model="selectedSize" class="form-control">
-        <option disabled value="">Select car size</option>
-        <option v-for="size in sizes" :key="size">{{ size }}</option>
-      </select>
-  
       <select v-model="selectedMake" class="form-control">
-        <option disabled value="">Select car Make</option>
+        <option disabled value="">Make</option>
         <option v-for="make in makes" :key="make">{{ make }}</option>
       </select>
-  
-      <select v-model="selectedFeature" class="form-control">
-        <option disabled value="">Select car feature</option>
-        <option v-for="feature in features" :key="feature">{{ feature }}</option>
+
+      <select v-model="selectedModel" class="form-control">
+        <option disabled value="">Model</option>
+        <option v-for="model in models" :key="model">{{ model }}</option>
       </select>
   
-      <select v-model="selectedNeighbour" class="form-control">
-        <option disabled value="">Select neighbour</option>
-        <option v-for="neighbour in neighbours" :key="neighbour">{{ neighbour }}</option>
+      <select v-model="selectedBranch" class="form-control">
+        <option disabled value="">Branch</option>
+        <option v-for="branch in branches" :key="branch">{{ branch }}</option>
       </select>
       <select v-model="selectedYear" class="form-control">
       <option disabled value="">Select car year</option>
@@ -26,9 +21,7 @@
     <select v-model="selectedColor" class="form-control">
       <option disabled value="">Select car color</option>
       <option v-for="color in colors" :key="color">{{ color }}</option>
-    </select>
-  
-      <button class="btn btn-primary" @click="search">Search</button>
+    </select>  
     </div>
   </template>
   
@@ -36,29 +29,44 @@
   export default {
     data() {
       return {
-        selectedSize: '',
+        selectedModel: '',
         selectedMake: '',
-        selectedFeature: '',
-        selectedNeighbour: '',
+        selectedBranch: '',
         selectedYear: '',
         selectedColor: '',
-        sizes: ['Small', 'Medium', 'Large'],
+        //! Update this data with the correct values
+        models: ['Small', 'Medium', 'Large'],
         makes: ['Sedan', 'SUV', 'Truck'],
-        features: ['Air Conditioning', 'Bluetooth', 'Sunroof'],
-        neighbours: ['Downtown Montreal', 'Plateau Mont-Royal', 'Notre-Dame-de-Grâce (NDG)',
+        branches: ['Downtown Montreal', 'Plateau Mont-Royal', 'Notre-Dame-de-Grâce (NDG)',
         'Rosemont-La Petite-Patrie', 'Ville-Marie', 'Villeray-Saint-Michel-Parc-Extension'],
         years: Array.from({length: 30}, (_, i) => new Date().getFullYear() - i),
         colors: ['Red', 'Blue', 'Green', 'Black', 'White'],
 
       };
     },
+    watch: {
+    selectedModel() {
+      this.search();
+    },
+    selectedMake() {
+      this.search();
+    },
+    selectedBranch() {
+      this.search();
+    },
+    selectedYear() {
+      this.search();
+    },
+    selectedColor() {
+      this.search();
+    },
+  },
     methods: {
       search() {
         const searchCriteria = {
-          size: this.selectedSize,
+          model: this.selectedModel,
           make: this.selectedMake,
-          feature: this.selectedFeature,
-          neighbour: this.selectedNeighbour,
+          branch: this.selectedBranch,
           year: this.selectedYear,
           color: this.selectedColor,
         };

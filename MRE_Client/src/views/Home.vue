@@ -16,7 +16,7 @@
         v-for="car in filteredCars" 
         :key="car.vehicle_id"
         :image="car.image_link"
-        :title="car.model"
+        :title="`${car.model} ${car.year}`"
         :color="car.color"
         :description="`Make: ${car.make}, Color: ${car.color}, ID: ${car.vehicle_id}`"
         :vehicle_id="car.vehicle_id"
@@ -44,12 +44,25 @@ export default {
   },
   computed: {
     //This is how we filter cars based on the searchCriteria
+    //The filters are:
+    //1.Color
+    //2.Model
+    //3.Make
     filteredCars() {
+      //First we check if a search criteria is set otherwise return all cars
       if (!this.searchCriteria) {
         return this.cars;
       }
-      return this.cars.filter(car => car.color === this.searchCriteria.color);
-    },
+      //We filter the cars based on the search criteria, if one of the criterias is empty, we ignore it
+      return this.cars.filter(
+        car => 
+      (this.searchCriteria.color === '' || car.color == this.searchCriteria.color) &&
+      (this.searchCriteria.model === '' || car.model == this.searchCriteria.model) &&
+      (this.searchCriteria.make === '' || car.make == this.searchCriteria.make) &&
+      (this.searchCriteria.year === '' || car.year == this.searchCriteria.year) &&
+      (this.searchCriteria.branch === '' || car.branch == this.searchCriteria.branch) 
+        );
+      },
   },
   data() {
     return {
