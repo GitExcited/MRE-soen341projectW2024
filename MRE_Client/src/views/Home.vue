@@ -74,8 +74,8 @@ export default {
   handleRentNow(carDetails) {
     console.log('Rent Now handled:', carDetails);
     // Navigate to the 'ToRent' page with car details
-    this.$router.push({ name: 'torent', params: {
-      carDetails:carDetails
+    this.$router.push({ name: 'torent', state: {
+      carDetails
     }});
   },
   //This updates the cars that will be searched by the car Card
