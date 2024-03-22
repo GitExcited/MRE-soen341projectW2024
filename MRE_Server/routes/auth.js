@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import db from "../database/db.js";
+import sendEmail from "../services/email.js";
 
 const bpURLencoded = bodyParser.urlencoded({ extended: true });
 const router = express.Router();
@@ -22,6 +23,8 @@ const secretKey = "ballsandnuts"
 export function verifyToken(req, res, next) {
     const token = req.cookies.authTokenMRE; // Extract token from cookies
 
+    console.log(token);
+    
     if (!token) {
         return res.status(401).json({ message: 'No token provided' });
     }
