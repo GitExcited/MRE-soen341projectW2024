@@ -96,7 +96,7 @@ export default {
       try {
         const rentalDetails = {
           bookingID: this.bookingID,
-          bookingConfirmationId: this.bookingConfirmation,
+          //bookingConfirmationId: this.bookingConfirmation,
           driverLicense: this.driverLicense,
           creditCard: this.creditCard,
           vehicleInspectionReport: this.vehicleInspectionReport,

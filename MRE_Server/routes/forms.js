@@ -128,10 +128,10 @@ formRouter.post('/registervehicle',async (req,res)=>{
 });
 
 formRouter.post('/checkin',verifyToken,async (req,res)=>{
-    const {bookingConfirmationId,driverLicense,creditCard,vehicleInspectionReport,signedFormImage} = req.query;
+    const {bookingID,driverLicense,creditCard,vehicleInspectionReport,signedFormImage} = req.query;
     //const user_id = req.userId;
     try {
-        await dboperations.updateReservationStatus(bookingConfirmationId,"checked in");
+        await dboperations.updateReservationStatus(bookingID,"checked in");
         return res.status(201).json({message: "Vehicle checked in."});
     } catch (error) {
         console.error('Error executing query', err);
