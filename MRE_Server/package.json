@@ -21,7 +21,8 @@
     "jsonwebtoken": "^9.0.2",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
-    "postgres": "^3.4.3"
+    "postgres": "^3.4.3",
+    "supertest": "^6.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",

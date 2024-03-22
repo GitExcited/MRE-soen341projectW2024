@@ -104,10 +104,10 @@ export default {
         await axios.post('http://localhost:3000/check-in', rentalDetails)
 
         // deposit
-        await axios.post('http://localhost:3000/take-deposit', {
-          creditCard: this.creditCard,
-          amount: 500 // CAD
-        })
+        // await axios.post('http://localhost:3000/take-deposit', {
+        //   creditCard: this.creditCard,
+        //   amount: 500 // CAD
+        // })
 
         // done
         this.message =
