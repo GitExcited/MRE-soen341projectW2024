@@ -6,15 +6,15 @@
       <form @submit.prevent="handleSubmit">
         <div class="form-group">
           <label for="cardNumber">Card Number:</label>
-          <input type="text" id="cardNumber" v-model="cardNumber" required>
+          <input type="number" id="cardNumber" v-model="cardNumber" required>
         </div>
         <div class="form-group">
           <label for="expiryDate">Expiry Date:</label>
-          <input type="text" id="expiryDate" v-model="expiryDate" required>
+          <input type="date" id="expiryDate" v-model="expiryDate" required>
         </div>
         <div class="form-group">
           <label for="cvv">CVV:</label>
-          <input type="text" id="cvv" v-model="cvv" required>
+          <input type="number" id="cvv" v-model="cvv" required maxlength="3" @input="limitCVV">
         </div>
         <button type="submit" class="submit-button">Submit</button>
       </form>
@@ -38,16 +38,23 @@
           expiryDate: this.expiryDate,
           cvv: this.cvv
         });
+      },
+
+      limitCVV() {
+      // Ensure CVV input does not exceed 3 digits
+      if (this.cvv && this.cvv.toString().length > 3) {
+        this.cvv = parseInt(this.cvv.toString().slice(0, 3));
       }
+    }
     }
   };
   </script>
   
   <style scoped>
   .checkout-form {
-    max-width: 400px;
+max-width: 400px;
   margin: 90px auto 20px; /* Increased margin-top */
-  padding: 40px 20px 20px; /* Added more padding at the top */
+  padding: 0px 20px 20px; /* Added more padding at the top */
   border: 1px solid #ccc;
   border-radius: 10px;
   }
@@ -72,6 +79,15 @@
     display: block;
     margin-bottom: 5px;
   }
+
+input[type="date"],
+input[type="number"],
+input[type="text"] {
+  width: calc(100%); /* Shorten text boxes */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
   
   input[type="text"] {
     width: 100%;
