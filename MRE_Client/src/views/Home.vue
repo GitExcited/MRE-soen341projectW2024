@@ -6,6 +6,9 @@
           <p class="lead">We provide a variety of cars for rent. Choose the one that suits your needs and book it now!</p>
         </div>
       </div>
+      <div class ="row mt-4">
+        <SearchBar/>
+      </div>
       <div class="row mt-4">
 
         <!-- ? If you want to create car cards, use this :   -->
@@ -29,11 +32,13 @@
 
 <script>
 import CarCard from '../components/CarCard.vue';
+import SearchBar from '../components/SearchBar.vue';
 import axios from 'axios';
 
 export default {
   components: {
     CarCard,
+    SearchBar,
   },
   data() {
     return {
