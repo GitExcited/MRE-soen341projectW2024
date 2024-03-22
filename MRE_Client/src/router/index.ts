@@ -17,7 +17,6 @@ const router = createRouter({
   routes: [
     { path: '/', redirect: '/home' }, // Redirect from root to /home
     { path: '/signup', component: SignUp },
-    { path: '/torent', component: ToRent },
     { path: '/login', component: Login },
     { path: '/home', component: Home },
     { path: '/services', component: Services },
