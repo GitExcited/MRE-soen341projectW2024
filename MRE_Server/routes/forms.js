@@ -139,6 +139,7 @@ formRouter.post('/checkin',verifyToken,async (req,res)=>{
 });
 
 formRouter.post('/checkout',verifyToken,async (req,res)=>{
+    const {cardNumber,expiryDate,cvv,rental_id} = req.query;
     const user_id = req.userId;
     try {
         
