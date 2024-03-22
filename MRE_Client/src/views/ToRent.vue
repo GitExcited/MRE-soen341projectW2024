@@ -148,9 +148,9 @@ export default {
           console.log(response)
           this.$router.push({ path: '/confirmrent' })
         })
-        .catch((error) => {
-          console.error(error)
-          this.error = error
+        .catch((err) => {
+          console.error(err)
+          this.error = err.response.data.message;
         })
     }
   }
