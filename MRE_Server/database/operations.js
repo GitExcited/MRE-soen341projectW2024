@@ -177,4 +177,14 @@ async function getAllReservations(user_id) {
     }
 }
 
-export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByVehicleId, updateVehicle, deleteVehicle, createRental, getRentalsById, updateRental, deleteRental, getAllVehicles, getAllReservations};
+async function updateReservationStatus(rental_id, status) {
+    try {
+        await db`UPDATE rentals SET status = ${status} WHERE rental_id = ${rental_id}`;
+    } catch (err) {
+        console.log(err);
+        return false;
+    }
+    return true;
+}
+
+export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByVehicleId, updateVehicle, deleteVehicle, createRental, getRentalsById, updateRental, deleteRental, getAllVehicles, getAllReservations, updateReservationStatus};
