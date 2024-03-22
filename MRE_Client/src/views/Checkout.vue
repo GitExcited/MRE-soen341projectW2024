@@ -45,14 +45,21 @@
 
 
     methods: {
-      handleSubmit() {
+      async handleSubmit() {
         // Here you can implement logic for submitting card details
-        console.log('Card details submitted:', {
+        try {
+          const rentalDetails =  {
           cardNumber: this.cardNumber,
           expiryDate: this.expiryDate,
           cvv: this.cvv,
           rental_id: this.rental_id,
-        });
+        }
+
+          await axios.post('http://localhost:3000/forms/checkout', rentalDetails)
+        } catch (error) {
+          console.log(error)
+        }
+        
       },
 
       limitCVV() {

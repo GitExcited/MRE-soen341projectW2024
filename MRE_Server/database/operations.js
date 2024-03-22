@@ -127,7 +127,8 @@ rentals:
 */
 async function createRental(vehicle_id, user_id, rental_start_date, rental_end_date, total_cost, status) {
     try {
-        await db`INSERT INTO rentals (vehicle_id, user_id, rental_start_date, rental_end_date, total_cost, status) VALUES (${vehicle_id},${user_id},${rental_start_date},${rental_end_date},${total_cost},${status})`;
+        const res = await db`INSERT INTO rentals (vehicle_id, user_id, rental_start_date, rental_end_date, total_cost, status) VALUES (${vehicle_id},${user_id},${rental_start_date},${rental_end_date},${total_cost},${status}) RETURNING rental_id`;
+        return res[0].rental_id || false;
     }
     catch(err){
         console.log(err);
@@ -177,4 +178,14 @@ async function getAllReservations(user_id) {
     }
 }
 
-export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByVehicleId, updateVehicle, deleteVehicle, createRental, getRentalsById, updateRental, deleteRental, getAllVehicles, getAllReservations};
+async function updateReservationStatus(rental_id, status) {
+    try {
+        await db`UPDATE rentals SET status = ${status} WHERE rental_id = ${rental_id}`;
+    } catch (err) {
+        console.log(err);
+        return false;
+    }
+    return true;
+}
+
+export default {createUser, getUser, updateUser, deleteUser, createVehicle, getVehiclesByVehicleId, updateVehicle, deleteVehicle, createRental, getRentalsById, updateRental, deleteRental, getAllVehicles, getAllReservations, updateReservationStatus};

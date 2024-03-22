@@ -1,7 +1,7 @@
 import express from "express";
 import {verifyToken} from "./auth.js";
 import dboperations from "../database/operations.js";
-import sendEmail from "../services/email.js";
+import { sendReservationEmail } from "../services/email.js";
 const formRouter = express.Router();
 
 //GET routes
@@ -80,7 +80,11 @@ formRouter.post('/reservation', verifyToken, async (req,res)=>{
                 const user = await dboperations.getUser(user_id);
                 const user_id_int = user[0].user_id;
                 console.log(user);
-                await dboperations.createRental(vehicle_id, user_id_int, start_date, end_date, total_cost, "reserved");
+                const rental_id = await dboperations.createRental(vehicle_id, user_id_int, start_date, end_date, total_cost, "reserved");
+
+                console.log("result", result);
+                
+                await sendReservationEmail(user[0].email, user[0].username, rental_id, vehicle_id, start_date, end_date, {make: result[0].make, model: result[0].model, year: result[0].year, license_plate: result[0].license_plate, color: result[0].color}, result[0].branch );
                 return res.status(201).json({message: "Reservation successfully created."});
             }else{
                 return res.status(400).json({message: "Error: vehicle already reserved."});
@@ -123,23 +127,45 @@ formRouter.post('/registervehicle',async (req,res)=>{
     }
 });
 
-formRouter.post('/checkin',async (req,res)=>{
-    
-});
-
-
-formRouter.post('/mailtest',async (req,res)=>{
-    const {email_to, body, subject} = req.query;
-    //console.log(email_to, body, subject)
-    const response = await sendEmail(email_to, body, subject);
-    //console.log(response)
-
-    if(response[0]=="Success"){
-        res.status(201).json({message: 'Email sent successfully.',info:response[1]});
-    }else if(response[0]=="Failure"){
-        res.status(500).json({message: 'Error occured while trying to send email.', info:response[1]});
+formRouter.post('/checkin',verifyToken,async (req,res)=>{
+    const {bookingID,driverLicense,creditCard,vehicleInspectionReport,signedFormImage} = req.query;
+    //const user_id = req.userId;
+    try {
+        await dboperations.updateReservationStatus(bookingID,"checked in");
+        return res.status(201).json({message: "Vehicle checked in."});
+    } catch (error) {
+        console.error('Error executing query', err);
+        res.status(500).json({ message: 'Internal server error' });
     }
-    
 });
+
+//status = one of ["reserved", "checked in", "checked out"]
+
+formRouter.post('/checkout',verifyToken,async (req,res)=>{
+    const {cardNumber,expiryDate,cvv,rental_id} = req.query;
+    //const user_id = req.userId;
+    try {
+        await dboperations.updateReservationStatus(rental_id,"checked out");
+        return res.status(201).json({message: "Vehicle checked out."});
+    } catch (error) {
+        console.error('Error executing query', err);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+
+// formRouter.post('/mailtest',async (req,res)=>{
+//     const {email_to, body, subject} = req.query;
+//     //console.log(email_to, body, subject)
+//     const response = await sendEmail(email_to, body, subject);
+//     //console.log(response)
+
+//     if(response[0]=="Success"){
+//         res.status(201).json({message: 'Email sent successfully.',info:response[1]});
+//     }else if(response[0]=="Failure"){
+//         res.status(500).json({message: 'Error occured while trying to send email.', info:response[1]});
+//     }
+    
+// });
 
 export default formRouter;

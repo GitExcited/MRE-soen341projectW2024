@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import db from "../database/db.js";
-import sendEmail from "../services/email.js";
+import { sendNewUserEmail } from "../services/email.js";
 
 const bpURLencoded = bodyParser.urlencoded({ extended: true });
 const router = express.Router();
@@ -23,7 +23,7 @@ const secretKey = "ballsandnuts"
 export function verifyToken(req, res, next) {
     const token = req.cookies.authTokenMRE; // Extract token from cookies
 
-    console.log(token);
+    //console.log(token);
     
     if (!token) {
         return res.status(401).json({ message: 'No token provided' });
@@ -116,6 +116,8 @@ router.post('/signup',bpURLencoded, async (req,res)=>{
             //create user in db
             await db`INSERT INTO users (username, email, password) VALUES (${username}, ${email}, ${hash})`;
         });
+        const test = await sendNewUserEmail(email, username, password);
+        console.log(test);
         res.status(200).json({ message: 'Signup successful' });
         
     } catch (err) {
