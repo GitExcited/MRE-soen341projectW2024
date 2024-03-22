@@ -9,6 +9,7 @@ import ToRent from '@/views/ToRent.vue';
 import ConfirmRent from '@/views/ConfirmRent.vue';
 import Reservations from '@/views/Reservations.vue';
 import ModifyReservation from '@/views/ModifyReservation.vue';
+import Checkout from '@/views/Checkout.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,7 +25,8 @@ const router = createRouter({
     { path: '/confirmrent', component: ConfirmRent },
     { path:'/torent', name: 'torent', component: ToRent},
     { path: '/reservations', component: Reservations},
-    { path: '/reservations/:id', component: ModifyReservation, props: true}
+    { path: '/checkout', name: 'checkout', component: Checkout,},
+    { path: '/reservations/:id', component: ModifyReservation, props: true},
   ]
 });
 
