@@ -102,7 +102,7 @@ export default {
           vehicleInspectionReport: this.vehicleInspectionReport,
           signedFormImage: this.signedFormImage // Include the signed form image
         }
-        await axios.post('http://localhost:3000/forms/checkin', rentalDetails)
+        await axios.post('http://localhost:3000/forms/checkin', rentalDetails, {withCredentials: true})
 
         // deposit
         // await axios.post('http://localhost:3000/take-deposit', {

@@ -128,8 +128,9 @@ formRouter.post('/registervehicle',async (req,res)=>{
 });
 
 formRouter.post('/checkin',verifyToken,async (req,res)=>{
-    const {bookingID,driverLicense,creditCard,vehicleInspectionReport,signedFormImage} = req.query;
+    const {bookingID,driverLicense,creditCard,vehicleInspectionReport,signedFormImage} = req.body;
     //const user_id = req.userId;
+    console.log(bookingID);
     try {
         await dboperations.updateReservationStatus(bookingID,"checked in");
         return res.status(201).json({message: "Vehicle checked in."});
@@ -142,7 +143,7 @@ formRouter.post('/checkin',verifyToken,async (req,res)=>{
 //status = one of ["reserved", "checked in", "checked out"]
 
 formRouter.post('/checkout',verifyToken,async (req,res)=>{
-    const {cardNumber,expiryDate,cvv,rental_id} = req.query;
+    const {cardNumber,expiryDate,cvv,rental_id} = req.body;
     //const user_id = req.userId;
     try {
         await dboperations.updateReservationStatus(rental_id,"checked out");

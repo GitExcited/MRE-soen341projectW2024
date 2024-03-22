@@ -17,16 +17,16 @@
           <label for="cvv">CVV:</label>
           <input type="number" id="cvv" v-model="cvv" required maxlength="3" @input="limitCVV">
         </div>
-
-        <router-link :to="{path: '/checkoutconfirmation'}">
-          <button type="submit" class="submit-button">Submit</button>
-        </router-link>
+        
+        <button type="submit" class="submit-button">Submit</button>
         
       </form>
     </div>
   </template>
   
   <script>
+  import axios from 'axios';
+import { routeLocationKey } from 'vue-router';
   export default {
     props: {
         rental_id: {
@@ -46,6 +46,7 @@
 
     methods: {
       async handleSubmit() {
+        console.log("submitted check out")
         // Here you can implement logic for submitting card details
         try {
           const rentalDetails =  {
@@ -55,7 +56,8 @@
           rental_id: this.rental_id,
         }
 
-          await axios.post('http://localhost:3000/forms/checkout', rentalDetails)
+          await axios.post('http://localhost:3000/forms/checkout', rentalDetails, {withCredentials: true})
+          this.$router.push({path: '/checkoutconfirmation'});
         } catch (error) {
           console.log(error)
         }
