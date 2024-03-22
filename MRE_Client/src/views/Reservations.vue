@@ -53,7 +53,7 @@
     const reservationDate = new Date(reservation.rental_start_date).toLocaleDateString() ;
         console.log("Today date is"+ currentDate);
         console.log("Reservation date is"+ reservationDate);
-    return currentDate === reservationDate;
+    return (currentDate === reservationDate && reservation.status != 'checked in');
   },
   isAfterReservationDate(reservation) {
     const currentDate = new Date().toLocaleDateString();
