@@ -123,8 +123,25 @@ formRouter.post('/registervehicle',async (req,res)=>{
     }
 });
 
-formRouter.post('/checkin',async (req,res)=>{
-    
+formRouter.post('/checkin',verifyToken,async (req,res)=>{
+    const {bookingConfirmation,driverLicense,creditCard,vehicleInspectionReport,signedFormImage} = req.query;
+    const user_id = req.userId;
+    try {
+        
+    } catch (error) {
+        console.error('Error executing query', err);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+formRouter.post('/checkout',verifyToken,async (req,res)=>{
+    const user_id = req.userId;
+    try {
+        
+    } catch (error) {
+        console.error('Error executing query', err);
+        res.status(500).json({ message: 'Internal server error' });
+    }
 });
 
 
