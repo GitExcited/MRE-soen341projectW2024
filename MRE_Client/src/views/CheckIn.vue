@@ -1,4 +1,3 @@
-import Swal from 'sweetalert2'
 <template>
   <div class="container" style="margin-top: 100px">
     <div class="row justify-content-center">
