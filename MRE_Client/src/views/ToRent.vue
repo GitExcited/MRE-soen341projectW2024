@@ -96,6 +96,15 @@ export default {
     handleRentNow(carInfo) {
       this.selectedCar = { ...carInfo }
     },
+    validateFutureDateMMYYYY(input) {
+      const regex = /^(0[1-9]|1[0-2])\/\d{4}$/;
+      if (!regex.test(input)) return false;
+
+      const currentDate = new Date();
+      const inputDate = new Date(input.split('/')[1], input.split('/')[0] - 1);
+
+      return inputDate > currentDate;
+    },
 
     async submitForm() {
       const auth = 'authTokenMRE=' + sessionStorage.getItem('token') + '; path=/; max-age=3600'
@@ -114,10 +123,8 @@ export default {
         return // Stop form submission if CVV is invalid
       }
 
-      const currentDate = new Date()
-      const expirationDate = new Date(this.expirationDate)
-      if (isNaN(expirationDate.getTime()) || expirationDate < currentDate) {
-        this.error = 'Expiration date must be a valid future date.'
+      if (!this.validateFutureDateMMYYYY(this.expirationDate)) {
+        this.error = 'Expiration date must be in the future and in the format MM/YYYY.'
         return // Stop form submission if expiration date is invalid
       }
 
