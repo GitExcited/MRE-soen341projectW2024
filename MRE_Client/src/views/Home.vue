@@ -11,11 +11,15 @@
         <!-- ? If you want to create car cards, use this :   -->
         <CarCard
         v-for="car in cars"
-        :key="car.model"
+        :key="car.vehicle_id"
         :image="car.image_link"
         :title="car.model"
-        :description="`Make: ${car.make}, Color: ${car.color}`"
+        :color="car.color"
+        :description="`Make: ${car.make}, Color: ${car.color}, ID: ${car.vehicle_id}`"
+        :vehicle_id="car.vehicle_id"
+        @rent-now="handleRentNow"
         />
+
 
         <!-- Repeat the above div for more car models -->
       </div>
@@ -35,8 +39,19 @@ export default {
       cars: [],
     };
   },
+  methods: {
+  handleRentNow(carDetails) {
+    console.log('Rent Now handled:', carDetails);
+    // Navigate to the 'ToRent' page with car details
+    this.$router.push({ name: 'torent', state: {
+      carDetails
+    }});
+  },
+},
+
+
   mounted() {
-    axios.post('http://localhost:3000/form/vehicles?user_id=103210')
+    axios.post('http://localhost:3000/forms/vehicles?user_id=103210')
       .then(response => {
         this.cars = response.data;
       })

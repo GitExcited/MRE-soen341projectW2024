@@ -1,28 +1,72 @@
 import express from "express";
-import bodyParser from "body-parser";
 import {verifyToken} from "./auth.js"
 import dboperations from "../database/operations.js";
 const formRouter = express.Router();
 
+formRouter.post('/getreservations', verifyToken, async (req,res)=>{
+    //get all reservations
+    try{
+        const user_id = req.userId;
+        const reservations = await dboperations.getAllReservations(user_id);
+        if(reservations)
+            return res.status(200).json(reservations);
+        else
+            return res.status(500).json({ message: 'Internal server error' });
+    }catch (err) {
+        console.error('Error executing query', err);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+formRouter.get('/getreservation', async (req,res)=>{
+    //get reservation by id
+    const rental_id = req.query.rental_id;
+    try{
+        const reservation = await dboperations.getRentalsById(rental_id);
+        if(reservation)
+            return res.status(200).json(reservation[0]);
+        else
+            return res.status(500).json({ message: 'Internal server error' });
+    }catch (err) {
+        console.error('Error executing query', err);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+formRouter.post('/updatereservation', async (req,res)=>{
+    //update reservation by id
+    const rental_id = req.query.rental_id;
+    const rental_start_date = req.query.rental_start_date;
+    const rental_end_date = req.query.rental_end_date;
+    try{
+        await dboperations.updateRental(rental_id, rental_start_date, rental_end_date);
+        return res.status(200).json({message: "Reservation updated successfully."});
+    }catch (err) {
+        console.error('Error executing query', err);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
 
 
-formRouter.post('/reservation',async (req,res)=>{
-    
-    const {vehicle_id, user_id, rental_start_date, rental_end_date, total_cost} = req.query;
-    //check if vehicle is already reserved or not 
-    //console.log(req.query)
-    //console.log(vehicle_id,user_id, rental_start_date, rental_end_date, total_cost); 
+formRouter.post('/reservation', verifyToken, async (req,res)=>{
+    const {vehicle_id, start_date, end_date} = req.body;
+    const user_id = req.userId;
+    console.log(vehicle_id, start_date, end_date, user_id);
 
     try{
-        const result = await dboperations.getVehiclesByFieldValue("vehicle_id", vehicle_id)
+        const result = await dboperations.getVehiclesByVehicleId(vehicle_id)
 
+        const total_cost = (Date.parse(end_date) - Date.parse(start_date)) / 86400000 * 100;
         if (result.length > 0){
             const vehiclestatus = result[0].status;
-            if(vehiclestatus === "available"){
-                await createRental(vehicle_id, user_id, rental_start_date, rental_end_date, total_cost, status="reserved")
+            if(vehiclestatus === "Available"){
+                const user = await dboperations.getUser(user_id);
+                const user_id_int = user[0].user_id;
+                console.log(user);
+                await dboperations.createRental(vehicle_id, user_id_int, start_date, end_date, total_cost, "reserved");
                 return res.status(201).json({message: "Reservation successfully created."});
             }else{
-                return res.status(400).json({message: "Error: vehicle already reserved."})
+                return res.status(400).json({message: "Error: vehicle already reserved."});
             }
         }else{
             return res.status(400).json({message: "Error: vehicle does not exist."});

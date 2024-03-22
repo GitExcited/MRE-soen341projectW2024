@@ -11,8 +11,8 @@ const port = 3000;
 //middleware
 const bpURLencoded = bodyParser.urlencoded({ extended: true });
 const bpJSON = bodyParser.json();
-
-app.use(cookieParser())
+app.use(express.json());
+app.use(cookieParser());
 app.use(cors({
     origin: 'http://localhost:5173',
     credentials: true,
