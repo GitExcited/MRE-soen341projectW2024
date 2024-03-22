@@ -24,8 +24,8 @@
             <td>{{ reservation.status }}</td>
             <td>
               <!-- View/Modify Button -->
-              <button @click="viewModifyReservation(reservation.rental_id)">View/Modify</button>
-              <router-link :to="{ name: 'Checkout', params: { rental_id: reservation.rental_id } }">Proceed to Checkout</router-link>
+              <button class="action-button" @click="viewModifyReservation(reservation.rental_id)">View/Modify</button>
+              <router-link :to="{ name: 'Checkout', params: { rental_id: reservation.rental_id } }" class="action-button">Proceed to Checkout</router-link>
             </td>
           </tr>
         </tbody>
@@ -61,7 +61,7 @@
         }
       },
       viewModifyReservation(rental_id) {
-        this.$router.push({ path: `/reservations/${rental_id}/checkout` });
+        this.$router.push({ path: `/reservations/${rental_id}` });
       }
     },
     mounted() {
@@ -90,6 +90,27 @@
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
+
+  /* Common style for buttons */
+.action-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.action-button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
   
   /* Style for error message */
   .error {
