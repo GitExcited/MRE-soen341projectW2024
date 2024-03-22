@@ -24,23 +24,21 @@
   
   <script>
   export default {
+    props: {
+        rental_id: {
+        type: String,
+        required: true,
+        }
+    },
     data() {
       return {
         cardNumber: '',
         expiryDate: '',
         cvv: '',
         name: 'Checkout',
-        props: {
-            rental_id: {
-            type: Number,
-            required: true
-            }
-        },
       };
     },
-    mounted() {
-    console.log(this.$route.params);
-  },
+
 
     methods: {
       handleSubmit() {
