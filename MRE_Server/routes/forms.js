@@ -3,7 +3,7 @@ import {verifyToken} from "./auth.js"
 import dboperations from "../database/operations.js";
 const formRouter = express.Router();
 
-formRouter.post('/getreservations', verifyToken, async (req,res)=>{
+formRouter.get('/getallreservations', verifyToken, async (req,res)=>{
     //get all reservations
     try{
         const user_id = req.userId;
@@ -106,9 +106,8 @@ formRouter.post('/registervehicle',async (req,res)=>{
     }
 });
 
-formRouter.post('/vehicles',async (req,res)=>{
+formRouter.get('/vehicles',async (req,res)=>{
     //get all vehicles
-    
     try{
         const vehicles = await dboperations.getAllVehicles(req.query.user_id);
         return res.status(200).json(vehicles);

@@ -24,7 +24,8 @@
             <td>{{ reservation.status }}</td>
             <td>
               <!-- View/Modify Button -->
-              <button @click="viewModifyReservation(reservation.rental_id)">View/Modify</button>
+              <button class="action-button" @click="viewModifyReservation(reservation.rental_id)">View/Modify</button>
+              <router-link :to="{ name: 'Checkout', params: { rental_id: reservation.rental_id } }" class="action-button">Proceed to Checkout</router-link>
             </td>
           </tr>
         </tbody>
@@ -50,7 +51,7 @@
         try {
             const auth = 'authTokenMRE=' + sessionStorage.getItem('token') + '; path=/; max-age=3600';
             document.cookie = auth;
-            const response = await axios.post('http://localhost:3000/forms/getreservations', {}, {
+            const response = await axios.get('http://localhost:3000/forms/getallreservations', {}, {
                 withCredentials: true
             });
             
@@ -89,6 +90,27 @@
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
+
+  /* Common style for buttons */
+.action-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.action-button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
   
   /* Style for error message */
   .error {

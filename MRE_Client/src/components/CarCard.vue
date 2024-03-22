@@ -3,9 +3,14 @@
       <div class="card mb-3 ">
         <img :src="image" class="card-img-top car-image" alt="Car Image">
         <div class="card-body">
-          <h5 class="card-title">{{ title }}</h5>
+          <div class = "d-flex align-items-center">
+          <h5 class="card-title ">{{ title }}</h5>
+          <button :class="['btn', 'btn-sm', 'rounded-pill', isAvailable === 'Available' ? 'btn-success' : 'btn-danger']">
+        {{ isAvailable === 'Available' ? 'Available' : 'Reserved' }}
+        </button>
+      </div>
           <p class="card-text">{{ description }}</p>
-          <a @click="rentNow" class="btn btn-primary">Rent Now</a>
+        <a @click="rentNow" class="btn btn-primary">Rent Now</a>
         </div>
       </div>
     </div>
@@ -34,6 +39,10 @@
         type: String,
         required: true,
       },
+      isAvailable: {
+        type: String,
+        required: true,
+      },  
     },
     methods: {
     rentNow() {
@@ -58,4 +67,10 @@
     width: 100%;
     object-fit: cover;
   }
+  .rounded-pill {
+  border-radius: 50px !important;
+}
+.card-title{
+  margin-right: 30px;
+}
   </style>
