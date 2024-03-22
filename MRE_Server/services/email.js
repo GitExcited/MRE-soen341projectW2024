@@ -4,6 +4,19 @@ dotenv.config();
 
 const {EMAILPASS} = process.env;
 
+export async function depositEmail(email, name, operation, cardNumber) {
+    let body = `<h1>Deposit ${operation}</h1>
+    <p>Hi ${name},</p>
+    <p>Your deposit of $500 has been ${operation} successfully from card: ${cardNumber}.</p>
+    <p>Thank you for choosing Montreal Rental Enterprise.</p>
+    <p>Best Regards,</p>
+    <p>Montreal Rental Enterprise</p>`;
+
+    let subject = `Deposit ${operation} - ${name}`;
+
+    return await sendEmail(email, body, subject);
+}
+
 export async function sendNewUserEmail(email, name, password) {
     let body = `<h1>Welcome to Montreal Rental Enterprise</h1>
     <p>Hi ${name},</p>
@@ -154,4 +167,4 @@ async function sendEmail(email_to, body, subject){
     return response;
 };
 
-export default {sendNewUserEmail, sendReservationEmail};
+export default {sendNewUserEmail, sendReservationEmail, depositEmail};

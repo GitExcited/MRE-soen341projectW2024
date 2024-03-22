@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-md-4">
         <h2 class="text-center" v-if="!loggedIn">Check In</h2>
-        <h2 class="text-center" v-if="loggedIn">Welcome, {{ username }}!</h2>
+        <h2 class="text-center" v-if="loggedIn">Welcome!</h2>
         <router-link to="/home" v-if="loggedIn">Go to Home</router-link>
 
         <form @submit.prevent="checkInCustomer" v-if="!loggedIn">

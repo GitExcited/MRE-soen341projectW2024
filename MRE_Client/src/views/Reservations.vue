@@ -53,13 +53,13 @@
     const reservationDate = new Date(reservation.rental_start_date).toLocaleDateString() ;
         console.log("Today date is"+ currentDate);
         console.log("Reservation date is"+ reservationDate);
-    return (currentDate === reservationDate && reservation.status != 'checked in');
+    return (currentDate === reservationDate && reservation.status == 'reserved');
   },
   isAfterReservationDate(reservation) {
     const currentDate = new Date().toLocaleDateString();
     const reservationDate =  new Date(reservation.rental_start_date).toLocaleDateString();
 
-    return (currentDate > reservationDate && reservation.status === 'checked in');
+    return (currentDate >= reservationDate && reservation.status === 'checked in');
   },
       async fetchReservations() {
         try {

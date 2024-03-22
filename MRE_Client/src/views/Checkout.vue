@@ -26,7 +26,6 @@
   
   <script>
   import axios from 'axios';
-import { routeLocationKey } from 'vue-router';
   export default {
     props: {
         rental_id: {
@@ -57,7 +56,7 @@ import { routeLocationKey } from 'vue-router';
         }
 
           await axios.post('http://localhost:3000/forms/checkout', rentalDetails, {withCredentials: true})
-          this.$router.push({path: '/checkoutconfirmation'});
+          this.$router.push({path: '/checkoutconfirmation', query: {id: this.rental_id}});
         } catch (error) {
           console.log(error)
         }
