@@ -62,9 +62,8 @@ formRouter.post('/registervehicle',async (req,res)=>{
     }
 });
 
-formRouter.post('/vehicles',async (req,res)=>{
+formRouter.get('/vehicles',async (req,res)=>{
     //get all vehicles
-    
     try{
         const vehicles = await dboperations.getAllVehicles(req.query.user_id);
         return res.status(200).json(vehicles);
