@@ -17,6 +17,7 @@
         :color="car.color"
         :description="`Make: ${car.make}, Color: ${car.color}, ID: ${car.vehicle_id}`"
         :vehicle_id="car.vehicle_id"
+        :isAvailable="car.status"
         @rent-now="handleRentNow"
         />
 
