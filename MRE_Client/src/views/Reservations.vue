@@ -25,6 +25,7 @@
             <td>
               <!-- View/Modify Button -->
               <button @click="viewModifyReservation(reservation.rental_id)">View/Modify</button>
+              <router-link :to="{ name: 'Checkout', params: { rental_id: reservation.rental_id } }">Proceed to Checkout</router-link>
             </td>
           </tr>
         </tbody>
@@ -60,7 +61,7 @@
         }
       },
       viewModifyReservation(rental_id) {
-        this.$router.push({ path: `/reservations/${rental_id}` });
+        this.$router.push({ path: `/reservations/${rental_id}/checkout` });
       }
     },
     mounted() {

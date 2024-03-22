@@ -25,6 +25,7 @@ const router = createRouter({
     { path:'/torent', name: 'torent', component: ToRent},
     { path: '/reservations', component: Reservations},
     { path: '/checkout', name: 'checkout',component: Checkout,},
+    { path: '/reservations/:rental_id/checkout',name: 'Checkout',component: Checkout,props: true},
     { path: '/reservations/:id', component: ModifyReservation, props: true}
   ]
 });

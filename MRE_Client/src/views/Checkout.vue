@@ -1,9 +1,5 @@
 <template>
     <div class="checkout-form">
-      <!-- Reservation number displayed at the top -->
-      <div class="reservation-number" v-if="reservationNumber">
-        <p>Reservation Number: {{ reservationNumber }}</p>
-      </div>
       <div class="banner">
         <h2 class="banner-text">Enter Your Card Details</h2>
       </div>
@@ -14,9 +10,7 @@
         </div>
         <div class="form-group">
           <label for="expiryDate">Expiry Date:</label>
-          <!-- Date Picker Component -->
           <input type="date" id="expiryDate" v-model="expiryDate" required>
-          <!-- End of Date Picker Component -->
         </div>
         <div class="form-group">
           <label for="cvv">CVV:</label>
@@ -31,10 +25,11 @@
   export default {
     data() {
       return {
-        reservationNumber: '', // Add reservationNumber data property
         cardNumber: '',
         expiryDate: '',
-        cvv: ''
+        cvv: '',
+        name: 'Checkout',
+        props: ['rental_id'],
       };
     },
     methods: {
@@ -46,38 +41,34 @@
           cvv: this.cvv
         });
       },
+
       limitCVV() {
-        // Ensure CVV input does not exceed 3 digits
-        if (this.cvv && this.cvv.toString().length > 3) {
-          this.cvv = parseInt(this.cvv.toString().slice(0, 3));
-        }
+      // Ensure CVV input does not exceed 3 digits
+      if (this.cvv && this.cvv.toString().length > 3) {
+        this.cvv = parseInt(this.cvv.toString().slice(0, 3));
       }
+    }
     }
   };
   </script>
   
   <style scoped>
   .checkout-form {
-    max-width: 400px;
-    margin: 90px auto 20px; /* Increased margin-top */
-    padding: 0px 20px 20px; /* Added more padding at the top */
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
-  
-  .reservation-number {
-    text-align: center;
-    margin-bottom: 20px;
+max-width: 400px;
+  margin: 90px auto 20px; /* Increased margin-top */
+  padding: 0px 20px 20px; /* Added more padding at the top */
+  border: 1px solid #ccc;
+  border-radius: 10px;
   }
   
   .banner {
     padding: 10%;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Adjust as needed */
   }
   
   .banner-text {
-    color: #333;
+    color: #333; /* Adjust text color as needed */
     margin: 0;
     font-size: 26px;
   }
@@ -90,11 +81,18 @@
     display: block;
     margin-bottom: 5px;
   }
+
+input[type="date"],
+input[type="number"],
+input[type="text"] {
+  width: calc(100%); /* Shorten text boxes */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
   
-  input[type="date"],
-  input[type="number"],
   input[type="text"] {
-    width: calc(100%); /* Shorten text boxes */
+    width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
