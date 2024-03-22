@@ -1,7 +1,22 @@
 import express from "express";
-import {verifyToken} from "./auth.js"
+import {verifyToken} from "./auth.js";
 import dboperations from "../database/operations.js";
+import sendEmail from "../services/email.js";
 const formRouter = express.Router();
+
+//GET routes
+
+formRouter.get('/vehicles',async (req,res)=>{
+    //get all vehicles
+    try{
+        const vehicles = await dboperations.getAllVehicles(req.query.user_id);
+        return res.status(200).json(vehicles);
+    }catch (err) {
+        console.error('Error executing query', err);
+        res.status(500).json({ message: 'Internal server error'});
+    }
+});
+
 
 formRouter.get('/getallreservations', verifyToken, async (req,res)=>{
     //get all reservations
@@ -32,6 +47,8 @@ formRouter.get('/getreservation', async (req,res)=>{
         res.status(500).json({ message: 'Internal server error' });
     }
 });
+
+//POST routes
 
 formRouter.post('/updatereservation', async (req,res)=>{
     //update reservation by id
@@ -106,18 +123,22 @@ formRouter.post('/registervehicle',async (req,res)=>{
     }
 });
 
-formRouter.get('/vehicles',async (req,res)=>{
-    //get all vehicles
-    try{
-        const vehicles = await dboperations.getAllVehicles(req.query.user_id);
-        return res.status(200).json(vehicles);
-    }catch (err) {
-        console.error('Error executing query', err);
-        res.status(500).json({ message: 'Internal server error'});
-    }
+formRouter.post('/checkin',async (req,res)=>{
+    
 });
 
-formRouter.post('/',(req,res)=>{
+
+formRouter.post('/mailtest',async (req,res)=>{
+    const {email_to, body, subject} = req.query;
+    //console.log(email_to, body, subject)
+    const response = await sendEmail(email_to, body, subject);
+    //console.log(response)
+
+    if(response[0]=="Success"){
+        res.status(201).json({message: 'Email sent successfully.',info:response[1]});
+    }else if(response[0]=="Failure"){
+        res.status(500).json({message: 'Error occured while trying to send email.', info:response[1]});
+    }
     
 });
 
