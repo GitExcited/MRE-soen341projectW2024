@@ -52,13 +52,13 @@
       </form>
     </div>
   </div>
-  <div v-if="this.error" class="alert alert-danger fixed-bottom" role="alert">
+  <div v-if="this.error" class="alert alert-danger mt-3" role="alert">
     {{ error }}
   </div>
 </template>
 
 <script>
-import CarCard from '../components/CarCard.vue'
+import CarCard from '@/components/CarCard.vue'
 import axios from 'axios'
 export default {
   data() {
@@ -75,7 +75,8 @@ export default {
       endDate: '',
       creditCardNumber: '',
       cvv: '',
-      expirationDate: ''
+      expirationDate: '',
+      error: null
     }
   },
 
@@ -95,6 +96,15 @@ export default {
     handleRentNow(carInfo) {
       this.selectedCar = { ...carInfo }
     },
+    validateFutureDateMMYYYY(input) {
+      const regex = /^(0[1-9]|1[0-2])\/\d{4}$/;
+      if (!regex.test(input)) return false;
+
+      const currentDate = new Date();
+      const inputDate = new Date(input.split('/')[1], input.split('/')[0] - 1);
+
+      return inputDate > currentDate;
+    },
 
     async submitForm() {
       const auth = 'authTokenMRE=' + sessionStorage.getItem('token') + '; path=/; max-age=3600'
@@ -113,10 +123,8 @@ export default {
         return // Stop form submission if CVV is invalid
       }
 
-      const currentDate = new Date()
-      const expirationDate = new Date(this.expirationDate)
-      if (isNaN(expirationDate.getTime()) || expirationDate < currentDate) {
-        this.error = 'Expiration date must be a valid future date.'
+      if (!this.validateFutureDateMMYYYY(this.expirationDate)) {
+        this.error = 'Expiration date must be in the future and in the format MM/YYYY.'
         return // Stop form submission if expiration date is invalid
       }
 
@@ -140,9 +148,9 @@ export default {
           console.log(response)
           this.$router.push({ path: '/confirmrent' })
         })
-        .catch((error) => {
-          console.error(error)
-          this.error = error
+        .catch((err) => {
+          console.error(err)
+          this.error = err.response.data.message;
         })
     }
   }

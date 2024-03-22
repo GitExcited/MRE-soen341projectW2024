@@ -31,8 +31,9 @@
   </template>
 
 <script>
-import CarCard from '../components/CarCard.vue';
+import CarCard from '@/components/CarCard.vue';
 import SearchBar from '../components/SearchBar.vue';
+
 import axios from 'axios';
 
 export default {
@@ -57,7 +58,7 @@ export default {
 
 
   mounted() {
-    axios.post('http://localhost:3000/forms/vehicles?user_id=103210')
+    axios.get('http://localhost:3000/forms/vehicles?user_id=103210')
       .then(response => {
         this.cars = response.data;
       })

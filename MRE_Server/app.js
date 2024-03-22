@@ -5,14 +5,12 @@ import formRouter from "./routes/forms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 //Create server app
-const app = express();
+export const app = express();
 const port = 3000;
-
 
 //middleware
 const bpURLencoded = bodyParser.urlencoded({ extended: true });
 const bpJSON = bodyParser.json();
-
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
@@ -24,17 +22,12 @@ app.use(cors({
 
 // Then, define your routes as usual
 
-
 app.use('/auth', router);
 app.use('/forms', formRouter);
-
 
 app.get('/',(req,res)=>{
   res.send('Hello World');
 })
-
-
-
 
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}`);
