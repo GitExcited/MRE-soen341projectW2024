@@ -9,12 +9,12 @@
         <form @submit.prevent="checkInCustomer" v-if="!loggedIn">
           <p class="subtitle">Please provide the information used to make the booking</p>
           <div class="mb-3">
-            <label for="bookingConfirmation" class="form-label"><b>Booking Confirmation</b></label>
+            <label for="bookingID" class="form-label"><b>Booking ID</b></label>
             <input
-              v-model="bookingConfirmation"
+              v-model="bookingID"
               type="text"
               class="form-control"
-              id="bookingConfirmation"
+              id="bookingID"
               required
             />
           </div>
@@ -81,7 +81,7 @@ export default {
   data() {
     return {
       username: '',
-      bookingConfirmation: '',
+      bookingID: '',
       driverLicense: '',
       creditCard: '',
       vehicleInspectionReport: '',
@@ -95,7 +95,7 @@ export default {
     async checkInCustomer() {
       try {
         const rentalDetails = {
-          bookingConfirmation: this.bookingConfirmation,
+          bookingID: this.bookingID,
           driverLicense: this.driverLicense,
           creditCard: this.creditCard,
           vehicleInspectionReport: this.vehicleInspectionReport,
