@@ -73,3 +73,25 @@ The team held a meeting to implement any final touches and wrap up sprint 3
 
 ### Decisions and Actions
 - Team implemented some final peices of code for the website to meet any overlooked criteria
+
+## Meeting 4
+Meeting Date: March 22, 2024 12:00am- 6:00pm (Duration 6h00m)
+Location: physical meeting
+
+### Summary
+The team worked on the process 1,2 and 3 from the sprint3
+
+### Attendance
+- [x] Alexandre Hachey
+- [x] J. David Ruiz
+- [x] Yan Pilon
+- [x] Mohammad Natsheh
+- [x] David Jordan Mateus
+- [x] Rishit Mittal
+
+### Agenda
+- Fill up your logs
+
+### Decisions and Actions
+- Team implemented most remaining features for sprint 3
+
