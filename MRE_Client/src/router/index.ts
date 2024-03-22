@@ -8,6 +8,7 @@ import Login from '@/views/Login.vue';
 import ToRent from '@/views/ToRent.vue';
 import ConfirmRent from '@/views/ConfirmRent.vue';
 import Reservations from '@/views/Reservations.vue';
+import Checkout from '@/views/Checkout.vue';
 import ModifyReservation from '@/views/ModifyReservation.vue';
 
 const router = createRouter({
@@ -23,6 +24,8 @@ const router = createRouter({
     { path: '/confirmrent', component: ConfirmRent },
     { path:'/torent', name: 'torent', component: ToRent},
     { path: '/reservations', component: Reservations},
+    { path: '/checkout', name: 'checkout',component: Checkout,},
+    { path: '/reservations/:rental_id/checkout',name: 'Checkout',component: Checkout,props: true},
     { path: '/reservations/:id', component: ModifyReservation, props: true}
   ]
 });
