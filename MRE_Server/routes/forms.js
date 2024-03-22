@@ -128,21 +128,25 @@ formRouter.post('/registervehicle',async (req,res)=>{
 });
 
 formRouter.post('/checkin',verifyToken,async (req,res)=>{
-    const {bookingConfirmation,driverLicense,creditCard,vehicleInspectionReport,signedFormImage} = req.query;
-    const user_id = req.userId;
+    const {bookingConfirmationId,driverLicense,creditCard,vehicleInspectionReport,signedFormImage} = req.query;
+    //const user_id = req.userId;
     try {
-        
+        await dboperations.updateReservationStatus(bookingConfirmationId,"checked in");
+        return res.status(201).json({message: "Vehicle checked in."});
     } catch (error) {
         console.error('Error executing query', err);
         res.status(500).json({ message: 'Internal server error' });
     }
 });
 
+//status = one of ["reserved", "checked in", "checked out"]
+
 formRouter.post('/checkout',verifyToken,async (req,res)=>{
     const {cardNumber,expiryDate,cvv,rental_id} = req.query;
-    const user_id = req.userId;
+    //const user_id = req.userId;
     try {
-        
+        await dboperations.updateReservationStatus(rental_id,"checked out");
+        return res.status(201).json({message: "Vehicle checked out."});
     } catch (error) {
         console.error('Error executing query', err);
         res.status(500).json({ message: 'Internal server error' });

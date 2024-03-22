@@ -95,7 +95,7 @@ export default {
     async checkInCustomer() {
       try {
         const rentalDetails = {
-          bookingConfirmation: this.bookingConfirmation,
+          bookingConfirmationId: this.bookingConfirmation,
           driverLicense: this.driverLicense,
           creditCard: this.creditCard,
           vehicleInspectionReport: this.vehicleInspectionReport,
