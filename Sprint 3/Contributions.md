@@ -13,3 +13,8 @@
 - March 18 : 3 hours working on confirmation page with reservation.
 - March 21 : 2 hours working on front end routing for checkout page to the confirmation page.
 
+
+- ## David Mateus
+- March 13: 1 hour of going over the tasks for sprint 3.
+- March 21: 2h 30m working on front end aspects of process one, booking a vehicle. Changes made on ToRent.vue to implement these functionalities
+- March 22: 4h Creating the aspects of process 2. Implemented these new functionalities on a new file called CheckIn.vue
