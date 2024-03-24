@@ -8,6 +8,11 @@
 - March 18: 1 hours Worked on some more features and user stories for sprint 3. Went over the rubrick and saw what needed to be worked on
 - March 22: 6hours worked on process 1, 2 and 3 including such as the sorting vehicules by selected info, worked on adding a database of models and makes of vehicles, and worked on the checkin and checkout routes from the reservations page. 
 
+## Mohammad Natsheh
+- March 15 : 1 hour discussing and coordinating front end tasks for user confirmation.
+- March 18 : 3 hours working on confirmation page with reservation.
+- March 21 : 2 hours working on front end routing for checkout page to the confirmation page.
+
 ## Yan Pilon
 - March 22: 7 hours of creating routes for check and check out, correcting bugs in the front end, creating a function with alex to send email, fixing the authentication system.
 - March 22: 6hours worked on process 1, 2 and 3 including such as the sorting vehicules by selected info, worked on adding a database of models and makes of vehicles, and worked on the checkin and checkout routes from the reservations page.
