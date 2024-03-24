@@ -1,3 +1,7 @@
+## Alexandre Hachey
+- March 19-21: total of about 3 hours coordinating within the team, helping debug errors, generally helping out working within the team.
+- March 22: 7 hours working on several core features within the backend, frontend, and directly on the database. Fixed multiple bugs, and wrote the code to connect our frontent and backend for Sprint 3 features.
+
 ## Rishit Mittal
 - March 19 : 30 minutes working on front end. Discussed with the team on how to create the checkout page.
 - March 20 : 2 hours working on front end. Created a page for checking out with card details such as card number, expiry date, cvv.
