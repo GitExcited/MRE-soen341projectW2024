@@ -16,8 +16,8 @@ Vision of what the website would look like is now past prototype stage and enter
 - [x] Rishit Mittal
 
 ### Agenda
-- Planning the tie to back end with front end
-- Discussion task divisions
+- Planning how to tie the back end with front end
+- Discussion division of task
 - Discussing technical requirements and tools
 - Planning for future meetings and work
 
@@ -27,7 +27,7 @@ Vision of what the website would look like is now past prototype stage and enter
 
 
 ## Meeting 2
-Meeting Date: March 8, 2024 12:00pm - 6:45pm (Duration 6h 45m)
+Meeting Date: March 15, 2024 12:00pm - 6:45pm (Duration 6h 45m)
 Location: H847
 
 ### Summary
@@ -44,12 +44,12 @@ The team is holding a meeting to go over progress made on the website and implem
 ### Agenda
 - Meeting with TA to go over progress and suggest changes
 - To further improve on aspect already done in the backend of the website
-- To add the neccesary components to the frontend
+- To add the neccesary components to the frontend to meet the requirement of Process 1
 - Testing of the website
 
 ### Decisions and Actions
-- Significantl progress on the back end of the website with implementation of databases, operations, etc
-- Addition of new features on the front end such as the menu
+- Significantl progress on the back end of the website by adding new routes
+- Addition of new features on the front end such car availibity information
 - Team catching up on progress made
 
 ## Meeting 3
@@ -57,7 +57,7 @@ Meeting Date: March 18, 2024 9:45am - 11:00am (Duration 1h15m)
 Location: online meeting
 
 ### Summary
-The team held a meeting to implement any final touches and wrap up sprint 3
+The team held a meeting to implement more features from process 1 and 2
 
 ### Attendance
 - [x] Alexandre Hachey
@@ -68,14 +68,14 @@ The team held a meeting to implement any final touches and wrap up sprint 3
 - [x] Rishit Mittal
 
 ### Agenda
-- Go over sprint 3 rubric together
-- Assign any additonal changes that need to be made
+- Add core front end features of process 1 and 2
+- Create neccessary additions to backend databases and routes for new features
 
 ### Decisions and Actions
 - Team implemented some final peices of code for the website to meet any overlooked criteria
 
 ## Meeting 4
-Meeting Date: March 22, 2024 12:00am- 6:00pm (Duration 6h00m)
+Meeting Date: March 22, 2024 12:00am- 7:00pm (Duration 7h00m)
 Location: physical meeting
 
 ### Summary
@@ -90,7 +90,9 @@ The team worked on the process 1,2 and 3 from the sprint3
 - [x] Rishit Mittal
 
 ### Agenda
-- Fill up your logs
+- Adding features implemented by each individual of the team into main
+- Bug testing and fixing new features
+- Receving feedback from TA on new features
 
 ### Decisions and Actions
 - Team implemented most remaining features for sprint 3
