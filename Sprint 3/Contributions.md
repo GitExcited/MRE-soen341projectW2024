@@ -13,8 +13,12 @@
 - March 18 : 3 hours working on confirmation page with reservation.
 - March 21 : 2 hours working on front end routing for checkout page to the confirmation page.
 
+## Yan Pilon
+- March 22: 7 hours of creating routes for check and check out, correcting bugs in the front end, creating a function with alex to send email, fixing the authentication system.
+- March 22: 6hours worked on process 1, 2 and 3 including such as the sorting vehicules by selected info, worked on adding a database of models and makes of vehicles, and worked on the checkin and checkout routes from the reservations page.
 
 - ## David Mateus
 - March 13: 1 hour of going over the tasks for sprint 3.
 - March 21: 2h 30m working on front end aspects of process one, booking a vehicle. Changes made on ToRent.vue to implement these functionalities
 - March 22: 4h Creating the aspects of process 2. Implemented these new functionalities on a new file called CheckIn.vue
+
