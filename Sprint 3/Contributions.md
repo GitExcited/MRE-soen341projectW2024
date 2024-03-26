@@ -10,7 +10,8 @@
 ## David Ruiz
 - March 13: 1 hour of going over the tasks for sprint 3 and working on how we wanted to implement the json files for the frontend. I started scaffolding some vue pages.
 - March 18: 1 hours Worked on some more features and user stories for sprint 3. Went over the rubrick and saw what needed to be worked on
-- March 22: 6hours worked on process 1, 2 and 3 including such as the sorting vehicules by selected info, worked on adding a database of models and makes of vehicles, and worked on the checkin and checkout routes from the reservations page. 
+- March 22: 6hours worked on process 1, 2 and 3 including such as the sorting vehicules by selected info, worked on adding a database of models and makes of vehicles, and worked on the checkin and checkout routes from the reservations page.
+- March 25: 2 hours working on the UML diagrams
 
 ## Mohammad Natsheh
 - March 15 : 1 hour discussing and coordinating front end tasks for user confirmation.
