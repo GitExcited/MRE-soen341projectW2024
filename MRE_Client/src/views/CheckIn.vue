@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-md-4">
         <h2 class="text-center" v-if="!loggedIn">Check In</h2>
-        <h2 class="text-center" v-if="loggedIn">Welcome, {{ username }}!</h2>
+        <h2 class="text-center" v-if="loggedIn">Welcome!</h2>
         <router-link to="/home" v-if="loggedIn">Go to Home</router-link>
 
         <form @submit.prevent="checkInCustomer" v-if="!loggedIn">
@@ -102,7 +102,7 @@ export default {
           vehicleInspectionReport: this.vehicleInspectionReport,
           signedFormImage: this.signedFormImage // Include the signed form image
         }
-        await axios.post('http://localhost:3000/forms/checkin', rentalDetails)
+        await axios.post('http://localhost:3000/forms/checkin', rentalDetails, {withCredentials: true})
 
         // deposit
         // await axios.post('http://localhost:3000/take-deposit', {

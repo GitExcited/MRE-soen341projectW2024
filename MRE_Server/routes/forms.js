@@ -1,7 +1,7 @@
 import express from "express";
 import {verifyToken} from "./auth.js";
 import dboperations from "../database/operations.js";
-import { sendReservationEmail } from "../services/email.js";
+import { sendReservationEmail, depositEmail } from "../services/email.js";
 const formRouter = express.Router();
 
 //GET routes
@@ -128,10 +128,17 @@ formRouter.post('/registervehicle',async (req,res)=>{
 });
 
 formRouter.post('/checkin',verifyToken,async (req,res)=>{
-    const {bookingID,driverLicense,creditCard,vehicleInspectionReport,signedFormImage} = req.query;
+    const {bookingID,driverLicense,creditCard,vehicleInspectionReport,signedFormImage} = req.body;
     //const user_id = req.userId;
+    console.log(bookingID);
     try {
         await dboperations.updateReservationStatus(bookingID,"checked in");
+
+        const user = await dboperations.getUser(req.userId);
+        const email = user[0].email;
+        
+        await depositEmail(email, req.userId, "received", creditCard);
+
         return res.status(201).json({message: "Vehicle checked in."});
     } catch (error) {
         console.error('Error executing query', err);
@@ -142,10 +149,16 @@ formRouter.post('/checkin',verifyToken,async (req,res)=>{
 //status = one of ["reserved", "checked in", "checked out"]
 
 formRouter.post('/checkout',verifyToken,async (req,res)=>{
-    const {cardNumber,expiryDate,cvv,rental_id} = req.query;
+    const {cardNumber,expiryDate,cvv,rental_id} = req.body;
     //const user_id = req.userId;
     try {
         await dboperations.updateReservationStatus(rental_id,"checked out");
+
+        const user = await dboperations.getUser(req.userId);
+        const email = user[0].email;
+        
+        await depositEmail(email, req.userId, "returned", cardNumber);
+        
         return res.status(201).json({message: "Vehicle checked out."});
     } catch (error) {
         console.error('Error executing query', err);

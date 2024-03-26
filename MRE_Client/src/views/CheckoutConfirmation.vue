@@ -1,8 +1,8 @@
 <template>
   <div class="confirmation-container">
     <h2>Thank you for submitting your details!</h2>
+    <p>You have succesfuly checked out from your reservation.</p>
     <p>Your Reservation number is: {{ reservationNumber }}</p>
-    <!-- You can add more content here if needed -->
   </div>
 </template>
 
@@ -14,21 +14,8 @@ export default {
     };
   },
   mounted() {
-    // Generate a random reservation number when the component is mounted
-    this.generateReservationNumber();
-  },
-  methods: {
-    generateRandomNumber(length) {
-      let result = "";
-      for (let i = 0; i < length; i++) {
-        result += Math.floor(Math.random() * 10); // Random number from 0 to 9
-      }
-      return result;
-    },
-    generateReservationNumber() {
-      // Generate a random reservation number consisting of only numbers
-      this.reservationNumber = this.generateRandomNumber(8);
-    }
+    // Assign the reservation number from the URL query parameter
+    this.reservationNumber = this.$route.query.id || 'Unavailable';
   }
 };
 </script>
