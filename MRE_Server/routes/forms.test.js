@@ -2,6 +2,7 @@ import {describe, expect, test} from '@jest/globals';
 import request from 'supertest';
 import express from "express";
 import formRouter from './forms';
+import db from "../database/db";
 
 const app = express();
 app.use("/forms",formRouter);
@@ -14,5 +15,8 @@ describe("Get /forms/vehicles endpoint", () =>{
                         });
         expect(response.statusCode).toBe(200);
     })
+    afterAll(async () => {
+        await db.end();
+    });  
 })
 
