@@ -2,6 +2,8 @@ import express from "express";
 import {verifyToken} from "./auth.js";
 import dboperations from "../database/operations.js";
 import { sendReservationEmail, depositEmail } from "../services/email.js";
+import { analyzePicture } from "../database/car_ai.js";
+
 const formRouter = express.Router();
 
 //GET routes
@@ -163,6 +165,21 @@ formRouter.post('/checkout',verifyToken,async (req,res)=>{
     } catch (error) {
         console.error('Error executing query', err);
         res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+formRouter.post('/caranalysis' ,async (req,res)=>{
+    //extract car picture url
+    const car_url = req.query.car_url;
+    if(car_url){
+        console.log(car_url);
+        try {
+            let caranalysis = await analyzePicture(car_url);
+            return res.status(200).json({message: caranalysis});
+        } catch (error) {
+            console.error('Error running script', err);
+            res.status(500).json({ message: 'Internal server error' });
+        }
     }
 });
 

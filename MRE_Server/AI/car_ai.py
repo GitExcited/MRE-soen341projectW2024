@@ -20,8 +20,8 @@ import pathlib
 temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
 
-learn = load_learner('MRE_SERVER/AI/car_ai.pkl')
-object,_,probs = learn.predict(PILImage.create('MRE_SERVER/AI/nissan_altima.jpeg'))
+learn = load_learner('./car_ai.pkl')
+object,_,probs = learn.predict(PILImage.create('./nissan_altima.jpeg'))
 print(f"This is a: {object}.")
 
 # # ? No data? No problem! We can use DuckDuckGo to search for images of cars
