@@ -8,7 +8,7 @@
         <div class="input-group">
           <label class="label" for="imageURL">Image URL:</label>
           <input type="url" id="imageURL" v-model="car.imageURL" required>
-          <button type="button" @click.prevent="submitImageLink" class="submit-button">AI autofill</button>
+          <button type="button" @click.prevent="analyzeCar(car.imageURL)" class="submit-button">AI autofill</button>
         </div>
 
         <div class="input-group">
@@ -62,10 +62,7 @@ export default {
     async analyzeCar(car_url){
       const response = await axios.get(`http://localhost:3000/forms/caranalysis?car_url=${car_url}`, {
           });
-    },
-    submitImageLink() {
-      console.log('Image link submitted:', this.car.imageURL);
-      this.$router.push({path: '/imageAIconfirmation'});
+      console.log(response)
     }
   }
 };

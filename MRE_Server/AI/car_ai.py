@@ -16,14 +16,16 @@ from fastai.vision.all import *
 import pathlib
 temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
-
+# ? This accesses the image link as a command-line argument
+import sys
+input_data = sys.argv[1]
 # ? This allows us to download the image link given to access the image
 from PIL import Image
 import requests
 from io import BytesIO
 
 # URL of the image. In this example its a 2002 Honda civic
-URL = 'https://upload.wikimedia.org/wikipedia/commons/e/e9/2002_Honda_Civic_%28MY02%29_GLi_sedan_%282015-05-29%29_01.jpg'
+URL = input_data
 
 # Download the image
 response = requests.get(URL)
