@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -56,6 +58,10 @@ export default {
     submitForm() {
       console.log('Form submitted with data:', this.car);
       this.$router.push({path: '/confirmation'});
+    },
+    async analyzeCar(car_url){
+      const response = await axios.get(`http://localhost:3000/forms/caranalysis?car_url=${car_url}`, {
+          });
     },
     submitImageLink() {
       console.log('Image link submitted:', this.car.imageURL);

@@ -36,7 +36,7 @@ if img.mode != 'RGB':
     img = img.convert('RGB')
 
 
-learn = load_learner('MRE_SERVER/AI/car_ai.pkl')
+learn = load_learner('car_ai.pkl')
 object,_,probs = learn.predict(PILImage.create(img))
 print(f"This is a: {object}.")
 
