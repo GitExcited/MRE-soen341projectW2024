@@ -6,6 +6,12 @@
     <div class="center-container">
       <form @submit.prevent="submitForm" class="form-container">
         <div class="input-group">
+          <label class="label" for="imageURL">Image URL:</label>
+          <input type="url" id="imageURL" v-model="car.imageURL" required>
+          <button type="button" @click.prevent="analyzeCar(car.imageURL)" class="submit-button">AI autofill</button>
+        </div>
+
+        <div class="input-group">
           <label class="label" for="make">Make:</label>
           <input type="text" id="make" v-model="car.make" required>
         </div>
@@ -25,10 +31,7 @@
           <label class="label" for="mileage">Mileage (km):</label>
           <input type="number" id="mileage" v-model="car.mileage" required>
         </div>
-        <div class="input-group">
-          <label class="label" for="imageURL">Image URL:</label>
-          <input type="url" id="imageURL" v-model="car.imageURL" required>
-        </div>
+        
         <button type="submit" class="submit-button">Submit</button>
       </form>
     </div>
@@ -59,6 +62,7 @@ export default {
     async analyzeCar(car_url){
       const response = await axios.post(`http://localhost:3000/forms/caranalysis?car_url=${car_url}`, {
           });
+      console.log(response)
     }
   }
 };
