@@ -11,7 +11,6 @@
 # pip install fastdownload
 from fastcore.all import *
 from fastai.vision.all import *
-from fastdownload import download_url
 
 # ? This is how a model would be imported 
 import os
