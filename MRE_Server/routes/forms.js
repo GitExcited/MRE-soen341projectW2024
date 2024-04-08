@@ -177,7 +177,7 @@ formRouter.post('/caranalysis' ,async (req,res)=>{
             let caranalysis = await analyzePicture(car_url);
             return res.status(200).json({message: caranalysis});
         } catch (error) {
-            console.error('Error running script', err);
+            console.error('Error running script', error);
             res.status(500).json({ message: 'Internal server error' });
         }
     }

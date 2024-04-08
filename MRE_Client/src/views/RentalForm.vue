@@ -57,7 +57,7 @@ export default {
       this.$router.push({path: '/confirmation'});
     },
     async analyzeCar(car_url){
-      const response = await axios.get(`http://localhost:3000/forms/caranalysis?car_url=${car_url}`, {
+      const response = await axios.post(`http://localhost:3000/forms/caranalysis?car_url=${car_url}`, {
           });
     }
   }
