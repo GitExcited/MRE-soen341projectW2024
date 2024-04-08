@@ -1,5 +1,4 @@
 
-#! This is how the car AI model was trained. It is not necessary to run this code again unless you want to retrain the model.
 #! THE MODEL WORKS WITH:
 # Chervolet Silverado 2004
 # Dodge Grand Caravan 2005
@@ -12,17 +11,41 @@
 from fastcore.all import *
 from fastai.vision.all import *
 
-# ? This is how a model would be imported 
-import os
-print(os.getcwd())
-# ? This redirects the path so that the model works
+
+# ? This redirects the path so that the model works. If you have a linux system you don't need this!
 import pathlib
 temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
 
+# ? This allows us to download the image link given to access the image
+from PIL import Image
+import requests
+from io import BytesIO
+
+# URL of the image. In this example its a 2002 Honda civic
+URL = 'https://upload.wikimedia.org/wikipedia/commons/e/e9/2002_Honda_Civic_%28MY02%29_GLi_sedan_%282015-05-29%29_01.jpg'
+
+# Download the image
+response = requests.get(URL)
+img = Image.open(BytesIO(response.content))
+# Resize the image
+img = img.resize((192, 192))  # Replace width and height with the size expected by your model
+
+# Convert the image to RGB
+if img.mode != 'RGB':
+    img = img.convert('RGB')
+
+
 learn = load_learner('MRE_SERVER/AI/car_ai.pkl')
-object,_,probs = learn.predict(PILImage.create('MRE_SERVER/AI/nissan_altima.jpeg'))
+object,_,probs = learn.predict(PILImage.create(img))
 print(f"This is a: {object}.")
+
+
+
+# ! run this code to put the path back to normal afte running the model: 
+pathlib.PosixPath = temp
+
+#! This is how the car AI model was trained. It is not necessary to run this code again unless you want to retrain the model.
 
 # # ? No data? No problem! We can use DuckDuckGo to search for images of cars
 # def search_images(term, max_images=200):
@@ -129,6 +152,3 @@ print(f"This is a: {object}.")
 # print(f"This is a: {object}.")
 
 # learn.export('car_ai.pkl') # Save the model to use another time
-
-# ! ALWAYS RUN THIS CODE: 
-pathlib.PosixPath = temp
