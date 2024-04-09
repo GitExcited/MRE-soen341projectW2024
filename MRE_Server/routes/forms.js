@@ -172,7 +172,7 @@ formRouter.post('/caranalysis' ,async (req,res)=>{
     //extract car picture url
     const car_url = req.query.car_url;
     if(car_url){
-        console.log(car_url);
+        //console.log(car_url);
         try {
             let caranalysis = await analyzePicture(car_url);
             return res.status(200).json({message: caranalysis});

@@ -27,6 +27,9 @@ from PIL import Image
 import requests
 from io import BytesIO
 
+import os
+#print(os.getcwd())
+
 # URL of the image. In this example its a 2002 Honda civic
 URL = input_data
 
@@ -41,7 +44,7 @@ if img.mode != 'RGB':
     img = img.convert('RGB')
 
 
-learn = load_learner('car_ai_8_cars_100_epoch.pkl')
+learn = load_learner('AI/car_ai_8_cars_100_epoch.pkl')
 object,_,probs = learn.predict(PILImage.create(img))
 print(f"{object}")
 sys.stdout.flush()
