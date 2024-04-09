@@ -17,7 +17,6 @@ import { describe, expect, test } from '@jest/globals';
     expect(result).toBeDefined();
   
   });
-
   describe('User Operations', () => {
     test('updateUser should update user email and password', async () => {
         // Arrange
