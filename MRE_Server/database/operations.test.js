@@ -1,7 +1,7 @@
 
 import operations from './operations';
 
-
+import db from "./db";
 import { describe, expect, test } from '@jest/globals';
 
 
@@ -34,5 +34,8 @@ import { describe, expect, test } from '@jest/globals';
         console.log('Updated User:', updatedUser);
         expect(updatedUser).toBeDefined();
       });
+      afterAll(async () => {
+        await db.end();
+    }); 
   });
   
