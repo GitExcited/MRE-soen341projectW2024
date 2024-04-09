@@ -43,8 +43,8 @@ if img.mode != 'RGB':
 
 learn = load_learner('car_ai_8_cars_100_epoch.pkl')
 object,_,probs = learn.predict(PILImage.create(img))
-print(f"This is a: {object}.")
-
+print(f"{object}")
+sys.stdout.flush()
 
 
 # ! run this code to put the path back to normal afte running the model: 
