@@ -8,6 +8,7 @@ export async function analyzePicture(car_url){
         //    });
         console.log("thread spawned now waiting : ", car_url);
         const result = await new Promise((resolve, reject) => {
+            console.log("callback reached");
             pythonProcess.stdout.on('data', (data) => {
                 resolve(data);
             });
