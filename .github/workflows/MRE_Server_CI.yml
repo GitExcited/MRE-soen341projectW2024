@@ -39,4 +39,4 @@ jobs:
     
     - name: Run Static Analysis on MRE_Server
       run: npm run lint
-      working-directory: MRE_Client
+      working-directory: MRE_Server
