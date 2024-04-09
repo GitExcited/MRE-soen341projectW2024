@@ -184,18 +184,5 @@ formRouter.post('/caranalysis' ,async (req,res)=>{
 });
 
 
-// formRouter.post('/mailtest',async (req,res)=>{
-//     const {email_to, body, subject} = req.query;
-//     //console.log(email_to, body, subject)
-//     const response = await sendEmail(email_to, body, subject);
-//     //console.log(response)
-
-//     if(response[0]=="Success"){
-//         res.status(201).json({message: 'Email sent successfully.',info:response[1]});
-//     }else if(response[0]=="Failure"){
-//         res.status(500).json({message: 'Error occured while trying to send email.', info:response[1]});
-//     }
-    
-// });
 
 export default formRouter;

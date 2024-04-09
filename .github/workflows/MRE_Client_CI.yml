@@ -30,3 +30,7 @@ jobs:
     - name: Test MRE_Client
       run: npm test
       working-directory: MRE_Client
+  
+    - name: Run Static Analysis on MRE_Client
+      run: npm run lint
+      working-directory: MRE_Client

@@ -10,13 +10,10 @@ export async function analyzePicture(car_url){
     };
 
     try {
-        const result = await new Promise((resolve, reject) => {
-                        //console.log("callback reached");
+        const result = await new Promise((resolve, _) => {
                         PythonShell.run('car_ai.py', options).then(messages=>{
-                            //console.log(messages);
                             resolve(messages);
                         });})
-        //let result = PythonShell.run('car_ai.py', options);
         return result;
     } catch (error) {
         console.log(error);

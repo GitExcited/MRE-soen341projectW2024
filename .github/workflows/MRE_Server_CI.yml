@@ -36,3 +36,7 @@ jobs:
         PGPASSWORD: ${{ secrets.PGPASSWORD }}
         PGDATABASE: ${{ secrets.PGDATABASE }}
         ENDPOINT_ID: ${{ secrets.ENDPOINT_ID }}
+    
+    - name: Run Static Analysis on MRE_Client
+      run: npm run lint
+      working-directory: MRE_Client
