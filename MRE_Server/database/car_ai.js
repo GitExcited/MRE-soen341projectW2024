@@ -13,7 +13,7 @@ export async function analyzePicture(car_url){
         const result = await new Promise((resolve, reject) => {
                         //console.log("callback reached");
                         PythonShell.run('car_ai.py', options).then(messages=>{
-                            console.log(messages);
+                            //console.log(messages);
                             resolve(messages);
                         });})
         //let result = PythonShell.run('car_ai.py', options);
