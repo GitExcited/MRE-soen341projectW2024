@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  Server_CI:
     runs-on: ubuntu-latest
     environment: mre_secrets
 
@@ -37,6 +37,6 @@ jobs:
         PGDATABASE: ${{ secrets.PGDATABASE }}
         ENDPOINT_ID: ${{ secrets.ENDPOINT_ID }}
     
-    - name: Run Static Analysis on MRE_Client
+    - name: Run Static Analysis on MRE_Server
       run: npm run lint
       working-directory: MRE_Client
