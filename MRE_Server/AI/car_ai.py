@@ -3,14 +3,11 @@
     # Chervolet Silverado 2004
     # Dodge Grand Caravan 2005
     # Ford Explorer 2002
-    # Ford Taurus_2001
     # Honda Civic 2002
     # Nissan altima 2005
-    # Nissnan altima 2002
     # Toyota Camry 2002
     # Volkswagen Jetta 2006
     # Jeep grand Cherockee 2004
-
 # pip install fastcore
 # pip install fastai
 # pip install fastdownload
@@ -44,10 +41,10 @@ if img.mode != 'RGB':
     img = img.convert('RGB')
 
 
-learn = load_learner('car_ai_100epochs.pkl')
+learn = load_learner('car_ai_8_cars_100_epoch.pkl')
 object,_,probs = learn.predict(PILImage.create(img))
-print(f"This is a: {object}.")
-
+print(f"{object}")
+sys.stdout.flush()
 
 
 # ! run this code to put the path back to normal afte running the model: 
