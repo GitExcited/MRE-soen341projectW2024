@@ -20,5 +20,6 @@ export async function analyzePicture(car_url){
         return result;
     } catch (error) {
         console.log(error);
+        throw "some shit fucked up";
     }
 }
