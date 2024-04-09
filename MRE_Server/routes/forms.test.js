@@ -21,7 +21,6 @@ describe("Get /forms/vehicles endpoint", () =>{
 })
 
 describe('Form Router', () => {
-    // Test GET /vehicles endpoint
     test('GET /vehicles should return status 200', async () => {
       const response = await request(app).get('/form/vehicles');
       expect(response.status).toBe(404);
@@ -30,3 +29,21 @@ describe('Form Router', () => {
         await db.end();
     });  
   });
+
+  describe('POST /forms/updatereservation endpoint', () => {
+    test('should return status 200', async () => {
+        const response = await request(app)
+            .post('/forms/updatereservation')
+            .send({
+                rental_id: '5',
+                rental_start_date: '2024/09/09',
+                rental_end_date: '2024/09/09'
+            });
+
+        expect(response.status).toBe(200);
+    });
+
+    afterAll(async () => {
+        await db.end();
+    });
+});
