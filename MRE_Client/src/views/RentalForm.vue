@@ -71,7 +71,6 @@ export default {
             });
           // Assuming the response is a single string make_model_year like this: 
           // const response = { data: 'Volks_jetta_2002' };
-          //console.log(response.data.message[0])
           const [make, model, year] = response.data.message[0].split('_');
           this.car.make = make;
           this.car.model = model;
