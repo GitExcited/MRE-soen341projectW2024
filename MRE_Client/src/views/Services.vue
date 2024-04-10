@@ -9,7 +9,7 @@
     <div class="row mt-4">
       <div class="col-md-4">
         <div class="card">
-          <img src="../../public/img/delorean_car_dummy.jpg" class="card-img-top"style="height:300px" alt="Service Image">
+          <img src="../../public/img/delorean_car_dummy.jpg" class="card-img-top" style="height:300px" alt="Service Image">
           <div class="card-body">
             <h5 class="card-title">Rent Car</h5>
             <p class="card-text">Look for a car that matches your needs</p>
@@ -19,7 +19,7 @@
       </div>
       <div class="col-md-4">
         <div class="card">
-          <img src="../../public/img/rent_your_car.jpg" class="card-img-top" style="height:300px"alt="Service Image">
+          <img src="../../public/img/rent_your_car.jpg" class="card-img-top" style="height:300px" alt="Service Image">
           <div class="card-body">
             <h5 class="card-title">Put a car for Rent</h5>
             <p class="card-text">Put your card to rent and start earning that $$$ NOW! </p>

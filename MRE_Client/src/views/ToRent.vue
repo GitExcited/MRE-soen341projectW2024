@@ -58,7 +58,6 @@
 </template>
 
 <script>
-import CarCard from '@/components/CarCard.vue'
 import axios from 'axios'
 export default {
   data() {
@@ -78,10 +77,6 @@ export default {
       expirationDate: '',
       error: null
     }
-  },
-
-  components: {
-    CarCard
   },
 
   mounted() {
