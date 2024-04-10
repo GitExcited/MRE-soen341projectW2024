@@ -49,11 +49,13 @@
     },
     methods: {
       isReservationDate(reservation) {
-    const currentDate = new Date().toLocaleDateString();
-    const reservationDate = new Date(reservation.rental_start_date).toLocaleDateString() ;
+    const currentDate = new Date();
+    const reservationDate = new Date(reservation.rental_start_date);
+    currentDate.setHours(0, 0, 0, 0);
+    reservationDate.setHours(0, 0, 0, 0);
         console.log("Today date is"+ currentDate);
         console.log("Reservation date is"+ reservationDate);
-    return (currentDate === reservationDate && reservation.status == 'reserved');
+    return (currentDate.getTime() >= reservationDate.getTime() && reservation.status == 'reserved');
   },
   isAfterReservationDate(reservation) {
     const currentDate = new Date().toLocaleDateString();
