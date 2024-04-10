@@ -6,6 +6,16 @@
     <div class="center-container">
       <form @submit.prevent="submitForm" class="form-container">
         <div class="input-group">
+          <label class="label" for="imageURL">Image URL:</label>
+          <input type="url" id="imageURL" v-model="car.imageURL" required>
+          <!-- While car is loading, the loading text appears and the button is disabled and changes color-->
+          <button type="button" @click.prevent="analyzeCar(car.imageURL)" :disabled="loadingAI"
+           :class="{ 'loading-button': loadingAI, 'submit-button': !loadingAI }">
+            {{ loadingAI ? 'Analyzing...' : 'Analyze Car' }} 
+          </button>
+        </div>
+
+        <div class="input-group">
           <label class="label" for="make">Make:</label>
           <input type="text" id="make" v-model="car.make" required>
         </div>
@@ -25,10 +35,7 @@
           <label class="label" for="mileage">Mileage (km):</label>
           <input type="number" id="mileage" v-model="car.mileage" required>
         </div>
-        <div class="input-group">
-          <label class="label" for="imageURL">Image URL:</label>
-          <input type="url" id="imageURL" v-model="car.imageURL" required>
-        </div>
+        
         <button type="submit" class="submit-button">Submit</button>
       </form>
     </div>
@@ -36,9 +43,12 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
+      loadingAI: false,
       car: {
         make: '',
         model: '',
@@ -53,6 +63,20 @@ export default {
     submitForm() {
       console.log('Form submitted with data:', this.car);
       this.$router.push({path: '/confirmation'});
+    },
+    async analyzeCar(car_url){
+       // Show user that the AI is loading
+        this.loadingAI = true;
+        const response = await axios.post(`http://localhost:3000/forms/caranalysis?car_url=${car_url}`, {
+            });
+          // Assuming the response is a single string make_model_year like this: 
+          // const response = { data: 'Volks_jetta_2002' };
+          const [make, model, year] = response.data.message.split('_');
+            
+          this.car.make = make;
+          this.car.model = model;
+          this.car.year = year;
+          this.loading = false;
     }
   }
 };
@@ -119,5 +143,10 @@ input[type="url"] {
 
 .submit-button:hover {
   background-color: #003366; /* Darker blue on hover */
+}
+
+.loading-button {
+  background-color: green;
+  color: white;  /* You might want to change the text color so it's visible on the green background */
 }
 </style>
