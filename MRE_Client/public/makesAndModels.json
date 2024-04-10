@@ -1,22 +1,138 @@
 {
-    "Ford": ["Fusion", "Focus", "Taurus", "Escape", "Explorer", "Expedition", "F-150", "F-250", "Ranger", "Bronco", "Maverick"],
-    "Honda": ["Civic", "Accord", "City", "CR-V", "Pilot", "HR-V", "Ridgeline"],
-    "Toyota": ["Camry", "Corolla", "Avalon", "RAV4", "Highlander", "4Runner", "Tacoma", "Tundra"],
-    "Tesla": ["Model 3", "Model S", "Model Y", "Model X", "Cybertruck"],
-    "Chevrolet": ["Malibu", "Cruze", "Impala", "Equinox", "Traverse", "Tahoe", "Silverado", "Colorado"],
-    "Nissan": ["Altima", "Sentra", "Maxima", "Rogue", "Pathfinder", "Armada", "Frontier", "Titan"],
-    "BMW": ["3 Series", "5 Series", "7 Series"],
-    "Mercedes-Benz": ["C-Class", "E-Class", "S-Class"],
-    "Audi": ["A3", "A4", "A6"],
-    "Hyundai": ["Elantra", "Sonata", "Genesis", "Tucson", "Santa Fe", "Palisade"],
-    "Kia": ["Optima", "Forte", "Cadenza", "Sportage", "Sorento", "Telluride"],
-    "Volkswagen": ["Jetta", "Passat", "Arteon"],
-    "Subaru": ["Impreza", "Legacy", "WRX", "Forester", "Outback", "Ascent"],
-    "Mazda": ["Mazda3", "Mazda6", "Mazda2", "CX-5", "CX-9"],
-    "Lexus": ["IS", "ES", "LS"],
-    "Jeep": ["Wrangler", "Grand Cherokee", "Cherokee", "Gladiator"],
-    "GMC": ["Terrain", "Acadia", "Yukon", "Sierra"],
-    "Buick": ["Encore", "Enclave"],
-    "Ram": ["1500", "2500", "3500"]
-  }
-  
+	"Ford": [
+		"Fusion",
+		"Focus",
+		"Taurus",
+		"Escape",
+		"Explorer",
+		"Expedition",
+		"F-150",
+		"F-250",
+		"Ranger",
+		"Bronco",
+		"Maverick"
+	],
+	"Honda": [
+		"Civic",
+		"Accord",
+		"City",
+		"CR-V",
+		"Pilot",
+		"HR-V",
+		"Ridgeline"
+	],
+	"Toyota": [
+		"Camry",
+		"Corolla",
+		"Avalon",
+		"RAV4",
+		"Highlander",
+		"4Runner",
+		"Tacoma",
+		"Tundra"
+	],
+	"Tesla": [
+		"Model 3",
+		"Model S",
+		"Model Y",
+		"Model X",
+		"Cybertruck"
+	],
+	"Chevrolet": [
+		"Malibu",
+		"Cruze",
+		"Impala",
+		"Equinox",
+		"Traverse",
+		"Tahoe",
+		"Silverado",
+		"Colorado"
+	],
+	"Nissan": [
+		"Altima",
+		"Sentra",
+		"Maxima",
+		"Rogue",
+		"Pathfinder",
+		"Armada",
+		"Frontier",
+		"Titan"
+	],
+	"BMW": [
+		"3 Series",
+		"5 Series",
+		"7 Series"
+	],
+	"Mercedes-Benz": [
+		"C-Class",
+		"E-Class",
+		"S-Class"
+	],
+	"Audi": [
+		"A3",
+		"A4",
+		"A6"
+	],
+	"Hyundai": [
+		"Elantra",
+		"Sonata",
+		"Genesis",
+		"Tucson",
+		"Santa Fe",
+		"Palisade"
+	],
+	"Kia": [
+		"Optima",
+		"Forte",
+		"Cadenza",
+		"Sportage",
+		"Sorento",
+		"Telluride"
+	],
+	"Volkswagen": [
+		"Jetta",
+		"Passat",
+		"Arteon"
+	],
+	"Subaru": [
+		"Impreza",
+		"Legacy",
+		"WRX",
+		"Forester",
+		"Outback",
+		"Ascent"
+	],
+	"Mazda": [
+		"Mazda3",
+		"Mazda6",
+		"Mazda2",
+		"CX-5",
+		"CX-9"
+	],
+	"Lexus": [
+		"IS",
+		"ES",
+		"LS"
+	],
+	"Jeep": [
+		"Wrangler",
+		"Grand Cherokee",
+		"Cherokee",
+		"Gladiator"
+	],
+	"GMC": [
+		"Terrain",
+		"Acadia",
+		"Yukon",
+		"Sierra"
+	],
+	"Buick": [
+		"Encore",
+		"Enclave"
+	],
+	"Ram": [
+		"1500",
+		"2500",
+		"3500"
+	]
+}
