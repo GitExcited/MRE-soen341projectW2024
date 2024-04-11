@@ -46,5 +46,49 @@ The team is holding a meeting to go over progress made on the website and implem
 - Implementing the new features
 - performing code review
 
+## Meeting 3
+Meeting Date: April 5, 2024 12:00pm - 6:00pm (Duration 6h)
+Location: online
 
+### Summary
+The team is holding a meeting to go over progress made on the website and implement certain functionalities
+
+### Attendance
+- [x] Alexandre Hachey
+- [x] J. David Ruiz
+- [x] Yan Pilon
+- [x] Mohammad Natsheh
+- [x] David Jordan Mateus
+- [x] Rishit Mittal
+
+### Agenda
+- Finalizing new feature
+- Implementing test cases
+
+### Decisions and Actions
+- Beggnning new test cases
+
+## Meeting 4
+Meeting Date: April 7, 2024 12:00pm - 6:00pm (Duration 6h)
+Location: online
+
+### Summary
+The team is holding a meeting to go over progress made on the website and implement certain functionalities
+
+### Attendance
+- [x] Alexandre Hachey
+- [x] J. David Ruiz
+- [x] Yan Pilon
+- [x] Mohammad Natsheh
+- [x] David Jordan Mateus
+- [x] Rishit Mittal
+
+### Agenda
+- Finalizing test cases
+- Performing code reveiew
+- Adding all neccessary git hub files for sprint 4
+
+### Decisions and Actions
+- Finalzing git hub organization and documentation
+- Finalizing test cases
 
