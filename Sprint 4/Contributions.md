@@ -28,3 +28,9 @@
 - April 3: 1 hour discussing and overviewing of the features added.
 - April 4: 30 minutes dicussing about screenshots to be used for the presentation.
 - April 6: 1 hour 30 minutes of taking screenshots for renting and to rent the vehicle for the presentation.
+
+- ## David Ruiz
+
+- April 4: 6 hours working on the AI model training and the feature
+- April 7 : 3 hours working on JS and frontend changes to implement AI
+- April 8 : 1 hour working on presentation and finishing up the merge with AI branch
