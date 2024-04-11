@@ -4,6 +4,12 @@
 - April 2 : 4 hours working on presentation.
 - April 5 : 2 hours planning the report and update of repo details.
 
+
+## Yan Pilon
+- April 5: 2 hours writing unit tests for the backend
+- April 7-8: 4 hours integrating David R's new AI feature into the backend and front-end
+- April 10: 1 hour preparing my part of the presentation
+
 ## David Mateus
 
 - April 4: 6 hours Working on implementing new test cases on the server side of the website for various files such as email.js, db.js, etc.
