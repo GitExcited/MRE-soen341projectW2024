@@ -11,7 +11,7 @@
           <p class="card-text">{{ selectedCar.description }}</p>
           <p><strong>Availability:</strong> {{ selectedCar.availability }}</p>
           <!-- Display car availability -->
-          <p><strong>Price:</strong> ${{ selectedCar.price }}/day</p>
+          <p><strong>Price:</strong> $100 /day</p>
           <!-- Display car price -->
         </div>
       </div>

@@ -1,3 +1,10 @@
+## Alexandre Hachey
+
+- March 31: 2 hours discussing new feature and implementation.
+- April 2: 4 hours working on features and coordinating with team members.
+- April 5: 4 hours working on documentation and implementing static analysis and fixing bugs.
+- April 9: 2 hours working on presentation.
+
 ## Mohammad Natsheh
 
 - March 31: 2 hour discussing new feature and possible implementation along with scheduling for future meetings.
